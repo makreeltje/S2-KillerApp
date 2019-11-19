@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KillerApp.Business
+namespace KillerApp.Data
 {
-    public class Class1
+    class Movie
     {
     }
 }
