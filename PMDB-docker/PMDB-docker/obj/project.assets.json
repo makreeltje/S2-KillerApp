@@ -571,11 +571,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+      "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
       "projectName": "PMDB-docker",
-      "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+      "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
       "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
+      "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -594,8 +594,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-              "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+            "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+              "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
             }
           }
         }
