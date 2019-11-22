@@ -1,0 +1,10 @@
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.deps.json
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csprojAssemblyReference.cache
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfoInputs.cache
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfo.cs
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\MySql.Data.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.CopyComplete

@@ -1,8 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model List<PMDB_docker.Business.Movie>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <ul>
+        @foreach (var m in @Model)
+        {
+            <li>@m.Title</li>
+        }
+    </ul>
 </div>

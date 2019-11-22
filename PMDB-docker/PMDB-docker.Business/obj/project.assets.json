@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "PMDB-docker.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/PMDB-docker.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PMDB-docker.Data.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PMDB-docker.Data/1.0.0": {
+      "type": "project",
+      "path": "../PMDB-docker.Data/PMDB-docker.Data.csproj",
+      "msbuildProject": "../PMDB-docker.Data/PMDB-docker.Data.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "PMDB-docker.Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\rick_\\.nuget\\packages\\": {},
@@ -36,7 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+              "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -5,4 +5,8 @@
     <RootNamespace>PMDB_docker.Business</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PMDB-docker.Data\PMDB-docker.Data.csproj" />
+  </ItemGroup>
+
 </Project>
