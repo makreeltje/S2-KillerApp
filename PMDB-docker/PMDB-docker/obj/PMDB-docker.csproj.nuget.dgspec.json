@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
   },
   "projects": {
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "projectName": "PMDB-docker.Business",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
-                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
         "projectName": "PMDB-docker.Data",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\obj\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -118,14 +118,14 @@
         }
       }
     },
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
         "projectName": "PMDB-docker",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -144,8 +144,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
               }
             }
           }
@@ -159,9 +159,35 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.9.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[0.61.0, )"
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",

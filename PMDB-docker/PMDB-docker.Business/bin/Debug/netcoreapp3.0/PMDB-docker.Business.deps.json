@@ -16,19 +16,20 @@
       },
       "PMDB-docker.Data/1.0.0": {
         "dependencies": {
-          "MySql.Data": "8.0.16.0",
+          "MySql.Data": "8.0.18.0",
           "Google.Protobuf": "3.6.1.0",
-          "BouncyCastle.Crypto": "1.8.3.0"
+          "BouncyCastle.Crypto": "1.8.3.0",
+          "Renci.SshNet": "2016.1.0.0"
         },
         "runtime": {
           "PMDB-docker.Data.dll": {}
         }
       },
-      "MySql.Data.Reference/8.0.16.0": {
+      "MySql.Data.Reference/8.0.18.0": {
         "runtime": {
           "MySql.Data.dll": {
-            "assemblyVersion": "8.0.16.0",
-            "fileVersion": "8.0.16.0"
+            "assemblyVersion": "8.0.18.0",
+            "fileVersion": "8.0.18.0"
           }
         }
       },
@@ -47,6 +48,14 @@
             "fileVersion": "1.8.18223.1"
           }
         }
+      },
+      "Renci.SshNet.Reference/2016.1.0.0": {
+        "runtime": {
+          "Renci.SshNet.dll": {
+            "assemblyVersion": "2016.1.0.0",
+            "fileVersion": "2016.1.0.0"
+          }
+        }
       }
     }
   },
@@ -61,7 +70,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MySql.Data.Reference/8.0.16.0": {
+    "MySql.Data.Reference/8.0.18.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -72,6 +81,11 @@
       "sha512": ""
     },
     "BouncyCastle.Crypto.Reference/1.8.3.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Renci.SshNet.Reference/2016.1.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

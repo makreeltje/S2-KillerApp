@@ -12,7 +12,7 @@ namespace PMDB_docker.Data.Movie
         public string Title { get; set; }
         public string Plot { get; set; }
         public int Runtime { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
         public string Website { get; set; }
         public string Studio { get; set; }
     }

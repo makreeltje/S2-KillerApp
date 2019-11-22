@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model List<PMDB_docker.Business.Movie>
+
+<h2>Movie List</h2>
+
+<p>This is a list of all the movies in the database</p>
+@foreach (var m in @Model)
+{
+    <li>@m.Title</li>
+    <ul>
+        <li>@m.Plot</li>
+        <li>@m.Runtime</li>
+        <li>@m.</li>
+    </ul>
+}

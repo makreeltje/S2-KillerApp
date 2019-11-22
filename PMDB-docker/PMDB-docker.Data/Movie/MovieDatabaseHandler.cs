@@ -6,7 +6,7 @@ namespace PMDB_docker.Data.Movie
     public class MovieDatabaseHandler
     {
         // TODO: Connection string aanpassen!
-        private string connectionString = "server=meelsnet.nl;user id=root;database=pmdb;password=Rsam.0255!;";
+        private string connectionString = "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
 
         // Grabs all movies
         public List<MovieDto> GetAllMovies()
@@ -17,7 +17,7 @@ namespace PMDB_docker.Data.Movie
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM movie";
+                    string query = "SELECT * FROM movie ORDER BY sortTitle";
                     using (MySqlCommand command = new MySqlCommand(query, conn))
                     {
                         conn.Open();
@@ -28,7 +28,7 @@ namespace PMDB_docker.Data.Movie
                             dto.Title = reader.GetString(3);
                             dto.Plot = reader.GetString(7);
                             dto.Runtime = reader.GetInt32(8);
-                            dto.ReleaseDate = reader.GetDateTime(9);
+                            dto.ReleaseDate = reader.GetString(9);
                             dto.Website = reader.GetString(10);
                             dto.Studio = reader.GetString(11);
 
@@ -36,7 +36,6 @@ namespace PMDB_docker.Data.Movie
                         }
                     }
                 }
-
             }
             catch (MySqlException sex)
             {

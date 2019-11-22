@@ -9,20 +9,22 @@ namespace PMDB_docker.Business
     {
         static MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public Movie(string title, string plot, int runtime, string studio, string website)
+        public Movie(string title, string plot, string runtime, string studio, string website, string releaseDate)
         {
             Title = title;
             Plot = plot;
             Runtime = runtime;
             Studio = studio;
             Website = website;
+            ReleaseDate = releaseDate;
         }
 
         public string Title { get; }
         public string Plot { get; }
-        public int Runtime { get; }
+        public string Runtime { get; }
         public string Studio { get; }
         public string Website { get; }
+        public string ReleaseDate { get; set; }
 
         public static List<Movie> GetAllMovies()
         {
@@ -32,7 +34,10 @@ namespace PMDB_docker.Business
 
             foreach (var movieDto in movieFromDatabase)
             {
-                Movie movie = new Movie(movieDto.Title, movieDto.Plot, movieDto.Runtime, movieDto.Studio, movieDto.Website);
+                TimeSpan time = TimeSpan.FromMinutes(movieDto.Runtime);
+                string str = time.ToString(@"hh\:mm");
+                DateTime oDate = DateTime.ParseExact(movieDto.ReleaseDate, "yyyy-MM-dd", null);
+                Movie movie = new Movie(movieDto.Title, movieDto.Plot, str, movieDto.Studio, movieDto.Website, movieDto.ReleaseDate);
                 allMovies.Add(movie);
             }
 
