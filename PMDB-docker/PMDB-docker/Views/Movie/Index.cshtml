@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Movies";
 }
 @model List<PMDB_docker.Business.Movie>
 
@@ -14,7 +14,7 @@
         <div class="row">
             @foreach (var m in @Model)
             {
-                <div class="col-md-3 col-sm-5 portfolio-item">
+                <div class="col-md-3 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
