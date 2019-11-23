@@ -36,7 +36,6 @@ namespace PMDB_docker.Business
             {
                 TimeSpan time = TimeSpan.FromMinutes(movieDto.Runtime);
                 string str = time.ToString(@"hh\:mm");
-                DateTime oDate = DateTime.ParseExact(movieDto.ReleaseDate, "yyyy-MM-dd", null);
                 Movie movie = new Movie(movieDto.Title, movieDto.Plot, str, movieDto.Studio, movieDto.Website, movieDto.ReleaseDate);
                 allMovies.Add(movie);
             }
