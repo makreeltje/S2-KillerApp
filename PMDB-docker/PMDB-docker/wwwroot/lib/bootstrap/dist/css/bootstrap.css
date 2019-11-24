@@ -1881,12 +1881,16 @@ pre code {
   border: 0;
 }
 
-.form-control:focus {
+/*.form-control:focus {
   color: #495057;
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}*/
+
+.form-control:focus {
+    box-shadow: none;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -1909,9 +1913,15 @@ pre code {
   opacity: 1;
 }
 
-.form-control::placeholder {
+/*.form-control::placeholder {
   color: #6c757d;
   opacity: 1;
+}*/
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
 }
 
 .form-control:disabled, .form-control[readonly] {
@@ -1928,6 +1938,13 @@ select.form-control:focus::-ms-value {
 .form-control-range {
   display: block;
   width: 100%;
+}
+
+.form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
 }
 
 .col-form-label {
@@ -4756,9 +4773,9 @@ input[type="button"].btn-block {
 
 @media (min-width: 576px) {
   .card-columns {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;

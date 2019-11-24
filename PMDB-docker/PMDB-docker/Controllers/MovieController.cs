@@ -9,7 +9,6 @@ namespace PMDB_docker.Controllers
 {
     public class MovieController : Controller
     {
-        // 
         // GET: /Movie/
 
         public IActionResult Index()
@@ -18,12 +17,12 @@ namespace PMDB_docker.Controllers
             return View(movie);
         }
 
-        // 
-        // GET: /Movie/Welcome/ 
+        // GET: /Movie/ 
 
-        public string Welcome()
+        public IActionResult Search(string query)
         {
-            return "This is the Welcome action method...";
+            List<Movie> movie = Movie.GetQueryMovies(query);
+            return View(movie);
         }
     }
 }

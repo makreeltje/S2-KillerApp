@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PMDB-docker",
+    "\\PMDB-docker\\PMDB-docker",
+    "\\PMDB-docker\\PMDB-docker\\wwwroot",
+    "\\PMDB-docker\\PMDB-docker\\wwwroot\\lib",
+    "\\PMDB-docker\\PMDB-docker\\wwwroot\\lib\\bootstrap",
+    "\\PMDB-docker\\PMDB-docker\\wwwroot\\lib\\bootstrap\\dist",
+    "\\PMDB-docker\\PMDB-docker\\wwwroot\\lib\\bootstrap\\dist\\css"
+  ],
+  "PreviewInSolutionExplorer": false
+}
