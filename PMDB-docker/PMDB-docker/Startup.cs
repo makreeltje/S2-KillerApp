@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PMDB_docker.Models;
 
 namespace PMDB_docker
 {
@@ -24,6 +25,7 @@ namespace PMDB_docker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<IMovieContainerData, MovieContainer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

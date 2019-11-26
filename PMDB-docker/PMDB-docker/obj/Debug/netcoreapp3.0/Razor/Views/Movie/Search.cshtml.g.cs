@@ -26,8 +26,15 @@ using PMDB_docker.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\Views\_ViewImports.cshtml"
+using PMDB_docker.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6ecad9beaa469bc20e63d8847d3cd1915d50bb33", @"/Views/Movie/Search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9a3f0cea02bbfacb8ec24bafcbcf6fa4e766cf21", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9cf5f54304d007134975a4714b30f111e382dd8b", @"/Views/_ViewImports.cshtml")]
     public class Views_Movie_Search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<PMDB_docker.Business.Movie>>
     {
         #pragma warning disable 1998

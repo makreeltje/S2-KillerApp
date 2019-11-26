@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model Movie
+<h1>Create</h1>
+
+<form asp-controller="Movie" asp-action="Create" method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="Title" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Title" class="form-control" placeholder="Title" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Plot" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Plot" class="form-control" placeholder="Plot" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Genre" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genre>()" class="custom-select mr-sm-2"></select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+    
+</form>
+
