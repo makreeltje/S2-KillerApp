@@ -7,7 +7,6 @@ C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Busines
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csproj.CopyComplete
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.dll
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\MySql.Data.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.deps.json
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
@@ -19,9 +18,5 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csproj.CopyComplete
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\Google.Protobuf.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\BouncyCastle.Crypto.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\Renci.SshNet.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\MySql.Data.xml
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Data.dll
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Data.pdb

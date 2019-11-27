@@ -72,3 +72,8 @@ body {
 
 /* Custom CSS styles
 -------------------------------------------------- */
+
+.card {
+    min-width: 286px;
+    max-width: 286px;
+}

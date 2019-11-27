@@ -6,8 +6,6 @@ C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\ob
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfo.cs
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.dll
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\MySql.Data.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.CopyComplete
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.deps.json
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
@@ -16,7 +14,3 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\P
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfo.cs
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\Google.Protobuf.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\BouncyCastle.Crypto.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\Renci.SshNet.dll
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\MySql.Data.xml

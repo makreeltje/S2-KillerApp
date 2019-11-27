@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PMDB_docker.Models;
 using PMDB_docker.ViewModels;
-using Movie = PMDB_docker.Business.Movie;
 
 namespace PMDB_docker.Controllers
 {
@@ -35,7 +34,6 @@ namespace PMDB_docker.Controllers
             MovieDetailsViewModel movieDetailsViewModel = new MovieDetailsViewModel()
             {
                 Movie = _movieRepository.GetMovie(id ?? 1),
-                
                 PageTitle = "Movie Details"
             };
             return View(movieDetailsViewModel);
@@ -48,10 +46,15 @@ namespace PMDB_docker.Controllers
         }
 
         [HttpPost]
-        public RedirectToActionResult Create(Models.Movie movie)
+        public IActionResult Create(Movie movie)
         {
-            Models.Movie newMovie = _movieRepository.Add(movie);
-            return RedirectToAction("details", new { id = newMovie});
+            if (ModelState.IsValid)
+            {
+                Movie newMovie = _movieRepository.Add(movie);
+                //return RedirectToAction("details", new {id = newMovie.Id});
+            }
+
+            return View();
         }
 
 
