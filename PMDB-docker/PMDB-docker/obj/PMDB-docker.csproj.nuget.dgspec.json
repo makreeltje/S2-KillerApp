@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
+    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "projectName": "PMDB-docker.Business",
-        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
+        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
-                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
         "projectName": "PMDB-docker.Data",
-        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\obj\\",
+        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -99,6 +99,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -118,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {
+    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
         "projectName": "PMDB-docker",
-        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
+        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -144,8 +150,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
               }
             }
           }
@@ -162,10 +168,6 @@
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

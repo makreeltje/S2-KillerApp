@@ -12,11 +12,7 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Data.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\MySql.Data.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\Google.Protobuf.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\BouncyCastle.Crypto.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\MySql.Data.xml
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csprojAssemblyReference.cache
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.AssemblyInfoInputs.cache
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.AssemblyInfo.cs

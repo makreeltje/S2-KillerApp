@@ -35,6 +35,7 @@ namespace PMDB_docker.Controllers
             MovieDetailsViewModel movieDetailsViewModel = new MovieDetailsViewModel()
             {
                 Movie = _movieRepository.GetMovie(id ?? 1),
+                
                 PageTitle = "Movie Details"
             };
             return View(movieDetailsViewModel);

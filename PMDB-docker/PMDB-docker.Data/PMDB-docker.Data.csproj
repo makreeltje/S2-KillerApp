@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
-    </Reference>
+    <PackageReference Include="MySql.Data" Version="8.0.18" />
   </ItemGroup>
 
 </Project>
