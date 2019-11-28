@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using PMDB_docker.Models;
 
 namespace PMDB_docker.Data.Movie
 {

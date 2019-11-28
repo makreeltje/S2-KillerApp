@@ -11,5 +11,6 @@ namespace PMDB_docker.Interfaces
         MovieDto GetMovie(int Id);
         IEnumerable<MovieDto> GetAllMovies();
         MovieDto Add(MovieDto movie);
+        IEnumerable<MovieDto> GetAllMoviesForDetailsPage();
     }
 }

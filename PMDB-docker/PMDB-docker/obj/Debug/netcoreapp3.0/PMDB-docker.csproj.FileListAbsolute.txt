@@ -173,7 +173,6 @@ C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Deb
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\PMDB-docker.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Search.cshtml.g.cs
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Details.cshtml.g.cs
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\libman.json
 C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Create.cshtml.g.cs
@@ -269,3 +268,7 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-d
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
