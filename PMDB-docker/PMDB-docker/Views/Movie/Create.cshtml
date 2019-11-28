@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Create";
 }
-@model Movie
-@inject IMovieContainerData _movConData
+@model MovieDto
+@inject PMDB_docker.Interfaces.IMovieContainerData _movConData
 <h1>Create</h1>
 
 <form asp-controller="Movie" asp-action="Create" method="post" class="mt-3">
@@ -25,7 +25,7 @@
     <div class="form-group row">
         <label asp-for="Genre" class="col-sm-2 col-form-label"></label>
         <div class="col-sm-10">
-            <select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genre>()" class="custom-select mr-sm-2">
+            <select asp-for="Genre" asp-items="Html.GetEnumSelectList<GenreDto>()" class="custom-select mr-sm-2">
                 <option value="">Please Select</option>
             </select>
             <span asp-validation-for="Genre" class="text-danger"></span>

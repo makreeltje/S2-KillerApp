@@ -21,8 +21,8 @@ namespace PMDB_docker.Controllers
 
         public IActionResult Index()
         {
-            List<Business.Movie> movie = Business.Movie.GetAllMovies();
-            return View(movie);
+            //List<Business.Movie> movie = Business.Movie.GetAllMovies();
+            return View();
         }
 
         public IActionResult Privacy()

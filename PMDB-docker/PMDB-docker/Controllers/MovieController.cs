@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PMDB_docker.Models;
 using PMDB_docker.ViewModels;
+using PMDB_docker.Interfaces;
 
 namespace PMDB_docker.Controllers
 {
@@ -46,11 +47,11 @@ namespace PMDB_docker.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Movie movie)
+        public IActionResult Create(MovieDto movie)
         {
             if (ModelState.IsValid)
             {
-                Movie newMovie = _movieRepository.Add(movie);
+                MovieDto newMovie = _movieRepository.Add(movie);
                 //return RedirectToAction("details", new {id = newMovie.Id});
             }
 

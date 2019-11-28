@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PMDB-docker.Data\PMDB-docker.Data.csproj" />
+    <ProjectReference Include="..\PMDB-docker.Interfaces\PMDB-docker.Interface.csproj" />
   </ItemGroup>
 
 </Project>

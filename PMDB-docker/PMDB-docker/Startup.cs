@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PMDB_docker.Models;
+using PMDB_docker.Interfaces;
+using PMDB_docker.Business;
 
 namespace PMDB_docker
 {
@@ -25,7 +27,7 @@ namespace PMDB_docker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<IMovieContainerData, MovieContainer>();
+            services.AddSingleton<IMovieContainerData, Movie>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

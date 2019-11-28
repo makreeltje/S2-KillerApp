@@ -265,4 +265,7 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\zh-Han
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Create.cshtml.g.cs
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Details.cshtml.g.cs
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Index.cshtml.g.cs
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\Razor\Views\Movie\Search.cshtml.g.cs
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb

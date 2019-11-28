@@ -1,94 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using System.Threading.Tasks;
 using PMDB_docker.Data.Movie;
+using PMDB_docker.Models;
+using PMDB_docker.Interfaces;
 
-namespace PMDB_docker.Business
+namespace PMDB_docker.Models
 {
-    public class Movie
+    public class Movie : IMovieContainerData
     {
-        static MovieDatabaseHandler handler = new MovieDatabaseHandler();
+        private readonly List<MovieDto> _movieList;
 
-        public Movie(int id, string title, string plot, string runtime, string studio, string website, string releaseDate)
+        public Movie()
         {
-            Id = id;
-            Title = title;
-            Plot = plot;
-            Runtime = runtime;
-            Studio = studio;
-            Website = website;
-            ReleaseDate = releaseDate;
+            _movieList = new List<MovieDto>()
+            {
+                new MovieDto() {Id = 1, Title = "Ant-Man", Plot = "Movie about an Ant-Man", Genre = GenreDto.Action, Website = "http://ant-man.com"},
+                new MovieDto() { Id = 2, Title = "Cars", Plot = "Movie about cars", Genre = GenreDto.Animation, Website = "http://cars.com"},
+                new MovieDto() {Id = 3, Title = "Dunkirk", Plot = "Movie about WWII", Genre = GenreDto.History, Website = "http://dunkirk.com"}
+            };
+        }
+        public MovieDto GetMovie(int Id)
+        {
+            return _movieList.FirstOrDefault(m => m.Id == Id);
         }
 
-        public int Id { get; set; }
-        public string Title { get; }
-        public string Plot { get; }
-        public string Runtime { get; }
-        public string Studio { get; }
-        public string Website { get; }
-        public string ReleaseDate { get; set; }
-
-        public static List<Movie> GetAllMovies()
+        public IEnumerable<MovieDto> GetAllMovies()
         {
-            List<Movie> allMovies = new List<Movie>();
-
-            var movieFromDatabase = handler.GetAllMovies();
-            int id = 0;
-            foreach (var movieDto in movieFromDatabase)
-            {
-                id++;
-                TimeSpan time = TimeSpan.FromMinutes(movieDto.Runtime);
-                string str = time.ToString(@"hh\:mm");
-                string plot;
-                if (movieDto.Plot.Length > 100)
-                {
-                    plot = movieDto.Plot.Substring(0, 100) + "...";
-                }
-                else
-                {
-                    plot = movieDto.Plot;
-                }
-                Movie movie = new Movie(id, movieDto.Title, plot, str, movieDto.Studio, movieDto.Website, movieDto.ReleaseDate);
-                allMovies.Add(movie);
-            }
-
-            return allMovies;
+            return _movieList;
         }
 
-        public static List<Movie> GetQueryMovies(string searchTerm)
+        public MovieDto Add(MovieDto movie)
         {
-            List<Movie> allMovies = new List<Movie>();
-            string cleanTitle;
-            if (searchTerm.Contains(" "))
-            {
-                cleanTitle = searchTerm.Replace(" ", "");
-            }
-            else
-            {
-                cleanTitle = searchTerm;
-            }
-            var movieFromDatabase = handler.GetQueryMovies(cleanTitle);
-            int id = 0;
-            foreach (var movieDto in movieFromDatabase)
-            {
-                id++;
-                TimeSpan time = TimeSpan.FromMinutes(movieDto.Runtime);
-                string str = time.ToString(@"hh\:mm");
-                string plot;
-                if (movieDto.Plot.Length > 100)
-                {
-                    plot = movieDto.Plot.Substring(0, 100) + "...";
-                }
-                else
-                {
-                    plot = movieDto.Plot;
-                }
-                Movie movie = new Movie(id, movieDto.Title, plot, str, movieDto.Studio, movieDto.Website, movieDto.ReleaseDate);
-                allMovies.Add(movie);
-            }
-
-            return allMovies;
+            movie.Id = _movieList.Max(m => m.Id) + 1;
+            _movieList.Add(movie);
+            return movie;
         }
     }
 }
