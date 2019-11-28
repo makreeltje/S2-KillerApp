@@ -26,7 +26,7 @@ namespace PMDB_docker.Controllers
 
         public ViewResult Index()
         {
-            var model = _movieRepository.GetAllMovies();
+            var model = _movieRepository.GetAllMoviesForDetailsPage();
             return View(model);
         }
 

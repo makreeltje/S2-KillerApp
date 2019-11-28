@@ -72,8 +72,33 @@ body {
 
 /* Custom CSS styles
 -------------------------------------------------- */
-
-.card {
-    min-width: 286px;
-    max-width: 286px;
+.header {
+    display: block;
 }
+
+header.masthead {
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+    header.masthead .intro-text {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+        header.masthead .intro-text .intro-lead-in {
+            font-size: 22px;
+            font-style: italic;
+            line-height: 22px;
+            margin-bottom: 25px;
+        }
+        header.masthead .intro-text .intro-heading {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 50px;
+            margin-bottom: 25px;
+        }

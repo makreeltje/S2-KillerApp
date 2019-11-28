@@ -6,16 +6,21 @@
 <div class="card-deck justify-content-center">
     @foreach (var movie in Model)
     {
-        <div class="card m-3">
-            <div class="card-header">
-                <h5>@movie.Title</h5>
-                <h7>@movie.Genre</h7>
-            </div>
-            <img class="card-img-top" src="~/img/noimage.png" asp-append-version="true"/>
-            <div class="card-footer text-center">
-                <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primary m-1">View</a>
-                <a href="#" class="btn btn-primary m-1">Edit</a>
-                <a href="#" class="btn btn-danger m-1">Delete</a>
+        <div class="card shadow m-3" style="min-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img class="card-img" src="~/img/noimage-cover.png" asp-append-version="true" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h5>@movie.Title</h5>
+                            <span class="small text-muted">@movie.ReleaseDate</span>
+                        </div>
+                        <p class="card-text">@movie.Plot</p>
+
+                    </div>
+                </div>
             </div>
         </div>
     }

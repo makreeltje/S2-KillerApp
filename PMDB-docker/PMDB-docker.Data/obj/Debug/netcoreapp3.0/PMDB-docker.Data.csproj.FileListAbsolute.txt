@@ -14,3 +14,9 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\P
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfo.cs
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.CopyComplete
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
+D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.CopyComplete

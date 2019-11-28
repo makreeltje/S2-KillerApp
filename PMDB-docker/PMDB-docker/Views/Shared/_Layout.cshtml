@@ -22,8 +22,7 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm sticky-top bg-dark navbar-dark">
             <div class="container">
                 <a class="navbar-brand" asp-controller="Movie" asp-action="Index">Movie App</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -52,7 +51,15 @@
                 </div>
             </div>
         </nav>
-    </header>
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Welcome To Our Studio!</div>
+                    <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" asp-area="" asp-controller="Home" asp-action="">Tell Me More</a>
+                </div>
+            </div>
+        </header>
     <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()

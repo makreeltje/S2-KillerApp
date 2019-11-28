@@ -9,3 +9,14 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreap
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.csproj.CopyComplete
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.deps.json
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.csprojAssemblyReference.cache
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.AssemblyInfoInputs.cache
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.AssemblyInfo.cs
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.csproj.CopyComplete
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
+C:\Users\rick_\source\repos\rick043\S2-KillerApp\PMDB-docker\PMDB-docker.Interfaces\obj\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
