@@ -11,6 +11,7 @@ namespace PMDB_docker.Models
     public class Movie : IMovieContainerData
     {
         private readonly List<MovieDto> _movieList;
+        MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         MovieDatabaseHandler handler = new MovieDatabaseHandler();

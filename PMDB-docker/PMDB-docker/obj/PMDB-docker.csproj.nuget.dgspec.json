@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "format": 1,
   "restore": {
@@ -332,4 +333,355 @@
       }
     }
   }
+=======
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectName": "PMDB-docker.Business",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+              },
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "projectName": "PMDB-docker.Data",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj",
+        "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "projectName": "PMDB-docker.Interface",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "projectName": "PMDB-docker.Models",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "projectName": "PMDB-docker",
+        "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj",
+        "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+              },
+              "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+                "projectPath": "C:\\Users\\rick_\\source\\repos\\rick043\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.9.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[0.61.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+>>>>>>> master
 }
