@@ -14,7 +14,7 @@ namespace PMDB_docker.Models
         MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
-        MovieDatabaseHandler handler = new MovieDatabaseHandler();
+        //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
         public Movie()
         {
