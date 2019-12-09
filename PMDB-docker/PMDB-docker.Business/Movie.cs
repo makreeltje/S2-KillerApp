@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MySqlX.XDevAPI;
 using PMDB_docker.Data.Movie;
 using PMDB_docker.Models;
 using PMDB_docker.Interfaces;
@@ -50,27 +51,13 @@ namespace PMDB_docker.Models
             return text;
         }
 
-        private string CorrectDateFormat(string date)
-        {
-            string dateCorrected = date.Remove(date.IndexOf(" "));
-            return dateCorrected;
-        }
-
         public IEnumerable<MovieDto> GetAllMoviesForDetailsPage()
         {
             foreach (var movie in _movieList)
             {
-                movie.Plot = ShortenPlotText(movie.Plot);
-                if (movie.ReleaseDate != "")
-                {
-                    movie.ReleaseDate = CorrectDateFormat(movie.ReleaseDate);
-                }
-                else
-                {
-                    movie.ReleaseDate = movie.ReleaseDate;
-                }
+                movie.ShortenedPlot = ShortenPlotText(movie.Plot);
+                movie.ReleaseDate = movie.ReleaseDateTime.ToString("dd-MM-yyyy");
             }
-
             return _movieList;
         }
     }

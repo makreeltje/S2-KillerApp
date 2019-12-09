@@ -409,3 +409,8 @@ C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\PMDB-d
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\PMDB-docker.csproj.CopyComplete
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\PMDB-docker.dll
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.0\PMDB-docker.pdb
+C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\System.Drawing.Common.dll
+C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

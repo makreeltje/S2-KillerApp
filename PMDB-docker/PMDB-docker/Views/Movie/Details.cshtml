@@ -4,25 +4,111 @@
 }
 @model MovieDetailsViewModel
 
-<div class="row justify-content-center m-3">
-    <div class="col-sm-8">
-        <div class="card-header">
-            <h1>@Model.Movie.Title</h1>
-        </div>
-        <div class="card-body text-center">
-            <img class="card-img-top " src="~/img/noimage-cover.png" asp-append-version="true"/>
-            <h4>Movie ID: @Model.Movie.Id</h4>
-            <h4>Title: @Model.Movie.Title</h4>
-            <h4>Plot: @Model.Movie.Plot</h4>
-            <h4>Genre: @Model.Movie.Genre</h4>
-            <h4>Website: <a href="@Model.Movie.Website">@Model.Movie.Website</a></h4>
-        </div>
-        <div class="card-footer text-center">
-            <a asp-controller="Movie" asp-action="Index" class="btn btn-primary m-1">Back</a>
-            <a href="#" class="btn btn-primary m-1">Edit</a>
-            <a href="#" class="btn btn-danger m-1">Delete</a>
-        </div>
+<div class="row m-4">
+    <div class="col-md-3">
+        <img class="card-img-top " src="@Model.Movie.Image" asp-append-version="true" />
+    </div>
+    <div class="col mb-4">
+        <h2>@Model.Movie.Title <span class="small text-muted">(@Model.Movie.ReleaseDate)</span></h2>
+        <h5>Overview</h5>
+        <p>@Model.Movie.Plot</p>
+        <h5>Featured Crew</h5>
     </div>
 </div>
+<hr/>
+<div class="row m-4">
+    <div class="col">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h5">Cast</span>
+        </nav>
+        <div class="card-deck mt-3">
+            <div class="card shadow" style="width: 10rem;">
+                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Name</h6>
+                    <small class="card-text">Role</small>
+                </div>
+            </div>
+            <div class="card shadow" style="width: 10rem;">
+                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Name</h6>
+                    <small class="card-text">Role</small>
+                </div>
+            </div>
+
+            <div class="card shadow" style="width: 10rem;">
+                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Name</h6>
+                    <small class="card-text">Role</small>
+                </div>
+            </div>
+            <div class="card shadow" style="width: 10rem;">
+                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Name</h6>
+                    <small class="card-text">Role</small>
+                </div>
+            </div>
+            <div class="card shadow" style="width: 10rem;">
+                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h6 class="card-title">Name</h6>
+                    <small class="card-text">Role</small>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <span class="navbar-brand mb-0 h5">Social</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">Reviews</a>
+                    <a class="nav-item nav-link" href="#">Discussions</a>
+                </div>
+            </div>
+        </nav>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue turpis, auctor a arcu vitae, facilisis tristique erat. Ut maximus ex sed tincidunt viverra. Donec tristique, arcu eu rutrum iaculis, nulla leo accumsan lacus, et pellentesque urna ligula vitae eros. Nullam vitae molestie urna. Duis id tristique ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec efficitur, velit et sagittis rhoncus, ligula ante semper sem, ut malesuada libero diam id nisi. Fusce velit ligula, porttitor et bibendum nec, feugiat vitae augue. Proin eget eros eget mauris finibus tempor a sodales sem. Curabitur cursus mi a dolor elementum facilisis. Quisque id mattis arcu. In molestie, mi sed vestibulum aliquam, mi lacus placerat diam, ut pellentesque ex arcu nec dolor. Sed sed lectus neque. Cras gravida nulla maximus, viverra lectus eu, venenatis ipsum. Proin sollicitudin nunc ac odio blandit consequat.
+        </p>
+        <hr />
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <span class="navbar-brand mb-0 h5">Media</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">Most Popular</a>
+                    <a class="nav-item nav-link" href="#">Videos</a>
+                    <a class="nav-item nav-link" href="#">Backdrops</a>
+                    <a class="nav-item nav-link" href="#">Posters</a>
+                </div>
+            </div>
+        </nav>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue turpis, auctor a arcu vitae, facilisis tristique erat. Ut maximus ex sed tincidunt viverra. Donec tristique, arcu eu rutrum iaculis, nulla leo accumsan lacus, et pellentesque urna ligula vitae eros. Nullam vitae molestie urna. Duis id tristique ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec efficitur, velit et sagittis rhoncus, ligula ante semper sem, ut malesuada libero diam id nisi. Fusce velit ligula, porttitor et bibendum nec, feugiat vitae augue. Proin eget eros eget mauris finibus tempor a sodales sem. Curabitur cursus mi a dolor elementum facilisis. Quisque id mattis arcu. In molestie, mi sed vestibulum aliquam, mi lacus placerat diam, ut pellentesque ex arcu nec dolor. Sed sed lectus neque. Cras gravida nulla maximus, viverra lectus eu, venenatis ipsum. Proin sollicitudin nunc ac odio blandit consequat.
+        </p>
+        <hr />
+        <a asp-controller="Movie" asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+    <div class="col col-lg-3">
+        <h6>Status</h6>
+        <p>Released</p>
+        <h6>Release Information</h6>
+        <p>@Model.Movie.ReleaseDate</p>
+        <h6>Runtime</h6>
+        <p>@Model.Movie.Runtime</p>
+        <h6>Studio</h6>
+        <p>@Model.Movie.Studio</p>
+        <h6>Website</h6>
+        <p><a href="@Model.Movie.Website">@Model.Movie.Website</a></p>
+    </div>
+</div>
+
 
 

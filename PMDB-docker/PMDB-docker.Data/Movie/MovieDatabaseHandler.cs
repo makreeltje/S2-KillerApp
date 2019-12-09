@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using PMDB_docker.Models;
+using static System.String;
 
 namespace PMDB_docker.Data.Movie
 {
     public class MovieDatabaseHandler
     {
         // TODO: Connection string aanpassen!
-        private string connectionString = "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
+        private readonly string connectionString = "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
 
         // Grabs all movies
         public List<MovieDto> GetAllMovies()
@@ -23,17 +25,23 @@ namespace PMDB_docker.Data.Movie
                     {
                         conn.Open();
                         var reader = command.ExecuteReader();
+                        int id = 0;
                         while (reader.Read())
                         {
                             MovieDto dto = new MovieDto();
+                            dto.Id = id;
                             dto.Title = reader.GetString(3);
                             dto.Plot = reader.GetString(7);
-                            dto.Runtime = reader.GetInt32(8);
-                            dto.ReleaseDate = reader.GetString(9);
-                            dto.Website = reader.GetString(10);
-                            dto.Studio = reader.GetString(11);
-
+                            if (reader.IsDBNull(8))
+                                dto.Image = "~/img/noimage-cover.png";
+                            else
+                                dto.Image = reader.GetString(8);
+                            dto.Runtime = reader.GetInt32(9);
+                            dto.ReleaseDateTime = reader.GetDateTime(10);
+                            dto.Website = reader.GetString(11);
+                            dto.Studio = reader.GetString(12);
                             movies.Add(dto);
+                            id++;
                         }
                     }
                 }
@@ -46,40 +54,40 @@ namespace PMDB_docker.Data.Movie
             return movies;
         }
 
-        public List<MovieDto> GetQueryMovies(string searchQuery)
-        {
-            List<MovieDto> movies = new List<MovieDto>();
+        //public List<MovieDto> GetQueryMovies(string searchQuery)
+        //{
+        //    List<MovieDto> movies = new List<MovieDto>();
 
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    string query = $"SELECT * FROM movie WHERE cleanTitle LIKE '%{searchQuery}%' ORDER BY sortTitle";
-                    using (MySqlCommand command = new MySqlCommand(query, conn))
-                    {
-                        conn.Open();
-                        var reader = command.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            MovieDto dto = new MovieDto();
-                            dto.Title = reader.GetString(3);
-                            dto.Plot = reader.GetString(7);
-                            dto.Runtime = reader.GetInt32(8);
-                            dto.ReleaseDate = reader.GetString(9);
-                            dto.Website = reader.GetString(10);
-                            dto.Studio = reader.GetString(11);
+        //    try
+        //    {
+        //        using (MySqlConnection conn = new MySqlConnection(connectionString))
+        //        {
+        //            string query = $"SELECT * FROM movie WHERE cleanTitle LIKE '%{searchQuery}%' ORDER BY sortTitle";
+        //            using (MySqlCommand command = new MySqlCommand(query, conn))
+        //            {
+        //                conn.Open();
+        //                var reader = command.ExecuteReader();
+        //                while (reader.Read())
+        //                {
+        //                    MovieDto dto = new MovieDto();
+        //                    dto.Title = reader.GetString(3);
+        //                    dto.Plot = reader.GetString(7);
+        //                    dto.Runtime = reader.GetInt32(8);
+        //                    dto.ReleaseDate = reader.GetString(9);
+        //                    dto.Website = reader.GetString(10);
+        //                    dto.Studio = reader.GetString(11);
 
-                            movies.Add(dto);
-                        }
-                    }
-                }
-            }
-            catch (MySqlException sex)
-            {
-                throw new MovieDataException(sex.Message);
-            }
+        //                    movies.Add(dto);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (MySqlException sex)
+        //    {
+        //        throw new MovieDataException(sex.Message);
+        //    }
 
-            return movies;
-        }
+        //    return movies;
+        //}
     }
 }

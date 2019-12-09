@@ -17,7 +17,10 @@ namespace PMDB_docker.Models
         [Display(Name = "Plot of the movie")]
         [Required]
         public string Plot { get; set; }
+        public string ShortenedPlot { get; set; }
+        public string Image { get; set; }
         public int Runtime { get; set; }
+        public DateTime ReleaseDateTime { get; set; }
         public string ReleaseDate { get; set; }
         [Required]
         //[RegularExpression(@"^[a-zA-Z0-9]+\:\/\/[a-zA-Z0-9]+\.[a-zA-Z0-9]+$", ErrorMessage = "Invalid website name")]
