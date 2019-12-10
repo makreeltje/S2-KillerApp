@@ -6,7 +6,7 @@ using PMDB_docker.Models;
 
 namespace PMDB_docker.Interfaces
 {
-    public interface IMovieContainerData
+    public interface IMovieRepository
     {
         MovieDto GetMovie(int Id);
         IEnumerable<MovieDto> GetAllMovies();

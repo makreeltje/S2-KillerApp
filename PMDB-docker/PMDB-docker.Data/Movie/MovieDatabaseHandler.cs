@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using PMDB_docker.Models;
-using static System.String;
 
 namespace PMDB_docker.Data.Movie
 {
@@ -53,41 +52,5 @@ namespace PMDB_docker.Data.Movie
 
             return movies;
         }
-
-        //public List<MovieDto> GetQueryMovies(string searchQuery)
-        //{
-        //    List<MovieDto> movies = new List<MovieDto>();
-
-        //    try
-        //    {
-        //        using (MySqlConnection conn = new MySqlConnection(connectionString))
-        //        {
-        //            string query = $"SELECT * FROM movie WHERE cleanTitle LIKE '%{searchQuery}%' ORDER BY sortTitle";
-        //            using (MySqlCommand command = new MySqlCommand(query, conn))
-        //            {
-        //                conn.Open();
-        //                var reader = command.ExecuteReader();
-        //                while (reader.Read())
-        //                {
-        //                    MovieDto dto = new MovieDto();
-        //                    dto.Title = reader.GetString(3);
-        //                    dto.Plot = reader.GetString(7);
-        //                    dto.Runtime = reader.GetInt32(8);
-        //                    dto.ReleaseDate = reader.GetString(9);
-        //                    dto.Website = reader.GetString(10);
-        //                    dto.Studio = reader.GetString(11);
-
-        //                    movies.Add(dto);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (MySqlException sex)
-        //    {
-        //        throw new MovieDataException(sex.Message);
-        //    }
-
-        //    return movies;
-        //}
     }
 }

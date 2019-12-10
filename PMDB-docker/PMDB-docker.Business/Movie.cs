@@ -9,7 +9,7 @@ using PMDB_docker.Interfaces;
 
 namespace PMDB_docker.Models
 {
-    public class Movie : IMovieContainerData
+    public class Movie : IMovieRepository
     {
         private readonly List<MovieDto> _movieList;
         MovieDatabaseHandler handler = new MovieDatabaseHandler();
