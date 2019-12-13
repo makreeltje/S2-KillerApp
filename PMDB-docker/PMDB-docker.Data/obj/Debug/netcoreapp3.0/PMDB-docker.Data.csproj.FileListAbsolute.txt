@@ -11,3 +11,16 @@ C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\P
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB_docker.Data.Properties.Resources.resources
 C:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.GenerateResource.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.deps.json
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Data.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csprojAssemblyReference.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB_docker.Data.Properties.Resources.resources
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.GenerateResource.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfoInputs.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.AssemblyInfo.cs
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.csproj.CopyComplete
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Data\obj\Debug\netcoreapp3.0\PMDB-docker.Data.pdb

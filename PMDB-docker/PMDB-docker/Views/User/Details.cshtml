@@ -1,0 +1,33 @@
+﻿@model UserDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+    var photoPath = $"~/img/profile/{@Model.User.ProfileImage ?? "noimage-face.png"}";
+}
+
+<div class="row m-4">
+    <div class="col-3">
+        <img class="card-img-top " src="@Model.User.ProfileImage" asp-append-version="true" />
+        <div class="form-group mt-2">
+            <input type="submit" value="Edit Profile" class="btn btn-primary btn-block" />
+        </div>
+    </div>
+    <div class="col">
+        <h3>Hello @Model.User.FirstName @Model.User.LastName, how are you doing today</h3>
+        <hr/>
+        <div class="row">
+            <div class="col-3">
+                <h6>First name</h6>
+                <h6>Last name</h6>
+                <h6>Username</h6>
+                <h6>Email</h6>
+                
+            </div>
+            <div class="col-9">
+                <h6 class="text-muted">@Model.User.FirstName</h6>
+                <h6 class="text-muted">@Model.User.LastName</h6>
+                <h6 class="text-muted">@Model.User.Username</h6>
+                <h6 class="text-muted">@Model.User.Email</h6>
+            </div>
+        </div>
+    </div>
+</div>

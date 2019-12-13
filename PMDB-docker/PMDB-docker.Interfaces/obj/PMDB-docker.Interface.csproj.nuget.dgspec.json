@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {}
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {}
   },
   "projects": {
-    "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
         "projectName": "PMDB-docker.Interface",
-        "projectPath": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\obj\\",
+        "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
-                "projectPath": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
+              "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+                "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
               }
             }
           }
@@ -55,6 +55,14 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -66,14 +74,14 @@
         }
       }
     },
-    "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
         "projectName": "PMDB-docker.Models",
-        "projectPath": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "C:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\obj\\",
+        "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -113,6 +121,14 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {

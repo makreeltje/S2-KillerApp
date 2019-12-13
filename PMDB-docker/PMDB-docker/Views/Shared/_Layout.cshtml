@@ -22,57 +22,62 @@
 
 </head>
 <body>
-        <nav class="navbar navbar-expand-sm sticky-top bg-dark navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" asp-controller="Movie" asp-action="Index">Movie App</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Movie
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Index">List</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Create">Create</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Search">Search</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <header class="masthead">
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-lead-in">Welcome To Our Studio!</div>
-                    <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" asp-area="" asp-controller="Home" asp-action="">Tell Me More</a>
-                </div>
-            </div>
-        </header>
+<nav class="navbar navbar-expand-sm sticky-top bg-dark navbar-dark">
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - Movie App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <a class="navbar-brand" asp-controller="Movie" asp-action="Index">Movie App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Movie
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Index">List</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Create">Create</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="Search">Search</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+            </ul>
         </div>
-    </footer>
-    <script src="~/lib/jquery/jquery.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+    </div>
+</nav>
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Welcome To Our Studio!</div>
+            <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" asp-area="" asp-controller="Home" asp-action="">Tell Me More</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2019 - Movie App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@if
+    (IsSectionDefined("Scripts"))
+{
+    @RenderSection("Scripts", required: true)
+}
 </body>
 </html>

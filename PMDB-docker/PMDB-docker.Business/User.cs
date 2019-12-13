@@ -24,7 +24,7 @@ namespace PMDB_docker.Business
         }
         public UserDto GetUser(int id)
         {
-            throw new NotImplementedException();
+            return _userList.FirstOrDefault(m => m.Id == id);
         }
 
         public IEnumerable<UserDto> GetAllUsers()
@@ -34,7 +34,10 @@ namespace PMDB_docker.Business
 
         public UserDto Add(UserDto user)
         {
-            throw new NotImplementedException();
+            user.Id = _userList.Max(m => m.Id) + 1;
+            _userList.Add(user);
+            handler.AddUser(user);
+            return user;
         }
 
         public UserDto Update(UserDto userChanges)

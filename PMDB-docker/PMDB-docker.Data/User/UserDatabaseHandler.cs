@@ -19,7 +19,7 @@ namespace PMDB_docker.Data.Movie
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM movie ORDER BY sortTitle";
+                    string query = "SELECT * FROM users";
                     using (MySqlCommand command = new MySqlCommand(query, conn))
                     {
                         conn.Open();
@@ -53,7 +53,8 @@ namespace PMDB_docker.Data.Movie
                             dto.DateOfRegistration = reader.GetDateTime(13);
                             if (!reader.IsDBNull(14))
                                 dto.ProfileImage = reader.GetString(14);
-                            dto.Gender = reader.GetString(15);
+                            if (!reader.IsDBNull(15))
+                                dto.Gender = reader.GetString(15);
                             users.Add(dto);
                             id++;
                         }
@@ -66,6 +67,27 @@ namespace PMDB_docker.Data.Movie
             }
 
             return users;
+        }
+
+        public void AddUser(UserDto user)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO users (username, password, email, dor)" +
+                                   $"VALUES ('{user.Username}','{user.Password}','{user.Email}', '{user.DateOfRegistration.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                    using (MySqlCommand command = new MySqlCommand(query, conn))
+                    {
+                        conn.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException sex)
+            {
+                throw new UserDataException(sex.Message);
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PMDB_docker.Business;
 using PMDB_docker.Models;
 using PMDB_docker.Interfaces;
 
@@ -27,6 +28,7 @@ namespace PMDB_docker
         {
             services.AddControllersWithViews();
             services.AddSingleton<IMovieRepository, Movie>();
+            services.AddSingleton<IUserRepository, User>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

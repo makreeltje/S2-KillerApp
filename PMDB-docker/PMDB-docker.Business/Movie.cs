@@ -60,5 +60,12 @@ namespace PMDB_docker.Models
             }
             return _movieList;
         }
+
+        public IEnumerable<MovieDto> RemoveMovie(int id)
+        {
+            handler.RemoveSelectedMovie(id);
+            _movieList.RemoveAt(id);
+            return _movieList;
+        }
     }
 }
