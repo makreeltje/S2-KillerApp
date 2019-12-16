@@ -10,7 +10,7 @@ using PMDB_docker.Models;
 
 namespace PMDB_docker.Business
 {
-    public class User : IUserRepository
+    public class User : IUserLogic
     {
         private readonly List<UserDto> _userList;
         UserDatabaseHandler handler = new UserDatabaseHandler();

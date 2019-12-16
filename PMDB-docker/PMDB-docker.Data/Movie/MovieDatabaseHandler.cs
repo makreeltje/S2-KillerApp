@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using MySql.Data.MySqlClient;
+using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
 namespace PMDB_docker.Data.Movie
 {
-    public class MovieDatabaseHandler
+    public class MovieDatabaseHandler : IMovieData
     {
         // TODO: Connection string aanpassen!
-        private readonly string connectionString = "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
+        private readonly string connectionString =
+            "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
 
         // Grabs all movies
-        public List<MovieDto> GetAllMovies()
+        public IEnumerable<MovieDto> GetAllMovies()
         {
             List<MovieDto> movies = new List<MovieDto>();
 
@@ -58,7 +61,12 @@ namespace PMDB_docker.Data.Movie
             return movies;
         }
 
-        public void RemoveSelectedMovie(int id)
+        public MovieDto AddMovie(MovieDto movie)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveMovie(int id)
         {
             try
             {
@@ -76,6 +84,11 @@ namespace PMDB_docker.Data.Movie
             {
                 throw new MovieDataException(sex.Message);
             }
+        }
+
+        public MovieDto EditMovie(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

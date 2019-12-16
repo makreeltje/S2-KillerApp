@@ -27,8 +27,8 @@ namespace PMDB_docker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<IMovieRepository, Movie>();
-            services.AddSingleton<IUserRepository, User>();
+            services.AddSingleton<IMovieLogic, Movie>();
+            services.AddSingleton<IUserLogic, User>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

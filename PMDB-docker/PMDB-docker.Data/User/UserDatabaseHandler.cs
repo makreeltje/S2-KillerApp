@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using MySql.Data.MySqlClient;
 using PMDB_docker.Models;
 
@@ -8,8 +9,8 @@ namespace PMDB_docker.Data.Movie
     public class UserDatabaseHandler
     {
         // TODO: Connection string aanpassen!
-        private readonly string connectionString = "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
-
+        private readonly string connectionString =
+            "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
         // Grabs all movies
         public List<UserDto> GetAllUsers()
         {
@@ -76,7 +77,7 @@ namespace PMDB_docker.Data.Movie
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     string query = "INSERT INTO users (username, password, email, dor)" +
-                                   $"VALUES ('{user.Username}','{user.Password}','{user.Email}', '{user.DateOfRegistration.ToString("yyyy-MM-dd HH:mm:ss")}')";
+                                   $"VALUES ('{user.Username}','{user.Password}','{user.Email}', '{user.DateOfRegistration:yyyy-MM-dd HH:mm:ss}')";
                     using (MySqlCommand command = new MySqlCommand(query, conn))
                     {
                         conn.Open();

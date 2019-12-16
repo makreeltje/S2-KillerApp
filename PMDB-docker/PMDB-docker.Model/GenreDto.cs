@@ -5,13 +5,9 @@ using System.Threading.Tasks;
 
 namespace PMDB_docker.Models
 {
-    public enum GenreDto
+    public class GenreDto
     {
-        None,
-        History,
-        Animation,
-        Action,
-        SciFi,
-        War
+        public int Id { get; set; }
+        public string Genre { get; set; }
     }
 }

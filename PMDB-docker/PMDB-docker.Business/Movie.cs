@@ -9,17 +9,17 @@ using PMDB_docker.Interfaces;
 
 namespace PMDB_docker.Models
 {
-    public class Movie : IMovieRepository
+    public class Movie : IMovieLogic
     {
         private readonly List<MovieDto> _movieList;
-        MovieDatabaseHandler handler = new MovieDatabaseHandler();
+        readonly MovieDatabaseHandler _handler = new MovieDatabaseHandler();
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
         public Movie()
         {
-            _movieList = new List<MovieDto>(handler.GetAllMovies());
+            _movieList = new List<MovieDto>(_handler.GetAllMovies());
         }
         public MovieDto GetMovie(int Id)
         {
@@ -63,7 +63,7 @@ namespace PMDB_docker.Models
 
         public IEnumerable<MovieDto> RemoveMovie(int id)
         {
-            handler.RemoveSelectedMovie(id);
+            _handler.RemoveMovie(id);
             _movieList.RemoveAt(id);
             return _movieList;
         }

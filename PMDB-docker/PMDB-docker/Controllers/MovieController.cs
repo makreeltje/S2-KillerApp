@@ -11,7 +11,7 @@ namespace PMDB_docker.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IMovieRepository _movieRepository;
+        private readonly IMovieLogic _movieRepository;
         // GET: /Movie/
 
         //public IActionResult Index()
@@ -19,7 +19,7 @@ namespace PMDB_docker.Controllers
         //    List<Movie> movie = Movie.GetAllMovies();
         //    return View(movie);
         //}
-        public MovieController(IMovieRepository movieRepository)
+        public MovieController(IMovieLogic movieRepository)
         {
             _movieRepository = movieRepository;
         }

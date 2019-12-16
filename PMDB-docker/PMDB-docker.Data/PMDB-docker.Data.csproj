@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PMDB-docker.Interfaces\PMDB-docker.Interface.csproj" />
     <ProjectReference Include="..\PMDB-docker.Model\PMDB-docker.Models.csproj" />
   </ItemGroup>
 

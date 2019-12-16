@@ -13,13 +13,13 @@ namespace PMDB_docker.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserLogic _userRepository;
 #pragma warning disable 618
         private readonly IHostingEnvironment _hostingEnvironment;
 #pragma warning restore 618
 
         [Obsolete]
-        public UserController(IUserRepository userRepository, IHostingEnvironment hostingEnvironment)
+        public UserController(IUserLogic userRepository, IHostingEnvironment hostingEnvironment)
         {
             _userRepository = userRepository;
             _hostingEnvironment = hostingEnvironment;
@@ -91,10 +91,10 @@ namespace PMDB_docker.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ViewResult Edit()
-        {
-            return View();
-        }
+        //[HttpPost]
+        //public ViewResult Edit()
+        //{
+        //    return View();
+        //}
     }
 }

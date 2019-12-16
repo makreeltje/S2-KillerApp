@@ -6,7 +6,7 @@
 
 <div class="row m-4">
     <div class="col-3">
-        <img class="card-img-top " src="@Model.User.ProfileImage" asp-append-version="true" />
+        <img class="card-img-top " src="@photoPath" asp-append-version="true" />
         <div class="form-group mt-2">
             <input type="submit" value="Edit Profile" class="btn btn-primary btn-block" />
         </div>
@@ -14,20 +14,49 @@
     <div class="col">
         <h3>Hello @Model.User.FirstName @Model.User.LastName, how are you doing today</h3>
         <hr/>
-        <div class="row">
-            <div class="col-3">
-                <h6>First name</h6>
-                <h6>Last name</h6>
-                <h6>Username</h6>
-                <h6>Email</h6>
-                
-            </div>
-            <div class="col-9">
-                <h6 class="text-muted">@Model.User.FirstName</h6>
-                <h6 class="text-muted">@Model.User.LastName</h6>
-                <h6 class="text-muted">@Model.User.Username</h6>
-                <h6 class="text-muted">@Model.User.Email</h6>
-            </div>
-        </div>
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <th>Username</th>
+                    <td class="text-muted">@Model.User.Username</td>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <td class="text-muted">@Model.User.FirstName</td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td class="text-muted">@Model.User.LastName</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td class="text-muted">@Model.User.Gender</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td class="text-muted">@Model.User.DateOfBirth</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td class="text-muted">@Model.User.Email</td>
+                </tr>
+                <tr>
+                    <th>Street</th>
+                    <td class="text-muted">@Model.User.Street</td>
+                </tr>
+                <tr>
+                    <th>House nr.</th>
+                    <td class="text-muted">@Model.User.Number</td>
+                </tr>
+                <tr>
+                    <th>Postalcode</th>
+                    <td class="text-muted">@Model.User.PostalCode</td>
+                </tr>
+                <tr>
+                    <th>Date of Registration</th>
+                    <td class="text-muted">@Model.User.DateOfRegistration</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
