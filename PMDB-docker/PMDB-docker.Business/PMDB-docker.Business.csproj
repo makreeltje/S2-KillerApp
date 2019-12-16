@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PMDB-docker.Data\PMDB-docker.Data.csproj" />
     <ProjectReference Include="..\PMDB-docker.Interfaces\PMDB-docker.Interface.csproj" />
   </ItemGroup>
 

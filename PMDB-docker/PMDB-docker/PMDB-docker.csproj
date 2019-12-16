@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>PMDB_docker</RootNamespace>
     <UserSecretsId>f6779f02-f5c4-42af-99c3-4222735d5197</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PMDB-docker.Business\PMDB-docker.Business.csproj" />
+    <ProjectReference Include="..\PMDB-docker.Data\PMDB-docker.Data.csproj" />
   </ItemGroup>
 
 </Project>

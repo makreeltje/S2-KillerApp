@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
-using PMDB_docker.Data;
-using PMDB_docker.Data.Movie;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
@@ -13,14 +11,14 @@ namespace PMDB_docker.Business
     public class User : IUserLogic
     {
         private readonly List<UserDto> _userList;
-        UserDatabaseHandler handler = new UserDatabaseHandler();
+        private readonly IUserData _userData;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
-        //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public User()
+        public User(IUserData userData)
         {
-            _userList = new List<UserDto>(handler.GetAllUsers());
+            _userData = userData;
+            _userList = new List<UserDto>(_userData.GetAllUsers());
         }
         public UserDto GetUser(int id)
         {
@@ -36,11 +34,11 @@ namespace PMDB_docker.Business
         {
             user.Id = _userList.Max(m => m.Id) + 1;
             _userList.Add(user);
-            handler.AddUser(user);
+            _userData.AddUser(user);
             return user;
         }
 
-        public UserDto Update(UserDto userChanges)
+        public UserDto Edit(UserDto userChanges)
         {
             UserDto user = _userList.FirstOrDefault(u => u.Id == userChanges.Id);
             if (user != null)

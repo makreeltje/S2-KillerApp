@@ -8,7 +8,7 @@
     <div class="col-3">
         <img class="card-img-top " src="@photoPath" asp-append-version="true" />
         <div class="form-group mt-2">
-            <input type="submit" value="Edit Profile" class="btn btn-primary btn-block" />
+            <input type="submit" value="Edit Profile" class="btn btn-primary btn-block" asp-action="edit" asp-controller="user" asp-route-id="@Model.User.Id"/>
         </div>
     </div>
     <div class="col">

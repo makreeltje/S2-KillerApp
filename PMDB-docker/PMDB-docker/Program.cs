@@ -20,7 +20,8 @@ namespace PMDB_docker
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>(); 
+
                 });
     }
 }

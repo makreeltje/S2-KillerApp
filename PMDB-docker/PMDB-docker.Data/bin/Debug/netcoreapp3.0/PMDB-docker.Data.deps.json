@@ -9,6 +9,7 @@
       "PMDB-docker.Data/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.18",
+          "PMDB-docker.Interface": "1.0.0",
           "PMDB-docker.Models": "1.0.0"
         },
         "runtime": {
@@ -956,6 +957,14 @@
           }
         }
       },
+      "PMDB-docker.Interface/1.0.0": {
+        "dependencies": {
+          "PMDB-docker.Models": "1.0.0"
+        },
+        "runtime": {
+          "PMDB-docker.Interface.dll": {}
+        }
+      },
       "PMDB-docker.Models/1.0.0": {
         "runtime": {
           "PMDB-docker.Models.dll": {}
@@ -1626,6 +1635,11 @@
       "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    },
+    "PMDB-docker.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "PMDB-docker.Models/1.0.0": {
       "type": "project",

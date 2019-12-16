@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MySqlX.XDevAPI;
-using PMDB_docker.Data.Movie;
 using PMDB_docker.Models;
 using PMDB_docker.Interfaces;
 
@@ -12,14 +10,15 @@ namespace PMDB_docker.Models
     public class Movie : IMovieLogic
     {
         private readonly List<MovieDto> _movieList;
-        readonly MovieDatabaseHandler _handler = new MovieDatabaseHandler();
+        private readonly IMovieData _movieData;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public Movie()
+        public Movie(IMovieData movieData)
         {
-            _movieList = new List<MovieDto>(_handler.GetAllMovies());
+            _movieData = movieData;
+            _movieList = new List<MovieDto>(_movieData.GetAllMovies());
         }
         public MovieDto GetMovie(int Id)
         {
@@ -63,7 +62,7 @@ namespace PMDB_docker.Models
 
         public IEnumerable<MovieDto> RemoveMovie(int id)
         {
-            _handler.RemoveMovie(id);
+            _movieData.RemoveMovie(id);
             _movieList.RemoveAt(id);
             return _movieList;
         }
