@@ -70,15 +70,11 @@ namespace PMDB_docker.Data.Movie
         {
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    string query = $"DELETE FROM movie WHERE id = {id}";
-                    using (MySqlCommand command = new MySqlCommand(query, conn))
-                    {
-                        conn.Open();
-                        command.ExecuteNonQuery();
-                    }
-                }
+                using MySqlConnection conn = new MySqlConnection(connectionString);
+                string query = $"DELETE FROM movie WHERE id = {id}";
+                using MySqlCommand command = new MySqlCommand(query, conn);
+                conn.Open();
+                command.ExecuteNonQuery();
             }
             catch (MySqlException sex)
             {

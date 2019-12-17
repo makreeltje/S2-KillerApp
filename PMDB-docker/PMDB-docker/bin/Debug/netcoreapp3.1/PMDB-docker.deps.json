@@ -2287,6 +2287,7 @@
       },
       "PMDB-docker.Interface/1.0.0": {
         "dependencies": {
+          "MySql.Data": "8.0.18",
           "PMDB-docker.Models": "1.0.0"
         },
         "runtime": {

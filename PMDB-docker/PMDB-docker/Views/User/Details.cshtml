@@ -7,56 +7,72 @@
 <div class="row m-4">
     <div class="col-3">
         <img class="card-img-top " src="@photoPath" asp-append-version="true" />
-        <div class="form-group mt-2">
-            <input type="submit" value="Edit Profile" class="btn btn-primary btn-block" asp-action="edit" asp-controller="user" asp-route-id="@Model.User.Id"/>
-        </div>
+        <a type="submit" class="btn btn-primary btn-block mt-1" asp-action="Edit" asp-controller="User" asp-route-id="@Model.User.Id">Edit Profile</a>
     </div>
     <div class="col">
         <h3>Hello @Model.User.FirstName @Model.User.LastName, how are you doing today</h3>
         <hr/>
-        <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <th>Username</th>
-                    <td class="text-muted">@Model.User.Username</td>
-                </tr>
-                <tr>
-                    <th>First Name</th>
-                    <td class="text-muted">@Model.User.FirstName</td>
-                </tr>
-                <tr>
-                    <th>Last Name</th>
-                    <td class="text-muted">@Model.User.LastName</td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td class="text-muted">@Model.User.Gender</td>
-                </tr>
-                <tr>
-                    <th>Date of Birth</th>
-                    <td class="text-muted">@Model.User.DateOfBirth</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td class="text-muted">@Model.User.Email</td>
-                </tr>
-                <tr>
-                    <th>Street</th>
-                    <td class="text-muted">@Model.User.Street</td>
-                </tr>
-                <tr>
-                    <th>House nr.</th>
-                    <td class="text-muted">@Model.User.Number</td>
-                </tr>
-                <tr>
-                    <th>Postalcode</th>
-                    <td class="text-muted">@Model.User.PostalCode</td>
-                </tr>
-                <tr>
-                    <th>Date of Registration</th>
-                    <td class="text-muted">@Model.User.DateOfRegistration</td>
-                </tr>
-            </tbody>
-        </table>
+        <form>
+            <div class="form-group row">
+                <label asp-for="@Model.User.Username" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.Username">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.FirstName" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.FirstName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.LastName" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.LastName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="User.Genders" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input asp-for="User.Genders" readonly class="form-control-plaintext" asp-items="Html.GetEnumSelectList<UserDto.Gender>()">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.DateOfBirth" class="col-sm-6 col-form-label font-weight-bold">Date of birth</label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.DateOfBirth.ToString("dd-MM-yyyy")">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.Email" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.Email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.Street" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.Street">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.Number" class="col-sm-6 col-form-label font-weight-bold"></label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.Number">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.PostalCode" class="col-sm-6 col-form-label font-weight-bold">Postal code</label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.PostalCode">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="@Model.User.DateOfRegistration" class="col-sm-6 col-form-label font-weight-bold">Date of registration</label>
+                <div class="col-sm-6">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.DateOfRegistration">
+                </div>
+            </div>
+        </form>
     </div>
 </div>

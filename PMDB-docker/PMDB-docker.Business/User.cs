@@ -38,12 +38,9 @@ namespace PMDB_docker.Business
             return user;
         }
 
-        public UserDto Edit(UserDto userChanges)
+        public void Edit(UserDto userChanges)
         {
-            UserDto user = _userList.FirstOrDefault(u => u.Id == userChanges.Id);
-            if (user != null)
-                user = userChanges;
-            return user;
+            _userData.EditUser(userChanges);
         }
 
         public UserDto Delete(int id)

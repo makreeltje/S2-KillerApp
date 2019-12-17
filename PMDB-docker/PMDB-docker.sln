@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Data", "PMDB-do
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Interface", "PMDB-docker.Interfaces\PMDB-docker.Interface.csproj", "{C5DC24D5-2AED-480D-970A-E3FC84B0536E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMDB-docker.Models", "PMDB-docker.Model\PMDB-docker.Models.csproj", "{1FCEED52-4202-4CF5-84B0-A28B1FDC991C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Models", "PMDB-docker.Model\PMDB-docker.Models.csproj", "{1FCEED52-4202-4CF5-84B0-A28B1FDC991C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

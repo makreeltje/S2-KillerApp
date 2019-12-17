@@ -2820,6 +2820,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
+          "MySql.Data": "8.0.18",
           "PMDB-docker.Models": "1.0.0"
         },
         "compile": {

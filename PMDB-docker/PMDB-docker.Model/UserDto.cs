@@ -7,6 +7,12 @@ namespace PMDB_docker.Models
 {
     public class UserDto
     {
+        public enum Gender
+        {
+            Male,
+            Female,
+            Other
+        }
         public int Id { get; set; }
         [Required]
         public string Username { get; set; }
@@ -26,6 +32,6 @@ namespace PMDB_docker.Models
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfRegistration { get; set; }
         public string ProfileImage { get; set; }
-        public string Gender { get; set; }
+        public Gender Genders { get; set; }
     }
 }

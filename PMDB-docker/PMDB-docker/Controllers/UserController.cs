@@ -53,18 +53,8 @@ namespace PMDB_docker.Controllers
 
                 UserDto user = new UserDto
                 {
-                    //Country = model.Country,
-                    //DateOfBirth = model.DateOfBirth,
                     DateOfRegistration = DateTime.Now,
                     Email = model.Email,
-                    //FirstName = model.FirstName,
-                    //Gender = model.Gender,
-                    //LastName = model.LastName,
-                    //Mobile = model.Mobile,
-                    //Number = model.Number,
-                    //ProfileImage = uniqueFileName,
-                    //Street = model.Street,
-                    //PostalCode = model.PostalCode,
                     Password = model.Password,
                     Username = model.Username
                 };
@@ -86,15 +76,60 @@ namespace PMDB_docker.Controllers
         }
 
         [HttpGet]
-        public ViewResult Edit()
+        public ViewResult Edit(int id)
         {
+            UserDto user = _userRepository.GetUser(id);
+            UserEditViewModel userEditViewModel = new UserEditViewModel()
+            {
+                User = _userRepository.GetUser(id),
+                ExistingPhotoPath = user.ProfileImage
+            };
+            return View(userEditViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(UserEditViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                UserDto user = _userRepository.GetUser(model.Id);
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Genders = model.Genders;
+                user.DateOfBirth = model.DateOfBirth;
+                user.Email = model.Email;
+                user.Street = model.Street;
+                user.Number = model.Number;
+                user.PostalCode = model.PostalCode;
+
+                if (model.Photo != null)
+                {
+                    if (model.ExistingPhotoPath != null)
+                    {
+                        string filePath = Path.Combine(_hostingEnvironment.WebRootPath, "img/profile", model.ExistingPhotoPath);
+                        System.IO.File.Delete(filePath);
+                    }
+                    user.ProfileImage = ProcessUploadedFile(model);
+                }
+
+                _userRepository.Edit(user);
+                return RedirectToAction("details", new { id = user.Id });
+            }
+
             return View();
         }
 
-        //[HttpPost]
-        //public ViewResult Edit()
-        //{
-        //    return View();
-        //}
+        private string ProcessUploadedFile(UserEditViewModel model)
+        {
+            string uniqueFileName = null;
+            if (model.Photo != null)
+            {
+                string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "img/profile");
+                uniqueFileName = Guid.NewGuid() + "_" + model.Photo.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+            }
+            return uniqueFileName;
+        }
     }
 }

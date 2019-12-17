@@ -10,7 +10,7 @@ namespace PMDB_docker.Interfaces
         UserDto GetUser(int id);
         IEnumerable<UserDto> GetAllUsers();
         UserDto Add(UserDto user);
-        UserDto Edit(UserDto userChanges);
+        void Edit(UserDto userChanges);
         UserDto Delete(int id);
 
     }
