@@ -40,23 +40,23 @@ namespace PMDB_docker.Controllers
             return View(movieDetailsViewModel);
         }
 
-        [HttpGet]
-        public ViewResult Create()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public ViewResult Create()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Create(MovieDto movie)
-        {
-            if (ModelState.IsValid)
-            {
-                MovieDto newMovie = _movieRepository.Add(movie);
-                //return RedirectToAction("details", new {id = newMovie.Id});
-            }
+        //[HttpPost]
+        //public IActionResult Create(MovieDto movie)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        MovieDto newMovie = _movieRepository.Add(movie);
+        //        //return RedirectToAction("details", new {id = newMovie.Id});
+        //    }
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
 
