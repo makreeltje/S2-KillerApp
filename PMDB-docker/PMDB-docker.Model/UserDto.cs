@@ -15,11 +15,8 @@ namespace PMDB_docker.Models
         }
         public int Id { get; set; }
         [Required]
-        [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         public string Username { get; set; }
-        [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
-            ErrorMessage = "Invalid Email Format")]
-        [Display(Name = "Office Email")]
+        [Required]
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }

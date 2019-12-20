@@ -7,31 +7,30 @@
 <div class="row m-4">
     <div class="col-3">
         <img class="card-img-top " src="@photoPath" asp-append-version="true" />
-        @*<a type="submit" class="btn btn-primary btn-block mt-1" asp-action="Edit" asp-controller="User" asp-route-id="Id">Update</a>*@
+        @*<a type="submit" class="btn btn-primary btn-block mt-1" asp-action="Edit" asp-controller="User" asp-route-id="@Model.User.Id">Update</a>*@
     </div>
     <div class="col">
-        <h3>Hello FirstName LastName, how are you doing today</h3>
+        <h3>Hello @Model.User.FirstName @Model.User.LastName, how are you doing today</h3>
         <hr />
         <form enctype="multipart/form-data" method="post" asp-controller="User" asp-action="Edit">
             <input hidden asp-for="@Model.User.Id" />
             <input hidden asp-for="ExistingPhotoPath" />
-            <input hidden asp-for="User.Password"/>
             <div class="form-group row">
                 <label asp-for="@Model.User.Username" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" readonly class="form-control-plaintext" asp-for="@Model.User.Username">
+                    <input type="text" readonly class="form-control-plaintext" value="@Model.User.Username">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.FirstName" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.FirstName">
+                    <input type="text" class="form-control" value="@Model.User.FirstName">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.LastName" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.LastName">
+                    <input type="text" class="form-control" value="@Model.User.LastName">
                 </div>
             </div>
             <div class="form-group row">
@@ -45,37 +44,37 @@
             <div class="form-group row">
                 <label asp-for="@Model.User.DateOfBirth" class="col-sm-6 col-form-label font-weight-bold">Date of birth</label>
                 <div class="col-sm-6">
-                    <input type="date" class="form-control" asp-for="@Model.User.DateOfBirth" id="example-date">
+                    <input type="date" class="form-control" value="@Model.User.DateOfBirth.ToString("yyyy-MM-dd")" id="example-date">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.Email" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.Email">
+                    <input type="text" class="form-control" value="@Model.User.Email">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.Street" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.Street">
+                    <input type="text" class="form-control" value="@Model.User.Street">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.Number" class="col-sm-6 col-form-label font-weight-bold"></label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.Number">
+                    <input type="text" class="form-control" value="@Model.User.Number">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.PostalCode" class="col-sm-6 col-form-label font-weight-bold">Postal code</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" asp-for="@Model.User.PostalCode">
+                    <input type="text" class="form-control" value="@Model.User.PostalCode">
                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="@Model.User.DateOfRegistration" readonly class="col-sm-6 col-form-label font-weight-bold">Date of registration</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control-plaintext" asp-for="@Model.User.DateOfRegistration">
+                    <input type="text" class="form-control-plaintext" value="@Model.User.DateOfRegistration">
                 </div>
             </div>
             <div class="form-group row">
@@ -90,7 +89,7 @@
             <div class="form-group row">
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <a asp-controller="User" asp-action="Details" asp-route-id="Id" class="btn btn-secondary">Cancel</a>
+                    <a asp-controller="User" asp-action="Details" asp-route-id="@Model.User.Id" class="btn btn-secondary">Cancel</a>
                 </div>
             </div>
             @section Scripts {

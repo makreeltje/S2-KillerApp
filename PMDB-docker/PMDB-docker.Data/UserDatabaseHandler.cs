@@ -90,11 +90,16 @@ namespace PMDB_docker.Data
 
         public void EditUser(UserDto user)
         {
+<<<<<<< HEAD
             string query = "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
+=======
+            string query = "UPDATE [users] SET email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
+>>>>>>> parent of aaa9fe6... User
             using MySqlConnection conn = new MySqlConnection(connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
+<<<<<<< HEAD
                 command.Parameters.AddWithValue("@username", user.Username);
                 command.Parameters.AddWithValue("@email", user.Email);
                 command.Parameters.AddWithValue("@firstName", user.FirstName);
@@ -126,12 +131,40 @@ namespace PMDB_docker.Data
             try
             {
                 command.Parameters.AddWithValue("@id", id);
+=======
+                List<MySqlParameter> p = new List<MySqlParameter>();
+                p.Add(new MySqlParameter("@email", user.Email));
+                p.Add(new MySqlParameter("@firstName", user.FirstName));
+                p.Add(new MySqlParameter("@lastName", user.LastName));
+                p.Add(new MySqlParameter("@street", user.Street));
+                p.Add(new MySqlParameter("@nr", user.Number));
+                p.Add(new MySqlParameter("@postalCode", user.PostalCode));
+                p.Add(new MySqlParameter("@country", user.Country));
+                p.Add(new MySqlParameter("@phone", user.Phone));
+                p.Add(new MySqlParameter("@mobile", user.Mobile));
+                p.Add(new MySqlParameter("@dob", user.DateOfBirth));
+                p.Add(new MySqlParameter("@image", user.ProfileImage));
+                p.Add(new MySqlParameter("@gender", user.Genders));
+>>>>>>> parent of aaa9fe6... User
                 conn.Open();
+                GetExample(command, p.ToArray());
                 command.ExecuteNonQuery();
+                command.Parameters.Clear();
             }
             catch (MySqlException sex)
             {
                 throw new DataException(sex.Message);
+            }
+            
+            conn.Open();
+            command.ExecuteNonQuery();
+        }
+
+        private void GetExample(MySqlCommand command, params MySqlParameter[] p)
+        {
+            if (p != null && p.Any())
+            {
+                command.Parameters.AddRange(p);
             }
         }
     }

@@ -7,8 +7,9 @@ using PMDB_docker.Models;
 
 namespace PMDB_docker.ViewModels
 {
-    public class UserEditViewModel : UserDetailsViewModel
+    public class UserEditViewModel : UserDto
     {
+        public UserDto User { get; set; }
         public string PageTitle { get; set; }
         public string ExistingPhotoPath { get; set; }
         public IFormFile Photo { get; set; }
