@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {}
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {}
   },
   "projects": {
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "projectName": "PMDB-docker.Business",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
+        "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
-                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj"
+              "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+                "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
         "projectName": "PMDB-docker.Interface",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\PMDB-docker.Interface.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\obj\\",
+        "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,8 +97,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
-                "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
+              "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+                "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj"
               }
             }
           }
@@ -150,14 +150,14 @@
         }
       }
     },
-    "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
         "projectName": "PMDB-docker.Models",
-        "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\PMDB-docker.Models.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-        "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\obj\\",
+        "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",

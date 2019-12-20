@@ -11,16 +11,3 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMD
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csproj.CopyComplete
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.deps.json
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Models.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Interface.pdb
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.0\PMDB-docker.Models.pdb
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csprojAssemblyReference.cache
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.AssemblyInfoInputs.cache
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.AssemblyInfo.cs
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.csproj.CopyComplete
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.dll
-D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.0\PMDB-docker.Business.pdb
