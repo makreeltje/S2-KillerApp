@@ -13,7 +13,7 @@ namespace PMDB_docker.Business
         private readonly List<UserDto> _userList;
         private readonly IUserData _userData;
 
-        // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
+        // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk aan Mock, inMemory of database
 
         public User(IUserData userData)
         {

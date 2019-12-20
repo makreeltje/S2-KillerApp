@@ -11,5 +11,7 @@ namespace PMDB_docker.Interfaces
         public IEnumerable<UserDto> GetAllUsers();
         public void AddUser(UserDto user);
         public void EditUser(UserDto user);
+
+        public void RemoveUser(int id);
     }
 }

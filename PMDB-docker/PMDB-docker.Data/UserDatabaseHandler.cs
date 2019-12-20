@@ -30,11 +30,10 @@ namespace PMDB_docker.Data
                 
                 conn.Open();
                 var reader = command.ExecuteReader();
-                int id = 0;
                 while (reader.Read())
                 {
                     UserDto dto = new UserDto();
-                    dto.Id = id;
+                    dto.Id = reader.GetInt32(0);
                     dto.Username = reader.GetString(1);
                     dto.Password = reader.GetString(2);
                     dto.Email = reader.GetString(3);
@@ -62,7 +61,6 @@ namespace PMDB_docker.Data
                     if (!reader.IsDBNull(15))
                         dto.Genders = (UserDto.Gender)reader.GetInt32(15);
                     users.Add(dto);
-                    id++;
                 }
             }
             catch (MySqlException sex)
@@ -92,25 +90,42 @@ namespace PMDB_docker.Data
 
         public void EditUser(UserDto user)
         {
-            string query = "UPDATE users SET email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
+            string query = "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
             using MySqlConnection conn = new MySqlConnection(connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
-                
-                command.Parameters.AddWithValue("email", user.Email);
-                command.Parameters.AddWithValue("firstName", user.FirstName);
-                command.Parameters.AddWithValue("lastName", user.LastName);
-                command.Parameters.AddWithValue("street", user.Street);
-                command.Parameters.AddWithValue("nr", user.Number);
-                command.Parameters.AddWithValue("postalCode", user.PostalCode);
-                command.Parameters.AddWithValue("country", user.Country);
-                command.Parameters.AddWithValue("phone", user.Phone);
-                command.Parameters.AddWithValue("mobile", user.Mobile);
-                command.Parameters.AddWithValue("dob", user.DateOfBirth.ToString("yyyy-MM-dd"));
-                command.Parameters.AddWithValue("image", user.ProfileImage);
-                command.Parameters.AddWithValue("gender", user.Genders);
-                command.Parameters.AddWithValue("id", user.Id + 1);
+                command.Parameters.AddWithValue("@username", user.Username);
+                command.Parameters.AddWithValue("@email", user.Email);
+                command.Parameters.AddWithValue("@firstName", user.FirstName);
+                command.Parameters.AddWithValue("@lastName", user.LastName);
+                command.Parameters.AddWithValue("@street", user.Street);
+                command.Parameters.AddWithValue("@nr", user.Number);
+                command.Parameters.AddWithValue("@postalCode", user.PostalCode);
+                command.Parameters.AddWithValue("@country", user.Country);
+                command.Parameters.AddWithValue("@phone", user.Phone);
+                command.Parameters.AddWithValue("@mobile", user.Mobile);
+                command.Parameters.AddWithValue("@dob", user.DateOfBirth.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@image", user.ProfileImage);
+                command.Parameters.AddWithValue("@gender", user.Genders);
+                command.Parameters.AddWithValue("@id", user.Id);
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
+        }
+
+        public void RemoveUser(int id)
+        {
+            string query = "DELETE FROM users WHERE id = @id";
+            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@id", id);
                 conn.Open();
                 command.ExecuteNonQuery();
             }
