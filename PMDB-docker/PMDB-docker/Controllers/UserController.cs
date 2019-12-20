@@ -90,7 +90,7 @@ namespace PMDB_docker.Controllers
         [HttpPost]
         public IActionResult Edit(UserEditViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 UserDto user = _userRepository.GetUser(model.Id);
                 user.FirstName = model.FirstName;
