@@ -7,7 +7,7 @@ using PMDB_docker.Models;
 
 namespace PMDB_docker.ViewModels
 {
-    public class UserDetailsViewModel : UserRegisterViewModel
+    public class UserDetailsViewModel
     {
         public UserDto User { get; set; }
         public string PageTitle { get; set; }

@@ -134,9 +134,6 @@ namespace PMDB_docker.Data
             {
                 throw new DataException(sex.Message);
             }
-            
-            conn.Open();
-            command.ExecuteNonQuery();
         }
     }
 }

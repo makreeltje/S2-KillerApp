@@ -10,7 +10,7 @@ namespace PMDB_docker.Business
 {
     public class User : IUserLogic
     {
-        private readonly List<UserDto> _userList;
+        private List<UserDto> _userList;
         private readonly IUserData _userData;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk aan Mock, inMemory of database
@@ -20,6 +20,12 @@ namespace PMDB_docker.Business
             _userData = userData;
             _userList = new List<UserDto>(_userData.GetAllUsers());
         }
+
+        //public User()
+        //{
+
+        //}
+
         public UserDto GetUser(int id)
         {
             return _userList.FirstOrDefault(m => m.Id == id);
@@ -32,9 +38,10 @@ namespace PMDB_docker.Business
 
         public UserDto Add(UserDto user)
         {
-            user.Id = _userList.Max(m => m.Id) + 1;
-            _userList.Add(user);
             _userData.AddUser(user);
+            _userList = (List<UserDto>) _userData.GetAllUsers();
+            user.Id = _userList.Last().Id;
+
             return user;
         }
 

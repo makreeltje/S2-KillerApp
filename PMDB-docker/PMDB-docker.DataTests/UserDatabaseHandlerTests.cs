@@ -13,7 +13,7 @@ namespace PMDB_docker.Data.Tests
     public class UserDatabaseHandlerTests
     {
         private List<UserDto> _userList;
-        private IUserData _userData = new UserDatabaseHandler();
+        private readonly IUserData _userData = new UserDatabaseHandler();
 
         [TestInitialize]
         public void TestInit()
