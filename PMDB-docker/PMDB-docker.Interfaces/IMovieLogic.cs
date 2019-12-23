@@ -9,9 +9,9 @@ namespace PMDB_docker.Interfaces
     public interface IMovieLogic
     {
         MovieDto GetMovie(int Id);
-        IEnumerable<MovieDto> GetAllMovies();
+        List<MovieDto> GetAllMovies();
         MovieDto Add(MovieDto movie);
-        IEnumerable<MovieDto> GetAllMoviesForDetailsPage();
-        IEnumerable<MovieDto> RemoveMovie(int id);
+        List<MovieDto> GetAllMoviesForDetailsPage();
+        List<MovieDto> RemoveMovie(int id);
     }
 }

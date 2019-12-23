@@ -31,14 +31,14 @@ namespace PMDB_docker.Data.Movie
                         {
                             MovieDto dto = new MovieDto();
                             dto.Id = reader.GetInt32(0);
+                            if (!reader.IsDBNull(2))
+                                dto.TmdbId = reader.GetString(2);
                             dto.Title = reader.GetString(3);
                             if (!reader.IsDBNull(7))
                                 dto.Plot = reader.GetString(7);
                             else
                                 dto.Plot = "";
-                            if (reader.IsDBNull(8))
-                                dto.Image = "~/img/noimage-cover.png";
-                            else
+                            if (!reader.IsDBNull(8))
                                 dto.Image = reader.GetString(8);
                             if (!reader.IsDBNull(9))
                                 dto.Runtime = reader.GetInt32(9);

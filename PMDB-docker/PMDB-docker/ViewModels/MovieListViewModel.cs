@@ -9,7 +9,7 @@ namespace PMDB_docker.ViewModels
 {
     public class MovieListViewModel
     {
-        public MovieDto Movies { get; set; }
         public string PageTitle { get; set; }
+        public List<MovieDto> Movies { get; set; }
     }
 }

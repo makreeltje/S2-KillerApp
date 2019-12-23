@@ -26,8 +26,12 @@ namespace PMDB_docker.Controllers
 
         public ViewResult Index()
         {
-            var model = _movieRepository.GetAllMoviesForDetailsPage();
-            return View(model);
+            MovieListViewModel movieListViewModel = new MovieListViewModel()
+            {
+                Movies = _movieRepository.GetAllMovies(),
+                PageTitle = "All Movies"
+            };
+            return View(movieListViewModel);
         }
 
         public ViewResult Details(int? id)
@@ -40,32 +44,22 @@ namespace PMDB_docker.Controllers
             return View(movieDetailsViewModel);
         }
 
-        [HttpGet]
-        public ViewResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(MovieDto movie)
-        {
-            if (ModelState.IsValid)
-            {
-                MovieDto newMovie = _movieRepository.Add(movie);
-                //return RedirectToAction("details", new {id = newMovie.Id});
-            }
-
-            return View();
-        }
-
-
-
-        // GET: /Movie/ 
-
-        //public IActionResult Search(string query)
+        //[HttpGet]
+        //public ViewResult Create()
         //{
-        //    List<Business.Movie> movie = Business.Movie.GetQueryMovies(query);
-        //    return View(movie);
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public IActionResult Create(MovieDto movie)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        MovieDto newMovie = _movieRepository.Add(movie);
+        //        //return RedirectToAction("details", new {id = newMovie.Id});
+        //    }
+
+        //    return View();
         //}
     }
 }

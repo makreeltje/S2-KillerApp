@@ -11,22 +11,43 @@ namespace PMDB_docker.Models
     {
         private readonly List<MovieDto> _movieList;
         private readonly IMovieData _movieData;
+        private readonly IMovieApi _movieApi;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public Movie(IMovieData movieData)
+        public Movie(IMovieData movieData, IMovieApi movieApi)
         {
             _movieData = movieData;
+            _movieApi = movieApi;
             _movieList = new List<MovieDto>(_movieData.GetAllMovies());
+            
         }
         public MovieDto GetMovie(int Id)
         {
             return _movieList.FirstOrDefault(m => m.Id == Id);
         }
 
-        public IEnumerable<MovieDto> GetAllMovies()
+        public List<MovieDto> GetAllMovies()
         {
+            int i = 0;
+            foreach (var movie in _movieList)
+            {
+                if (movie.Image == null)
+                {
+                    MovieApiDto movieapi = new MovieApiDto();
+                    string image = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
+                    string imageAdditive;
+                    if (movie.TmdbId != null)
+                    {
+                        imageAdditive = _movieApi.GetMovieAsync(movie.TmdbId).ToString();
+                        //movie.Image = $"{image}{imageAdditive}";
+                    }
+                    if (i >= 10)
+                        break;
+                    i++;
+                }
+            }
             return _movieList;
         }
 
@@ -50,7 +71,7 @@ namespace PMDB_docker.Models
             return text;
         }
 
-        public IEnumerable<MovieDto> GetAllMoviesForDetailsPage()
+        public List<MovieDto> GetAllMoviesForDetailsPage()
         {
             foreach (var movie in _movieList)
             {
@@ -60,7 +81,7 @@ namespace PMDB_docker.Models
             return _movieList;
         }
 
-        public IEnumerable<MovieDto> RemoveMovie(int id)
+        public List<MovieDto> RemoveMovie(int id)
         {
             _movieData.RemoveMovie(id);
             _movieList.RemoveAt(id);
