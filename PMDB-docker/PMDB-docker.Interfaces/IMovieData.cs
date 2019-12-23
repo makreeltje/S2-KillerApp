@@ -10,6 +10,6 @@ namespace PMDB_docker.Interfaces
         IEnumerable<MovieDto> GetAllMovies();
         MovieDto AddMovie(MovieDto movie);
         void RemoveMovie(int id);
-        MovieDto EditMovie(int id);
+        void EditMovie(MovieDto movie);
     }
 }

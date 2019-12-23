@@ -1,9 +1,6 @@
-﻿using System;
+﻿using PMDB_docker.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using PMDB_docker.Models;
-using PMDB_docker.Interfaces;
 using TMDbLib.Client;
 
 namespace PMDB_docker.Models
@@ -12,17 +9,15 @@ namespace PMDB_docker.Models
     {
         private readonly List<MovieDto> _movieList;
         private readonly IMovieData _movieData;
-        private readonly IMovieApi _movieApi;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public Movie(IMovieData movieData, IMovieApi movieApi)
+        public Movie(IMovieData movieData)
         {
             _movieData = movieData;
-            _movieApi = movieApi;
             _movieList = new List<MovieDto>(_movieData.GetAllMovies());
-            
+
         }
         public MovieDto GetMovie(int Id)
         {
@@ -31,21 +26,6 @@ namespace PMDB_docker.Models
 
         public List<MovieDto> GetAllMovies()
         {
-            TMDbClient client = new TMDbClient("8e8b06b1cb21b2d3f36f8bd44c933672");
-            foreach (var movie in _movieList)
-            {
-                
-                if (movie.Image == null)
-                {
-                    MovieApiDto movieapi = new MovieApiDto();
-                    string image = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
-                    if (movie.TmdbId != null)
-                    {
-                        TMDbLib.Objects.Movies.Movie tmdbMovie = client.GetMovieAsync(movie.TmdbId).Result;
-                        movie.Image = image + tmdbMovie.PosterPath;
-                    }
-                }
-            }
             return _movieList;
         }
 
@@ -73,8 +53,8 @@ namespace PMDB_docker.Models
         {
             foreach (var movie in _movieList)
             {
-                movie.ShortenedPlot = ShortenPlotText(movie.Plot);
-                movie.ReleaseDate = movie.ReleaseDateTime.ToString("dd-MM-yyyy");
+                movie.ShortenedPlot = ShortenPlotText(movie.Overview);
+                //movie.ReleaseDate = movie.ReleaseDate.ToString("dd-MM-yyyy");
             }
             return _movieList;
         }
@@ -84,6 +64,30 @@ namespace PMDB_docker.Models
             _movieData.RemoveMovie(id);
             _movieList.RemoveAt(id);
             return _movieList;
+        }
+
+        public void UpdateMovieInformation(MovieDto movie)
+        {
+            TMDbClient client = new TMDbClient("8e8b06b1cb21b2d3f36f8bd44c933672");
+            TMDbLib.Objects.Movies.Movie tmdbMovie = client.GetMovieAsync(movie.TmdbId).Result;
+            MovieApiDto movieApi = new MovieApiDto();
+
+            if (movie.Image == null)
+            {
+                
+                string image = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
+                if (movie.TmdbId != null)
+                {
+                    movie.Image = image + tmdbMovie.PosterPath;
+                }
+            }
+
+            if (movie.Overview == null || movie.Overview != tmdbMovie.Overview)
+            {
+                movie.Overview = tmdbMovie.Overview;
+            }
+
+            _movieData.EditMovie(movie);
         }
     }
 }

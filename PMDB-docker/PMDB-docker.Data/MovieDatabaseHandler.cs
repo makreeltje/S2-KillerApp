@@ -35,9 +35,9 @@ namespace PMDB_docker.Data.Movie
                                 dto.TmdbId = reader.GetString(2);
                             dto.Title = reader.GetString(3);
                             if (!reader.IsDBNull(7))
-                                dto.Plot = reader.GetString(7);
+                                dto.Overview = reader.GetString(7);
                             else
-                                dto.Plot = "";
+                                dto.Overview = "";
                             if (!reader.IsDBNull(8))
                                 dto.Image = reader.GetString(8);
                             if (!reader.IsDBNull(9))
@@ -82,9 +82,33 @@ namespace PMDB_docker.Data.Movie
             }
         }
 
-        public MovieDto EditMovie(int id)
+        public void EditMovie(MovieDto movie)
         {
-            throw new NotImplementedException();
+            string query = "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
+            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@imdbID", movie.ImdbId);
+                command.Parameters.AddWithValue("@tmdbID", movie.TmdbId);
+                command.Parameters.AddWithValue("@title", movie.Title);
+                command.Parameters.AddWithValue("@plot", movie.Overview);
+                command.Parameters.AddWithValue("@image", movie.Image);
+                command.Parameters.AddWithValue("@runtime", movie.Runtime);
+                command.Parameters.AddWithValue("@releaseDate", movie.ReleaseDate.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@website", movie.Website);
+                command.Parameters.AddWithValue("@studio", movie.Studio);
+                command.Parameters.AddWithValue("@budget", movie.Budget);
+                command.Parameters.AddWithValue("@revenue", movie.Revenue);
+                command.Parameters.AddWithValue("@status", movie.Status);
+                command.Parameters.AddWithValue("@posterBackdrop", movie.PosterBackdrop);
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
         }
     }
 }

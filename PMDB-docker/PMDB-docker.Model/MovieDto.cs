@@ -17,18 +17,21 @@ namespace PMDB_docker.Models
         public string Title { get; set; }
         [Display(Name = "Plot of the movie")]
         [Required]
-        public string Plot { get; set; }
+        public string Overview { get; set; }
         public string ShortenedPlot { get; set; }
         public string Image { get; set; }
         public int Runtime { get; set; }
-        public DateTime ReleaseDateTime { get; set; }
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         [Required]
-        //[RegularExpression(@"^[a-zA-Z0-9]+\:\/\/[a-zA-Z0-9]+\.[a-zA-Z0-9]+$", ErrorMessage = "Invalid website name")]
         public string Website { get; set; }
         public string Studio { get; set; }
         [Required]
         public GenreDto? Genre { get; set; }
+        public int Revenue { get; set; }
+        public int Budget { get; set; }
+        public string Status { get; set; }
+        public string PosterBackdrop { get; set; }
+        public double average_rating { get; set; }
         
         
         
