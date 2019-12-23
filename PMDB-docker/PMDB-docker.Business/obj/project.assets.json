@@ -1768,6 +1768,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "TMDbLib/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/TMDbLib.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TMDbLib.dll": {}
+        }
+      },
       "PMDB-docker.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -6211,6 +6223,20 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
+    "TMDbLib/1.4.0": {
+      "sha512": "wE7c5kYZ3eqjLgKsaXiRu8w6e7BUxgd5wQhoAgnY/LI0J09LX+g7TerDxaRPLn/7cSSJAqslZX33nHt6HvHMQQ==",
+      "type": "package",
+      "path": "tmdblib/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/TMDbLib.dll",
+        "lib/netstandard1.2/TMDbLib.dll",
+        "lib/netstandard2.0/TMDbLib.dll",
+        "tmdblib.1.4.0.nupkg.sha512",
+        "tmdblib.nuspec"
+      ]
+    },
     "PMDB-docker.Interface/1.0.0": {
       "type": "project",
       "path": "../PMDB-docker.Interfaces/PMDB-docker.Interface.csproj",
@@ -6225,7 +6251,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.AspNet.WebApi.Client >= 5.2.7",
-      "PMDB-docker.Interface >= 1.0.0"
+      "PMDB-docker.Interface >= 1.0.0",
+      "TMDbLib >= 1.4.0"
     ]
   },
   "packageFolders": {
@@ -6272,6 +6299,10 @@
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.7, )"
+          },
+          "TMDbLib": {
+            "target": "Package",
+            "version": "[1.4.0, )"
           }
         },
         "imports": [

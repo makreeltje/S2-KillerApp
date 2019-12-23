@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PMDB_docker.Models;
 using PMDB_docker.Interfaces;
+using TMDbLib.Client;
 
 namespace PMDB_docker.Models
 {
@@ -30,22 +31,19 @@ namespace PMDB_docker.Models
 
         public List<MovieDto> GetAllMovies()
         {
-            int i = 0;
+            TMDbClient client = new TMDbClient("8e8b06b1cb21b2d3f36f8bd44c933672");
             foreach (var movie in _movieList)
             {
+                
                 if (movie.Image == null)
                 {
                     MovieApiDto movieapi = new MovieApiDto();
                     string image = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
-                    string imageAdditive;
                     if (movie.TmdbId != null)
                     {
-                        imageAdditive = _movieApi.GetMovieAsync(movie.TmdbId).ToString();
-                        //movie.Image = $"{image}{imageAdditive}";
+                        TMDbLib.Objects.Movies.Movie tmdbMovie = client.GetMovieAsync(movie.TmdbId).Result;
+                        movie.Image = image + tmdbMovie.PosterPath;
                     }
-                    if (i >= 10)
-                        break;
-                    i++;
                 }
             }
             return _movieList;

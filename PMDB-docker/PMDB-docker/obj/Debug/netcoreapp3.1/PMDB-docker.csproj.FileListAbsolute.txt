@@ -140,3 +140,4 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\PMDB-docker.
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\Razor\Views\User\Edit.cshtml.g.cs
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\Razor\Views\User\UserNotFound.cshtml.g.cs
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\TMDbLib.dll

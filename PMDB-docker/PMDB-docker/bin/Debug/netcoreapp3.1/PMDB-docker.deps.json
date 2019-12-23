@@ -1943,10 +1943,25 @@
           "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "TMDbLib/1.4.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/TMDbLib.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/TMDbLib.dll": {}
+        }
+      },
       "PMDB-docker.Business/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
-          "PMDB-docker.Interface": "1.0.0"
+          "PMDB-docker.Interface": "1.0.0",
+          "TMDbLib": "1.4.0"
         },
         "runtime": {
           "PMDB-docker.Business.dll": {}
@@ -4674,6 +4689,13 @@
       "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    },
+    "TMDbLib/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wE7c5kYZ3eqjLgKsaXiRu8w6e7BUxgd5wQhoAgnY/LI0J09LX+g7TerDxaRPLn/7cSSJAqslZX33nHt6HvHMQQ==",
+      "path": "tmdblib/1.4.0",
+      "hashPath": "tmdblib.1.4.0.nupkg.sha512"
     },
     "PMDB-docker.Business/1.0.0": {
       "type": "project",

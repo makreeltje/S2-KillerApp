@@ -45,6 +45,10 @@
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.7, )"
+            },
+            "TMDbLib": {
+              "target": "Package",
+              "version": "[1.4.0, )"
             }
           },
           "imports": [
