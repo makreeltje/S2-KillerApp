@@ -28,18 +28,21 @@ namespace PMDB_docker.Controllers
         {
             MovieListViewModel movieListViewModel = new MovieListViewModel()
             {
-                Movies = _movieRepository.GetAllMovies(),
+                Movies = _movieRepository.GetAllMoviesForListPage(),
                 PageTitle = "All Movies"
             };
             return View(movieListViewModel);
         }
 
-        public ViewResult Details(int? id)
+        public ViewResult Details(int id)
         {
+            MovieDto movie = _movieRepository.GetMovie(id);
+            _movieRepository.UpdateMovie(_movieRepository.GetMovie(id));
             MovieDetailsViewModel movieDetailsViewModel = new MovieDetailsViewModel()
             {
-                Movie = _movieRepository.GetMovie(id ?? 1),
-                PageTitle = "Movie Details"
+                Movie = movie,
+                PageTitle = "Movie Details",
+                RuntimeTimeFormat = _movieRepository.FormatRuntime(movie.Runtime)
             };
             return View(movieDetailsViewModel);
         }

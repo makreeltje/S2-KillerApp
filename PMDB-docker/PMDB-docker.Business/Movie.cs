@@ -1,4 +1,5 @@
-﻿using PMDB_docker.Interfaces;
+﻿using System;
+using PMDB_docker.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using TMDbLib.Client;
@@ -36,45 +37,44 @@ namespace PMDB_docker.Models
             return movie;
         }
 
-        private string ShortenPlotText(string text)
+        private string ShortenOverviewText(string text)
         {
             int maxLenght = 100;
             string plotShortened;
-            if (text.Length > maxLenght)
+            if (text != null)
             {
-                plotShortened = text.Substring(0, maxLenght) + "...";
-                return plotShortened;
+                if (text.Length > maxLenght)
+                {
+                    plotShortened = text.Substring(0, maxLenght) + "...";
+                    return plotShortened;
+                }
             }
-
             return text;
         }
 
-        public List<MovieDto> GetAllMoviesForDetailsPage()
+        public List<MovieDto> GetAllMoviesForListPage()
         {
             foreach (var movie in _movieList)
             {
-                movie.ShortenedPlot = ShortenPlotText(movie.Overview);
-                //movie.ReleaseDate = movie.ReleaseDate.ToString("dd-MM-yyyy");
+                movie.ShortenedPlot = ShortenOverviewText(movie.Overview);
             }
             return _movieList;
         }
 
-        public List<MovieDto> RemoveMovie(int id)
+        public List<MovieDto> RemoveMovie(MovieDto movie)
         {
-            _movieData.RemoveMovie(id);
-            _movieList.RemoveAt(id);
+            _movieData.RemoveMovie(movie);
+            _movieList.RemoveAt(movie.Id);
             return _movieList;
         }
 
-        public void UpdateMovieInformation(MovieDto movie)
+        public void UpdateMovie(MovieDto movie)
         {
             TMDbClient client = new TMDbClient("8e8b06b1cb21b2d3f36f8bd44c933672");
             TMDbLib.Objects.Movies.Movie tmdbMovie = client.GetMovieAsync(movie.TmdbId).Result;
-            MovieApiDto movieApi = new MovieApiDto();
 
             if (movie.Image == null)
             {
-                
                 string image = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
                 if (movie.TmdbId != null)
                 {
@@ -86,8 +86,57 @@ namespace PMDB_docker.Models
             {
                 movie.Overview = tmdbMovie.Overview;
             }
+            if (movie.AverageRating == null || movie.AverageRating != tmdbMovie.VoteAverage)
+            {
+                movie.AverageRating = tmdbMovie.VoteAverage;
+            }
+            if (movie.Runtime == null || movie.Runtime != tmdbMovie.Runtime)
+            {
+                movie.Runtime = tmdbMovie.Runtime;
+            }
+            if (movie.Budget == null || movie.Budget != tmdbMovie.Budget)
+            {
+                movie.Budget = tmdbMovie.Budget;
+            }
+            if (movie.Revenue == null || movie.Revenue != tmdbMovie.Revenue)
+            {
+                movie.Revenue = tmdbMovie.Revenue;
+            }
+            if (movie.Studio == null || movie.Studio != tmdbMovie.ProductionCompanies[0].Name)
+            {
+                movie.Studio = tmdbMovie.ProductionCompanies[1].Name;
+            }
+            if (movie.Website == null || movie.Website != tmdbMovie.Homepage)
+            {
+                movie.Website = tmdbMovie.Homepage;
+            }
+            if (movie.ReleaseDate == null || movie.ReleaseDate != tmdbMovie.ReleaseDate)
+            {
+                movie.ReleaseDate = tmdbMovie.ReleaseDate;
+            }
+            if (movie.PosterBackdrop == null || movie.PosterBackdrop != tmdbMovie.BackdropPath)
+            {
+                string image = "https://image.tmdb.org/t/p/w1400_and_h450_face";
+                movie.PosterBackdrop = $"{image}{tmdbMovie.BackdropPath}";
+            }
+            if (movie.Status == null || movie.Status != tmdbMovie.Status)
+            {
+                movie.Status = tmdbMovie.Status;
+            }
 
             _movieData.EditMovie(movie);
+        }
+
+        public string FormatRuntime(int? runtime)
+        {
+            if (runtime != null)
+            {
+                TimeSpan ts = TimeSpan.FromMinutes((int)runtime);
+                return $"{ts.Hours:00}:{ts.Minutes:00}";
+            }
+
+            return "-";
+
         }
     }
 }

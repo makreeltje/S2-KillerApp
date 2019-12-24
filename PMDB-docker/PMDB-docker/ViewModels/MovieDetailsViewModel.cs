@@ -10,5 +10,6 @@ namespace PMDB_docker.ViewModels
     {
         public MovieDto Movie { get; set; }
         public string PageTitle { get; set; }
+        public string RuntimeTimeFormat { get; set; }
     }
 }

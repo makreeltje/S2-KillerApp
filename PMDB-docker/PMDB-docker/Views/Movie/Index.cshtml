@@ -1,6 +1,6 @@
 ﻿@model MovieListViewModel
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "All our movies";
 }
 
 <div class="card-deck justify-content-center">
@@ -15,10 +15,10 @@
                     <div class="card-body">
                         <div class="card-title">
                             <h5>@movie.Title</h5>
-                            <span class="small text-muted">@movie.ReleaseDate</span>
+                            <span class="small text-muted">@movie.ReleaseDate?.ToString("dd-MM-yyyy")</span>
                         </div>
                         <p class="card-text">@movie.ShortenedPlot</p>
-                        <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primary">Details</a>
+                        <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-light">Details</a>
                     </div>
                 </div>
             </div>

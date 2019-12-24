@@ -106,3 +106,6 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\obj\Debug\netcoreapp3.
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\obj\Debug\netcoreapp3.0\PMDB-docker.BusinessTests.csproj.CopyComplete
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\obj\Debug\netcoreapp3.0\PMDB-docker.BusinessTests.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\obj\Debug\netcoreapp3.0\PMDB-docker.BusinessTests.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.BusinessTests\bin\Debug\netcoreapp3.0\TMDbLib.dll

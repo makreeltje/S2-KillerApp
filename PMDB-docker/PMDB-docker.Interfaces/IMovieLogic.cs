@@ -11,8 +11,9 @@ namespace PMDB_docker.Interfaces
         MovieDto GetMovie(int Id);
         List<MovieDto> GetAllMovies();
         MovieDto Add(MovieDto movie);
-        List<MovieDto> GetAllMoviesForDetailsPage();
-        List<MovieDto> RemoveMovie(int id);
-        void UpdateMovieInformation(MovieDto movie);
+        List<MovieDto> GetAllMoviesForListPage();
+        List<MovieDto> RemoveMovie(MovieDto movie);
+        void UpdateMovie(MovieDto movie);
+        string FormatRuntime(int? runtime);
     }
 }

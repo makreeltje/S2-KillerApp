@@ -25,9 +25,9 @@ namespace PMDB_docker.Data
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
-                
-                
-                
+
+
+
                 conn.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
@@ -59,7 +59,7 @@ namespace PMDB_docker.Data
                     if (!reader.IsDBNull(14))
                         dto.ProfileImage = reader.GetString(14);
                     if (!reader.IsDBNull(15))
-                        dto.Genders = (UserDto.Gender)reader.GetInt32(15);
+                        dto.Genders = (UserDto.Gender) reader.GetInt32(15);
                     users.Add(dto);
                 }
             }
@@ -73,12 +73,16 @@ namespace PMDB_docker.Data
 
         public void AddUser(UserDto user)
         {
+            string query =
+                "INSERT INTO users SET username = @username, password = @password, email = @email, dor = @dor";
+            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
-                string query = "INSERT INTO users (username, password, email, dor)" +
-                               $"VALUES ('{user.Username}','{user.Password}','{user.Email}', '{user.DateOfRegistration:yyyy-MM-dd HH:mm:ss}')";
-                using MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@username", user.Username);
+                command.Parameters.AddWithValue("@password", user.Password);
+                command.Parameters.AddWithValue("@email", user.Email);
+                command.Parameters.AddWithValue("@dor", user.DateOfRegistration.ToString("yyyy-MM-dd HH:mm:ss"));
                 conn.Open();
                 command.ExecuteNonQuery();
             }
@@ -90,7 +94,8 @@ namespace PMDB_docker.Data
 
         public void EditUser(UserDto user)
         {
-            string query = "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
+            string query =
+                "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
             using MySqlConnection conn = new MySqlConnection(connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try

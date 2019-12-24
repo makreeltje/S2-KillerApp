@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Details";
 }
+@using System.Globalization
+@using Org.BouncyCastle.Crypto.Tls
 @model MovieDetailsViewModel
 
 <div class="row m-4">
@@ -9,10 +11,10 @@
         <img class="card-img-top " src="@Model.Movie.Image" asp-append-version="true" />
     </div>
     <div class="col mb-4">
-        <h2>@Model.Movie.Title <span class="small text-muted">(@Model.Movie.ReleaseDate)</span></h2>
+        <h2>@Model.Movie.Title <span class="small text-muted">(@Model.Movie.ReleaseDate?.ToString("dd-MM-yyyy"))</span></h2>
         <h5>Overview</h5>
         <p>@Model.Movie.Overview</p>
-        <h5>Featured Crew</h5>
+        @*<h5>Featured Crew</h5>*@
     </div>
 </div>
 <hr/>
@@ -98,11 +100,15 @@
     </div>
     <div class="col col-lg-3">
         <h6>Status</h6>
-        <p>Released</p>
+        <p>@Model.Movie.Status</p>
         <h6>Release Information</h6>
-        <p>@Model.Movie.ReleaseDate</p>
+        <p>@Model.Movie.ReleaseDate?.ToString("dd-MM-yyyy")</p>
         <h6>Runtime</h6>
-        <p>@Model.Movie.Runtime</p>
+        <p>@Model.RuntimeTimeFormat</p>
+        <h6>Budget</h6>
+        <p>@Model.Movie.Budget?.ToString("C0", CultureInfo.CreateSpecificCulture("en-US"))</p>
+        <h6>Revenue</h6>
+        <p>@Model.Movie.Revenue?.ToString("C0", CultureInfo.CreateSpecificCulture("en-US"))</p>
         <h6>Studio</h6>
         <p>@Model.Movie.Studio</p>
         <h6>Website</h6>
