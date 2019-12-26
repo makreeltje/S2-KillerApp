@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZ9h3uByiEU+Dj2rf1etl6gAAAAACAAAAAAAQZgAAAAEAACAAAAAcvJa9+mYt9GYaU1F7aTGjTCEYJJNu3xp4xxbVbVnzigAAAAAOgAAAAAIAACAAAAB4dZYJ4cdrw/px15xhAbdHMp5RWNxeXjVAh7HXuAYsXSAAAACxfRNxQ+u6oKCzfz4Qyg6h2Vzs5pOKkj6gGaMtRDPOxUAAAAB8BQiASDzhjHaQ2KJ5KmCs3TVBkSdM1eDcEzTAis7ZY5fsXgwCy6uXBsgBKnyWbsO0vNtTq69JhLG1VgZQCw3w</EncryptedPassword>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DbConnection">
+      <Value>server=meelsnet.nl%3buser id=root%3bpersistsecurityinfo=True%3bdatabase=pmdb%3bpassword=Rsam.0255!%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

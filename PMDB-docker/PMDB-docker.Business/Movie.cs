@@ -102,10 +102,15 @@ namespace PMDB_docker.Models
             {
                 movie.Revenue = tmdbMovie.Revenue;
             }
-            if (movie.Studio == null || movie.Studio != tmdbMovie.ProductionCompanies[0].Name)
+
+            if (tmdbMovie.ProductionCompanies.Count != 0)
             {
-                movie.Studio = tmdbMovie.ProductionCompanies[1].Name;
+                if (movie.Studio == null || movie.Studio != tmdbMovie.ProductionCompanies[0].Name)
+                {
+                    movie.Studio = tmdbMovie.ProductionCompanies[1].Name;
+                }
             }
+            
             if (movie.Website == null || movie.Website != tmdbMovie.Homepage)
             {
                 movie.Website = tmdbMovie.Homepage;

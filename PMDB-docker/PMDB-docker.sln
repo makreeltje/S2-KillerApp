@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Models", "PMDB-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.DataTests", "PMDB-docker.DataTests\PMDB-docker.DataTests.csproj", "{9A2E4D39-656D-492C-9F3B-0FE3808BF0A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMDB-docker.BusinessTests", "PMDB-docker.BusinessTests\PMDB-docker.BusinessTests.csproj", "{F47F54AA-5640-455B-B665-5CDBFA713541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.BusinessTests", "PMDB-docker.BusinessTests\PMDB-docker.BusinessTests.csproj", "{F47F54AA-5640-455B-B665-5CDBFA713541}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{63F45BE2-E993-4307-A02A-1B31B0F40A18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F47F54AA-5640-455B-B665-5CDBFA713541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F47F54AA-5640-455B-B665-5CDBFA713541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F47F54AA-5640-455B-B665-5CDBFA713541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F45BE2-E993-4307-A02A-1B31B0F40A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F45BE2-E993-4307-A02A-1B31B0F40A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F45BE2-E993-4307-A02A-1B31B0F40A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F45BE2-E993-4307-A02A-1B31B0F40A18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
