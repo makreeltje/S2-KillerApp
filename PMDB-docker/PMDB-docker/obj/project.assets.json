@@ -28,19 +28,6 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AspNet.WebApi.Client/5.2.7": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -704,19 +691,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -2373,21 +2347,6 @@
           "lib/netstandard2.0/TMDbLib.dll": {}
         }
       },
-      "PMDB-docker.Business/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.7",
-          "PMDB-docker.Interface": "1.0.0",
-          "TMDbLib": "1.4.0"
-        },
-        "compile": {
-          "bin/placeholder/PMDB-docker.Business.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PMDB-docker.Business.dll": {}
-        }
-      },
       "PMDB-docker.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -2408,13 +2367,28 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "MySql.Data": "8.0.18",
-          "PMDB-docker.Models": "1.0.0"
+          "PMDB-docker.Models": "1.0.0",
+          "TMDbLib": "1.4.0"
         },
         "compile": {
           "bin/placeholder/PMDB-docker.Interface.dll": {}
         },
         "runtime": {
           "bin/placeholder/PMDB-docker.Interface.dll": {}
+        }
+      },
+      "PMDB-docker.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "PMDB-docker.Interface": "1.0.0",
+          "TMDbLib": "1.4.0"
+        },
+        "compile": {
+          "bin/placeholder/PMDB-docker.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PMDB-docker.Logic.dll": {}
         }
       },
       "PMDB-docker.Models/1.0.0": {
@@ -2470,23 +2444,6 @@
         "lib/net45/Google.Protobuf.xml",
         "lib/netstandard1.0/Google.Protobuf.dll",
         "lib/netstandard1.0/Google.Protobuf.xml"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.Client/5.2.7": {
-      "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
-      "type": "package",
-      "path": "microsoft.aspnet.webapi.client/5.2.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/System.Net.Http.Formatting.dll",
-        "lib/net45/System.Net.Http.Formatting.xml",
-        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
-        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
-        "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -3577,21 +3534,6 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
-      ]
-    },
-    "Newtonsoft.Json.Bson/1.0.1": {
-      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
-      "type": "package",
-      "path": "newtonsoft.json.bson/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/Newtonsoft.Json.Bson.dll",
-        "lib/net45/Newtonsoft.Json.Bson.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
-        "newtonsoft.json.bson.1.0.1.nupkg.sha512",
-        "newtonsoft.json.bson.nuspec"
       ]
     },
     "NuGet.Frameworks/4.7.0": {
@@ -7745,11 +7687,6 @@
         "tmdblib.nuspec"
       ]
     },
-    "PMDB-docker.Business/1.0.0": {
-      "type": "project",
-      "path": "../PMDB-docker.Business/PMDB-docker.Business.csproj",
-      "msbuildProject": "../PMDB-docker.Business/PMDB-docker.Business.csproj"
-    },
     "PMDB-docker.Data/1.0.0": {
       "type": "project",
       "path": "../PMDB-docker.Data/PMDB-docker.Data.csproj",
@@ -7759,6 +7696,11 @@
       "type": "project",
       "path": "../PMDB-docker.Interfaces/PMDB-docker.Interface.csproj",
       "msbuildProject": "../PMDB-docker.Interfaces/PMDB-docker.Interface.csproj"
+    },
+    "PMDB-docker.Logic/1.0.0": {
+      "type": "project",
+      "path": "../PMDB-docker.Business/PMDB-docker.Logic.csproj",
+      "msbuildProject": "../PMDB-docker.Business/PMDB-docker.Logic.csproj"
     },
     "PMDB-docker.Models/1.0.0": {
       "type": "project",
@@ -7771,8 +7713,8 @@
       "Microsoft.Extensions.Logging.Debug >= 3.0.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.9.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.0",
-      "PMDB-docker.Business >= 1.0.0",
       "PMDB-docker.Data >= 1.0.0",
+      "PMDB-docker.Logic >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 4.6.0"
     ]
   },
@@ -7802,8 +7744,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj": {
+              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj"
             },
             "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
               "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"

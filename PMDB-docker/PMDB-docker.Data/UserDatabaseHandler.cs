@@ -13,7 +13,7 @@ namespace PMDB_docker.Data
     {
         // TODO: Connection string aanpassen!
         private readonly string connectionString =
-            "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
+            "server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;";
 
         // Grabs all movies
         public IEnumerable<UserDto> GetAllUsers()
@@ -29,7 +29,7 @@ namespace PMDB_docker.Data
 
 
                 conn.Open();
-                var reader = command.ExecuteReader();
+                MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     UserDto dto = new UserDto();
@@ -133,7 +133,6 @@ namespace PMDB_docker.Data
                 command.Parameters.AddWithValue("@id", id);
                 conn.Open();
                 command.ExecuteNonQuery();
-                command.Parameters.Clear();
             }
             catch (MySqlException sex)
             {

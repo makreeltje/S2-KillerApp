@@ -27,8 +27,8 @@
           "Microsoft.Extensions.Logging.Debug": "3.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.0",
-          "PMDB-docker.Business": "1.0.0",
           "PMDB-docker.Data": "1.0.0",
+          "PMDB-docker.Logic": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.6.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -348,21 +348,6 @@
         },
         "compile": {
           "lib/netstandard1.0/Google.Protobuf.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.2.7": {
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.2",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
-            "assemblyVersion": "5.2.7.0",
-            "fileVersion": "5.2.61128.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -928,21 +913,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.1.20722"
-          }
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -1957,19 +1927,6 @@
           "lib/netstandard2.0/TMDbLib.dll": {}
         }
       },
-      "PMDB-docker.Business/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.7",
-          "PMDB-docker.Interface": "1.0.0",
-          "TMDbLib": "1.4.0"
-        },
-        "runtime": {
-          "PMDB-docker.Business.dll": {}
-        },
-        "compile": {
-          "PMDB-docker.Business.dll": {}
-        }
-      },
       "PMDB-docker.Data/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.18",
@@ -1986,13 +1943,26 @@
       "PMDB-docker.Interface/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.18",
-          "PMDB-docker.Models": "1.0.0"
+          "PMDB-docker.Models": "1.0.0",
+          "TMDbLib": "1.4.0"
         },
         "runtime": {
           "PMDB-docker.Interface.dll": {}
         },
         "compile": {
           "PMDB-docker.Interface.dll": {}
+        }
+      },
+      "PMDB-docker.Logic/1.0.0": {
+        "dependencies": {
+          "PMDB-docker.Interface": "1.0.0",
+          "TMDbLib": "1.4.0"
+        },
+        "runtime": {
+          "PMDB-docker.Logic.dll": {}
+        },
+        "compile": {
+          "PMDB-docker.Logic.dll": {}
         }
       },
       "PMDB-docker.Models/1.0.0": {
@@ -3717,13 +3687,6 @@
       "path": "google.protobuf/3.6.1",
       "hashPath": "google.protobuf.3.6.1.nupkg.sha512"
     },
-    "Microsoft.AspNet.WebApi.Client/5.2.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
-      "path": "microsoft.aspnet.webapi.client/5.2.7",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3982,13 +3945,6 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
-    },
-    "Newtonsoft.Json.Bson/1.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
-      "path": "newtonsoft.json.bson/1.0.1",
-      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
     },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
@@ -4697,17 +4653,17 @@
       "path": "tmdblib/1.4.0",
       "hashPath": "tmdblib.1.4.0.nupkg.sha512"
     },
-    "PMDB-docker.Business/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "PMDB-docker.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "PMDB-docker.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PMDB-docker.Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -8,14 +8,14 @@ using PMDB_docker.Models;
 
 namespace PMDB_docker.Business
 {
-    public class User : IUserLogic
+    public class UserLogic : IUserLogic
     {
         private List<UserDto> _userList;
         private readonly IUserData _userData;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk aan Mock, inMemory of database
 
-        public User(IUserData userData)
+        public UserLogic(IUserData userData)
         {
             _userData = userData;
             _userList = new List<UserDto>(_userData.GetAllUsers());

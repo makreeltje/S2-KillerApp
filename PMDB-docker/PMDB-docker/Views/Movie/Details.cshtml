@@ -8,7 +8,7 @@
 
 <div class="row m-4">
     <div class="col-md-3">
-        <img class="card-img-top " src="@Model.Movie.Image" asp-append-version="true" />
+        <img class="card-img-top " src="@Model.Movie.PosterPath" asp-append-version="true" />
     </div>
     <div class="col mb-4">
         <h2>@Model.Movie.Title <span class="small text-muted">(@Model.Movie.ReleaseDate?.ToString("dd-MM-yyyy"))</span></h2>
@@ -109,8 +109,11 @@
         <p>@Model.Movie.Budget?.ToString("C0", CultureInfo.CreateSpecificCulture("en-US"))</p>
         <h6>Revenue</h6>
         <p>@Model.Movie.Revenue?.ToString("C0", CultureInfo.CreateSpecificCulture("en-US"))</p>
-        <h6>Studio</h6>
-        <p>@Model.Movie.Studio</p>
+        <h6>Genres</h6>
+        @foreach (var item in @Model.Movie.Genre)
+        {
+            <button class="btn btn-outline-secondary m-1">@item</button>
+        }
         <h6>Website</h6>
         <p><a href="@Model.Movie.Website">@Model.Movie.Website</a></p>
     </div>

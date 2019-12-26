@@ -11,9 +11,7 @@ C:\git\S2-KillerApp\PMDB-docker\bin\Debug\PMDB-docker.Interface.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\PMDB-docker.Business.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\PMDB-docker.Data.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\TMDbLib.dll
-C:\git\S2-KillerApp\PMDB-docker\bin\Debug\System.Net.Http.Formatting.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\MySql.Data.dll
-C:\git\S2-KillerApp\PMDB-docker\bin\Debug\Newtonsoft.Json.Bson.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\Google.Protobuf.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\BouncyCastle.Crypto.dll
 C:\git\S2-KillerApp\PMDB-docker\bin\Debug\Renci.SshNet.dll

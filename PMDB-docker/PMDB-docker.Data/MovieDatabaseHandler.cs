@@ -11,7 +11,7 @@ namespace PMDB_docker.Data.Movie
     {
         // TODO: Connection string aanpassen!
         private readonly string connectionString =
-            "server=meelsnet.nl;user id=root;persistsecurityinfo=True;database=pmdb;password=Rsam.0255!;";
+            "server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;";
 
         // Grabs all movies
         public List<MovieDto> GetAllMovies()
@@ -39,7 +39,7 @@ namespace PMDB_docker.Data.Movie
                             if (!reader.IsDBNull(4))
                                 dto.Overview = reader.GetString(4);
                             if (!reader.IsDBNull(5))
-                                dto.Image = reader.GetString(5);
+                                dto.PosterPath = reader.GetString(5);
                             if (!reader.IsDBNull(6))
                                 dto.Runtime = reader.GetInt32(6);
                             if (!reader.IsDBNull(7))
@@ -47,15 +47,17 @@ namespace PMDB_docker.Data.Movie
                             if (!reader.IsDBNull(8))
                                 dto.Website = reader.GetString(8);
                             if (!reader.IsDBNull(9))
-                                dto.Studio = reader.GetString(9);
+                                dto.Budget = reader.GetInt64(9);
                             if (!reader.IsDBNull(10))
-                                dto.Budget = reader.GetInt64(10);
+                                dto.Revenue = reader.GetInt64(10);
                             if (!reader.IsDBNull(11))
-                                dto.Revenue = reader.GetInt64(11);
+                                dto.Status = reader.GetString(11);
                             if (!reader.IsDBNull(12))
-                                dto.Status = reader.GetString(12);
+                                dto.PosterBackdrop = reader.GetString(12);
                             if (!reader.IsDBNull(13))
-                                dto.PosterBackdrop = reader.GetString(13);
+                                dto.AverageRating = reader.GetDouble(13);
+                            if (!reader.IsDBNull(14))
+                                dto.LastModified = reader.GetDateTime(14);
                             movies.Add(dto);
                         }
                     }
@@ -93,7 +95,7 @@ namespace PMDB_docker.Data.Movie
 
         public void EditMovie(MovieDto movie)
         {
-            string query = "UPDATE movie SET title = @title, overview = @overview, image = @image, runtime = @runtime, releaseDate = @releaseDate, website = @website, studio = @studio, budget = @budget, revenue = @revenue, status = @status, posterBackdrop = @posterBackdrop, averageRating = @averageRating WHERE id = @id";
+            string query = "UPDATE movie SET title = @title, overview = @overview, image = @image, runtime = @runtime, releaseDate = @releaseDate, website = @website, budget = @budget, revenue = @revenue, status = @status, posterBackdrop = @posterBackdrop, averageRating = @averageRating WHERE id = @id";
             using MySqlConnection conn = new MySqlConnection(connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
@@ -101,11 +103,10 @@ namespace PMDB_docker.Data.Movie
                 command.Parameters.AddWithValue("@id", movie.Id);
                 command.Parameters.AddWithValue("@title", movie.Title);
                 command.Parameters.AddWithValue("@overview", movie.Overview);
-                command.Parameters.AddWithValue("@image", movie.Image);
+                command.Parameters.AddWithValue("@image", movie.PosterPath);
                 command.Parameters.AddWithValue("@runtime", movie.Runtime);
                 command.Parameters.AddWithValue("@releaseDate", movie.ReleaseDate?.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@website", movie.Website);
-                command.Parameters.AddWithValue("@studio", movie.Studio);
                 command.Parameters.AddWithValue("@budget", movie.Budget);
                 command.Parameters.AddWithValue("@revenue", movie.Revenue);
                 command.Parameters.AddWithValue("@status", movie.Status);

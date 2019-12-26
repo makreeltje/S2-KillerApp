@@ -19,18 +19,17 @@ namespace PMDB_docker.Models
         [Required]
         public string Overview { get; set; }
         public string ShortenedPlot { get; set; }
-        public string Image { get; set; }
+        public string PosterPath { get; set; }
         public int? Runtime { get; set; }
         public DateTime? ReleaseDate { get; set; }
         [Required]
         public string Website { get; set; }
-        public string Studio { get; set; }
-        [Required]
-        public GenreDto? Genre { get; set; }
         public long? Revenue { get; set; }
         public long? Budget { get; set; }
         public string Status { get; set; }
-        public string PosterBackdrop { get; set; }
+        public string? PosterBackdrop { get; set; }
         public double? AverageRating { get; set; }
+        public DateTime LastModified { get; set; }
+        public List<string> Genre { get; set; }
     }
 }
