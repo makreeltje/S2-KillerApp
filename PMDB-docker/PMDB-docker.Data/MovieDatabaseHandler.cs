@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 using System;
@@ -9,8 +10,16 @@ namespace PMDB_docker.Data.Movie
     public class MovieDatabaseHandler : IMovieData
     {
         // TODO: Connection string aanpassen!
-        private readonly string connectionString =
-            "server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;";
+        
+
+        private readonly IConfiguration _configuration;
+        private readonly string _connectionString;
+
+        public MovieDatabaseHandler(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            _connectionString = _configuration.GetConnectionString("MovieDatabase");
+        }
 
         // Grabs all movies
         public List<MovieDto> GetAllMovies()
@@ -19,7 +28,7 @@ namespace PMDB_docker.Data.Movie
 
             try
             {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
+                using MySqlConnection conn = new MySqlConnection(_connectionString);
                 {
                     string query = "SELECT * FROM movie ORDER BY releaseDate DESC";
                     using MySqlCommand command = new MySqlCommand(query, conn);
@@ -78,7 +87,7 @@ namespace PMDB_docker.Data.Movie
         public void RemoveMovie(MovieDto movie)
         {
             string query = $"DELETE FROM movie WHERE id = @id";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
@@ -95,7 +104,7 @@ namespace PMDB_docker.Data.Movie
         public void EditMovie(MovieDto movie)
         {
             string query = "UPDATE movie SET title = @title, overview = @overview, image = @image, runtime = @runtime, releaseDate = @releaseDate, website = @website, budget = @budget, revenue = @revenue, status = @status, posterBackdrop = @posterBackdrop, averageRating = @averageRating WHERE id = @id";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
@@ -124,7 +133,7 @@ namespace PMDB_docker.Data.Movie
         {
             string query = "INSERT INTO moviegenre (movieID, genreID)" +
                            "VALUES ((SELECT id FROM movie WHERE id = @movieId), (SELECT id FROM genre WHERE name = @genre))";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
@@ -146,7 +155,7 @@ namespace PMDB_docker.Data.Movie
             string query = "SELECT COUNT(*) FROM moviegenre WHERE movieID = (SELECT id FROM movie WHERE id = @movieId) AND genreID = (SELECT id FROM genre WHERE name = @genre)";
             foreach (var genre in genres)
             {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
+                using MySqlConnection conn = new MySqlConnection(_connectionString);
                 using MySqlCommand command = new MySqlCommand(query, conn);
 
                 try

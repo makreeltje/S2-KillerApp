@@ -45,6 +45,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.18, )"
