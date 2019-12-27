@@ -121,7 +121,7 @@ namespace PMDB_docker.Business
         private string UpdatePosterBackdrop(string posterBackdrop)
         {
             string posterBackdropPrefix = "https://image.tmdb.org/t/p/w1400_and_h450_face";
-            posterBackdrop = $"{posterBackdropPrefix}{posterBackdrop}";
+            posterBackdrop = $"{posterBackdropPrefix}{_tmdbMovie.BackdropPath}";
             return posterBackdrop;
         }
 
@@ -132,14 +132,16 @@ namespace PMDB_docker.Business
         }
 
         // TODO: Connect genres to movie
-        public List<string> UpdateGenre(List<Genre> tmdbGenres)
+        public List<GenreDto> UpdateGenre(List<Genre> tmdbGenres)
         {
-            List<string> genres = new List<string>();
+            List<GenreDto> genres = new List<GenreDto>();
             foreach (var item in tmdbGenres)
             {
                 if (!_genreLogic.CheckGenre(item.Name))
                     _genreLogic.AddGenre(item.Name);
-                genres.Add(item.Name);
+                GenreDto genre = new GenreDto();
+                genre.Name = item.Name;
+                genres.Add(genre);
             }
             return genres;
         }

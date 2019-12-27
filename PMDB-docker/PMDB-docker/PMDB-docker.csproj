@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PMDB-docker.Business\PMDB-docker.Logic.csproj" />
+    <ProjectReference Include="..\PMDB-docker.Business\PMDB-docker.Business.csproj" />
     <ProjectReference Include="..\PMDB-docker.Data\PMDB-docker.Data.csproj" />
   </ItemGroup>
 

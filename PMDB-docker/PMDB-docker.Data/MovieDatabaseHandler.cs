@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
+using System;
+using System.Collections.Generic;
 
 namespace PMDB_docker.Data.Movie
 {
@@ -118,6 +117,55 @@ namespace PMDB_docker.Data.Movie
             catch (MySqlException sex)
             {
                 throw new DataException(sex.Message);
+            }
+        }
+
+        private void UpdateGenres(string genre, int movieId)
+        {
+            string query = "INSERT INTO moviegenre (movieID, genreID)" +
+                           "VALUES ((SELECT id FROM movie WHERE id = @movieId), (SELECT id FROM genre WHERE name = @genre))";
+            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@genre", genre);
+                command.Parameters.AddWithValue("@movieId", movieId);
+                conn.Open();
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
+        }
+
+        public void CheckGenreConnection(List<GenreDto> genres, int movieId)
+        {
+            int result;
+            string query = "SELECT COUNT(*) FROM moviegenre WHERE movieID = (SELECT id FROM movie WHERE id = @movieId) AND genreID = (SELECT id FROM genre WHERE name = @genre)";
+            foreach (var genre in genres)
+            {
+                using MySqlConnection conn = new MySqlConnection(connectionString);
+                using MySqlCommand command = new MySqlCommand(query, conn);
+
+                try
+                {
+                    command.Parameters.AddWithValue("@movieId", movieId);
+                    command.Parameters.AddWithValue("@genre", genre);
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    MySqlDataReader reader = command.ExecuteReader();
+                    reader.Read();
+                    result = reader.GetInt32(0);
+                    if (result < 1)
+                        UpdateGenres(genre.Name, movieId);
+                    command.Parameters.Clear();
+                }
+                catch (MySqlException sex)
+                {
+                    throw new DataException(sex.Message);
+                }
             }
         }
     }

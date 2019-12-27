@@ -112,7 +112,7 @@
         <h6>Genres</h6>
         @foreach (var item in @Model.Movie.Genre)
         {
-            <button class="btn btn-outline-secondary m-1">@item</button>
+            <button class="btn btn-outline-secondary m-1">@item.Name</button>
         }
         <h6>Website</h6>
         <p><a href="@Model.Movie.Website">@Model.Movie.Website</a></p>

@@ -24,7 +24,7 @@ namespace PMDB_docker.Interfaces
         //double? UpdateAverageRating(double? averageRating);
 
         // TODO: Implement following methods
-        List<string> UpdateGenre(List<Genre> genres);
+        List<GenreDto> UpdateGenre(List<Genre> genres);
         List<ProductionCompany> UpdateProductionCompanies(List<ProductionCompany> productionCompanies);
         List<Credit> UpdateActors(List<Credit> credits);
     }

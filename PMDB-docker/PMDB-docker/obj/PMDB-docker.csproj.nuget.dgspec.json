@@ -4,12 +4,12 @@
     "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker\\PMDB-docker.csproj": {}
   },
   "projects": {
-    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj": {
+    "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj",
-        "projectName": "PMDB-docker.Logic",
-        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj",
+        "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+        "projectName": "PMDB-docker.Business",
+        "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
         "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
         "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
         "projectStyle": "PackageReference",
@@ -328,8 +328,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj": {
-                "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj"
+              "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+                "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
               },
               "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
                 "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"

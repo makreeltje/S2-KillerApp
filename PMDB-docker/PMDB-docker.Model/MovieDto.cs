@@ -30,6 +30,6 @@ namespace PMDB_docker.Models
         public string? PosterBackdrop { get; set; }
         public double? AverageRating { get; set; }
         public DateTime LastModified { get; set; }
-        public List<string> Genre { get; set; }
+        public List<GenreDto> Genre { get; set; }
     }
 }

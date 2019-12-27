@@ -25,6 +25,11 @@ namespace PMDB_docker.Business
             _genreList = _genreData.GetAllGenres();
         }
 
+        public List<GenreDto> GetGenreForMovie(int movieId)
+        {
+            return _genreData.GetGenreForMovie(movieId);
+        }
+
         public List<GenreDto> GetAllGenres()
         {
             throw new NotImplementedException();

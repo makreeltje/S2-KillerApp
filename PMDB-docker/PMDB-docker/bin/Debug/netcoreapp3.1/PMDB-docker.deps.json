@@ -27,8 +27,8 @@
           "Microsoft.Extensions.Logging.Debug": "3.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.0",
+          "PMDB-docker.Business": "1.0.0",
           "PMDB-docker.Data": "1.0.0",
-          "PMDB-docker.Logic": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.6.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -1927,6 +1927,18 @@
           "lib/netstandard2.0/TMDbLib.dll": {}
         }
       },
+      "PMDB-docker.Business/1.0.0": {
+        "dependencies": {
+          "PMDB-docker.Interface": "1.0.0",
+          "TMDbLib": "1.4.0"
+        },
+        "runtime": {
+          "PMDB-docker.Business.dll": {}
+        },
+        "compile": {
+          "PMDB-docker.Business.dll": {}
+        }
+      },
       "PMDB-docker.Data/1.0.0": {
         "dependencies": {
           "MySql.Data": "8.0.18",
@@ -1951,18 +1963,6 @@
         },
         "compile": {
           "PMDB-docker.Interface.dll": {}
-        }
-      },
-      "PMDB-docker.Logic/1.0.0": {
-        "dependencies": {
-          "PMDB-docker.Interface": "1.0.0",
-          "TMDbLib": "1.4.0"
-        },
-        "runtime": {
-          "PMDB-docker.Logic.dll": {}
-        },
-        "compile": {
-          "PMDB-docker.Logic.dll": {}
         }
       },
       "PMDB-docker.Models/1.0.0": {
@@ -4653,17 +4653,17 @@
       "path": "tmdblib/1.4.0",
       "hashPath": "tmdblib.1.4.0.nupkg.sha512"
     },
+    "PMDB-docker.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "PMDB-docker.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "PMDB-docker.Interface/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PMDB-docker.Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

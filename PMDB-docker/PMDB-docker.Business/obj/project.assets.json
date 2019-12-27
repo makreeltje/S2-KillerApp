@@ -5839,9 +5839,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj",
-      "projectName": "PMDB-docker.Logic",
-      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj",
+      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
+      "projectName": "PMDB-docker.Business",
+      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj",
       "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
       "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\obj\\",
       "projectStyle": "PackageReference",

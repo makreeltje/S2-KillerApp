@@ -11,5 +11,6 @@ namespace PMDB_docker.Interfaces
         List<GenreDto> GetAllGenres();
         bool CheckGenre(string genre);
         void AddGenre(string genre);
+        List<GenreDto> GetGenreForMovie(int movieId);
     }
 }

@@ -76,5 +76,32 @@ namespace PMDB_docker.Data
             }
 
         }
+
+        public List<GenreDto> GetGenreForMovie(int movieId)
+        {
+            List<GenreDto> genres = new List<GenreDto>(); 
+            string query = "SELECT g.id, g.name FROM genre g INNER JOIN moviegenre mg ON g.id = mg.genreID INNER JOIN movie m ON m.id = mg.movieID WHERE m.id = @movieId";
+            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@movieId", movieId);
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    GenreDto dto = new GenreDto();
+                    dto.Id = reader.GetInt32(0);
+                    dto.Name = reader.GetString(1);
+                    genres.Add(dto);
+                }
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
+
+            return genres;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PMDB_docker.Business;
 using TMDbLib.Client;
+using TMDbLib.Objects.People;
 
 namespace PMDB_docker.Models
 {
@@ -12,16 +13,21 @@ namespace PMDB_docker.Models
         private readonly List<MovieDto> _movieList;
         private readonly IMovieData _movieData;
         private readonly ITmdbLogic _tmdbLogic;
+        private readonly IGenreLogic _genreLogic;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public MovieLogic(IMovieData movieData, ITmdbLogic tmdbLogic)
+        public MovieLogic(IMovieData movieData, ITmdbLogic tmdbLogic, IGenreLogic genreLogic)
         {
             _movieData = movieData;
             _tmdbLogic = tmdbLogic;
+            _genreLogic = genreLogic;
             _movieList = new List<MovieDto>(_movieData.GetAllMovies());
-
+            foreach (var movieDto in _movieList)
+            {
+                movieDto.Genre = _genreLogic.GetGenreForMovie(movieDto.Id);
+            }
         }
         public MovieDto GetMovie(int Id)
         {
@@ -42,7 +48,7 @@ namespace PMDB_docker.Models
 
         private string ShortenOverviewText(string text)
         {
-            int maxLenght = 100;
+            int maxLenght = 97;
             string plotShortened;
             if (text != null)
             {
@@ -74,6 +80,7 @@ namespace PMDB_docker.Models
         public void UpdateMovie(MovieDto movie)
         {
             _movieData.EditMovie(_tmdbLogic.UpdateMovie(movie));
+            UpdateGenres(movie.Genre, movie.Id);
         }
 
         public string FormatRuntime(int? runtime)
@@ -86,6 +93,11 @@ namespace PMDB_docker.Models
 
             return "-";
 
+        }
+
+        public void UpdateGenres(List<GenreDto> genres, int movieId)
+        {
+            _movieData.CheckGenreConnection(genres, movieId);
         }
     }
 }

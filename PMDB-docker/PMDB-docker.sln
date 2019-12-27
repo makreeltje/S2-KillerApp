@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker", "PMDB-docker\PMDB-docker.csproj", "{98C84393-F78C-4705-974F-EFD57A32E726}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Logic", "PMDB-docker.Business\PMDB-docker.Logic.csproj", "{3F3F390D-D31E-4087-96D9-004B6CC42CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Business", "PMDB-docker.Business\PMDB-docker.Business.csproj", "{3F3F390D-D31E-4087-96D9-004B6CC42CC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Data", "PMDB-docker.Data\PMDB-docker.Data.csproj", "{397308D1-0898-43F5-8619-55F35EC4B0B5}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.Models", "PMDB-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.DataTests", "PMDB-docker.DataTests\PMDB-docker.DataTests.csproj", "{9A2E4D39-656D-492C-9F3B-0FE3808BF0A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.LogicTests", "PMDB-docker.BusinessTests\PMDB-docker.LogicTests.csproj", "{F47F54AA-5640-455B-B665-5CDBFA713541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMDB-docker.BusinessTests", "PMDB-docker.BusinessTests\PMDB-docker.BusinessTests.csproj", "{F47F54AA-5640-455B-B665-5CDBFA713541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

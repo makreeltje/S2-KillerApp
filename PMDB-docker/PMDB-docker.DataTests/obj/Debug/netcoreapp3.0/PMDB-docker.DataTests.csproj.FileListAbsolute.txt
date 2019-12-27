@@ -106,3 +106,4 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PM
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PMDB-docker.DataTests.csproj.CopyComplete
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PMDB-docker.DataTests.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PMDB-docker.DataTests.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\bin\Debug\netcoreapp3.0\TMDbLib.dll

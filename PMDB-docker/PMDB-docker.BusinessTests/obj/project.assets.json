@@ -2275,6 +2275,35 @@
           "lib/netstandard2.0/TMDbLib.dll": {}
         }
       },
+      "PMDB-docker.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "PMDB-docker.Interface": "1.0.0",
+          "TMDbLib": "1.4.0"
+        },
+        "compile": {
+          "bin/placeholder/PMDB-docker.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PMDB-docker.Business.dll": {}
+        }
+      },
+      "PMDB-docker.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "MySql.Data": "8.0.18",
+          "PMDB-docker.Interface": "1.0.0",
+          "PMDB-docker.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PMDB-docker.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PMDB-docker.Data.dll": {}
+        }
+      },
       "PMDB-docker.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -2288,20 +2317,6 @@
         },
         "runtime": {
           "bin/placeholder/PMDB-docker.Interface.dll": {}
-        }
-      },
-      "PMDB-docker.Logic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "PMDB-docker.Interface": "1.0.0",
-          "TMDbLib": "1.4.0"
-        },
-        "compile": {
-          "bin/placeholder/PMDB-docker.Logic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PMDB-docker.Logic.dll": {}
         }
       },
       "PMDB-docker.Models/1.0.0": {
@@ -7554,15 +7569,20 @@
         "tmdblib.nuspec"
       ]
     },
+    "PMDB-docker.Business/1.0.0": {
+      "type": "project",
+      "path": "../PMDB-docker.Business/PMDB-docker.Business.csproj",
+      "msbuildProject": "../PMDB-docker.Business/PMDB-docker.Business.csproj"
+    },
+    "PMDB-docker.Data/1.0.0": {
+      "type": "project",
+      "path": "../PMDB-docker.Data/PMDB-docker.Data.csproj",
+      "msbuildProject": "../PMDB-docker.Data/PMDB-docker.Data.csproj"
+    },
     "PMDB-docker.Interface/1.0.0": {
       "type": "project",
       "path": "../PMDB-docker.Interfaces/PMDB-docker.Interface.csproj",
       "msbuildProject": "../PMDB-docker.Interfaces/PMDB-docker.Interface.csproj"
-    },
-    "PMDB-docker.Logic/1.0.0": {
-      "type": "project",
-      "path": "../PMDB-docker.Business/PMDB-docker.Logic.csproj",
-      "msbuildProject": "../PMDB-docker.Business/PMDB-docker.Logic.csproj"
     },
     "PMDB-docker.Models/1.0.0": {
       "type": "project",
@@ -7575,7 +7595,8 @@
       "MSTest.TestAdapter >= 2.0.0",
       "MSTest.TestFramework >= 2.0.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
-      "PMDB-docker.Logic >= 1.0.0",
+      "PMDB-docker.Business >= 1.0.0",
+      "PMDB-docker.Data >= 1.0.0",
       "coverlet.collector >= 1.0.1"
     ]
   },
@@ -7585,9 +7606,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.LogicTests.csproj",
-      "projectName": "PMDB-docker.LogicTests",
-      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.LogicTests.csproj",
+      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
+      "projectName": "PMDB-docker.BusinessTests",
+      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
       "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
       "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\obj\\",
       "projectStyle": "PackageReference",
@@ -7605,8 +7626,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Logic.csproj"
+            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+            },
+            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
             }
           }
         }

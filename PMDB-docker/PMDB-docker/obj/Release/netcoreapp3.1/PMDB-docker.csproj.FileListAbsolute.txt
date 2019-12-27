@@ -12,7 +12,6 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docke
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Views.pdb
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Google.Protobuf.dll
-C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -30,7 +29,6 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Microsoft.
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\MySql.Data.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
-C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\NuGet.Frameworks.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\Renci.SshNet.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\SshNet.Security.Cryptography.dll
@@ -101,11 +99,9 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\runtimes\w
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Business.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Data.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Interface.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Models.dll
-C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Business.pdb
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Data.pdb
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Interface.pdb
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Models.pdb
@@ -141,3 +137,5 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Release\netcoreapp3.1\PMDB-docke
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Release\netcoreapp3.1\PMDB-docker.csproj.CopyComplete
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Release\netcoreapp3.1\PMDB-docker.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Release\netcoreapp3.1\PMDB-docker.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Business.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Release\netcoreapp3.1\PMDB-docker.Business.pdb
