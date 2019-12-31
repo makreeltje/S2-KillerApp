@@ -13,25 +13,19 @@ namespace PMDB_docker.Models
         private readonly List<MovieDto> _movieList;
         private readonly IMovieData _movieData;
         private readonly ITmdbLogic _tmdbLogic;
-        private readonly IGenreLogic _genreLogic;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public MovieLogic(IMovieData movieData, ITmdbLogic tmdbLogic, IGenreLogic genreLogic)
+        public MovieLogic(IMovieData movieData, ITmdbLogic tmdbLogic)
         {
             _movieData = movieData;
             _tmdbLogic = tmdbLogic;
-            _genreLogic = genreLogic;
             _movieList = new List<MovieDto>(_movieData.GetAllMovies());
-            foreach (var movieDto in _movieList)
-            {
-                movieDto.Genre = _genreLogic.GetGenreForMovie(movieDto.Id);
-            }
         }
         public MovieDto GetMovie(int Id)
         {
-            return _movieList.FirstOrDefault(m => m.Id == Id);
+            return _movieList.Find(m => m.Id == Id);
         }
 
         public List<MovieDto> GetAllMovies()
@@ -79,8 +73,7 @@ namespace PMDB_docker.Models
 
         public void UpdateMovie(MovieDto movie)
         {
-            _movieData.EditMovie(_tmdbLogic.UpdateMovie(movie));
-            UpdateGenres(movie.Genre, movie.Id);
+            _movieData.EditMovie(movie);
         }
 
         public string FormatRuntime(int? runtime)
@@ -98,6 +91,11 @@ namespace PMDB_docker.Models
         public void UpdateGenres(List<GenreDto> genres, int movieId)
         {
             _movieData.CheckGenreConnection(genres, movieId);
+        }
+
+        public void UpdatePeopleMovie(List<RoleDto> role, int movieId)
+        {
+            _movieData.CheckPeopleConnection(role, movieId);
         }
     }
 }

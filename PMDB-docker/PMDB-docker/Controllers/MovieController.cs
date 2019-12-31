@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 using PMDB_docker.ViewModels;
-using PMDB_docker.Interfaces;
+using TMDbLib.Objects.Credit;
 
 namespace PMDB_docker.Controllers
 {
     public class MovieController : Controller
     {
         private readonly IMovieLogic _movieRepository;
+        private readonly IGenreLogic _genreRepository;
+        private readonly IPersonLogic _peopleRepository;
+        private readonly ITmdbLogic _tmdbRepository;
         // GET: /Movie/
 
         //public IActionResult Index()
@@ -19,9 +20,12 @@ namespace PMDB_docker.Controllers
         //    List<Movie> movie = Movie.GetAllMovies();
         //    return View(movie);
         //}
-        public MovieController(IMovieLogic movieRepository)
+        public MovieController(IMovieLogic movieRepository, IGenreLogic genreRepository, ITmdbLogic tmdbLogic, IPersonLogic personRepository)
         {
             _movieRepository = movieRepository;
+            _genreRepository = genreRepository;
+            _tmdbRepository = tmdbLogic;
+            _peopleRepository = personRepository;
         }
 
         public ViewResult Index()
@@ -33,36 +37,36 @@ namespace PMDB_docker.Controllers
             };
             return View(movieListViewModel);
         }
-
-        public ViewResult Details(int id)
+        [HttpGet]
+        public ViewResult Details(int? id)
         {
-            MovieDto movie = _movieRepository.GetMovie(id);
-            _movieRepository.UpdateMovie(_movieRepository.GetMovie(id));
+            MovieDto movie = _movieRepository.GetMovie(id.Value);
+            movie.Genre = _genreRepository.GetGenreForMovie(movie.Id);
+            movie.People = _peopleRepository.GetPeopleForMovie(movie.Id);
             MovieDetailsViewModel movieDetailsViewModel = new MovieDetailsViewModel()
             {
                 Movie = movie,
-                PageTitle = "Movie Details",
+                PageTitle = movie.Title,
                 RuntimeTimeFormat = _movieRepository.FormatRuntime(movie.Runtime)
             };
+
             return View(movieDetailsViewModel);
         }
 
-        //[HttpGet]
-        //public ViewResult Create()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Details(int id)
+        {
+            MovieDto movie = _movieRepository.GetMovie(id);
+            movie = _tmdbRepository.UpdateMovie(movie);
+            _genreRepository.CheckIfGenreExists(movie.Genre);
+            _movieRepository.UpdateGenres(movie.Genre, movie.Id);
+            foreach (var item in movie.People)
+            {
+                _peopleRepository.CheckIfPersonExists(_tmdbRepository.UpdatePeople(item.TmdbId));
+            }
+            _movieRepository.UpdatePeopleMovie(movie.People, movie.Id);
 
-        //[HttpPost]
-        //public IActionResult Create(MovieDto movie)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        MovieDto newMovie = _movieRepository.Add(movie);
-        //        //return RedirectToAction("details", new {id = newMovie.Id});
-        //    }
-
-        //    return View();
-        //}
+            return RedirectToAction("Details", movie.Id);
+        }
     }
 }

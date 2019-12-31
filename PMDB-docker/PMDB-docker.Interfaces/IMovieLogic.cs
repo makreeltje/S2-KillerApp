@@ -16,5 +16,6 @@ namespace PMDB_docker.Interfaces
         void UpdateMovie(MovieDto movie);
         string FormatRuntime(int? runtime);
         void UpdateGenres(List<GenreDto> genres, int movieId);
+        void UpdatePeopleMovie(List<RoleDto> role, int movieId);
     }
 }

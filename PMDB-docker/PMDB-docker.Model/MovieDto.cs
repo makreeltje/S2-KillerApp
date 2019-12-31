@@ -12,7 +12,7 @@ namespace PMDB_docker.Models
     {
         public int Id { get; set; }
         public string ImdbId { get; set; }
-        public string TmdbId { get; set; }
+        public int TmdbId { get; set; }
         [Required, MaxLength(50, ErrorMessage = "Title cannot exceed 50 characters")]
         public string Title { get; set; }
         [Display(Name = "Plot of the movie")]
@@ -31,5 +31,6 @@ namespace PMDB_docker.Models
         public double? AverageRating { get; set; }
         public DateTime LastModified { get; set; }
         public List<GenreDto> Genre { get; set; }
+        public List<RoleDto> People { get; set; }
     }
 }

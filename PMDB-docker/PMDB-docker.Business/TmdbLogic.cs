@@ -6,6 +6,7 @@ using TMDbLib.Client;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.People;
 
 namespace PMDB_docker.Business
 {
@@ -13,17 +14,17 @@ namespace PMDB_docker.Business
     {
         private readonly TMDbClient _client;
         private Movie _tmdbMovie;
-        private IGenreLogic _genreLogic;
+        private List<Credits> _tmdbMovieCredits;
 
-        public TmdbLogic(IGenreLogic genreLogic)
+        public TmdbLogic()
         {
-            _genreLogic = genreLogic;
             _client = new TMDbClient("8e8b06b1cb21b2d3f36f8bd44c933672");
-            
+
         }
         public MovieDto UpdateMovie(MovieDto movie)
         {
             _tmdbMovie = GetMovie(movie.TmdbId);
+            _tmdbMovieCredits = GetMovieCredits(movie.TmdbId);
             if (movie.Title != _tmdbMovie.Title)
                 movie.Title = UpdateTitle(movie.Title);
             if (movie.PosterPath != _tmdbMovie.PosterPath)
@@ -55,12 +56,18 @@ namespace PMDB_docker.Business
             if (movie.Status != _tmdbMovie.Status)
                 movie.Status = UpdateStatus(movie.Status);
             movie.Genre = UpdateGenre(_tmdbMovie.Genres);
+            movie.People = UpdatePeopleMovie(_tmdbMovieCredits);
             return movie;
         }
 
-        private Movie GetMovie(string tmdbId)
+        private Movie GetMovie(int tmdbId)
         {
             return _client.GetMovieAsync(tmdbId).Result;
+        }
+        private List<Credits> GetMovieCredits(int tmdbId)
+        {
+            List<Credits> credits = new List<Credits> {_client.GetMovieCreditsAsync(tmdbId).Result};
+            return credits;
         }
 
         private string UpdateTitle(string title)
@@ -131,14 +138,11 @@ namespace PMDB_docker.Business
             return averageRating;
         }
 
-        // TODO: Connect genres to movie
         public List<GenreDto> UpdateGenre(List<Genre> tmdbGenres)
         {
             List<GenreDto> genres = new List<GenreDto>();
             foreach (var item in tmdbGenres)
             {
-                if (!_genreLogic.CheckGenre(item.Name))
-                    _genreLogic.AddGenre(item.Name);
                 GenreDto genre = new GenreDto();
                 genre.Name = item.Name;
                 genres.Add(genre);
@@ -153,9 +157,55 @@ namespace PMDB_docker.Business
         }
         // TODO: Implement database insertion of credits
         // TODO: Add credit to list and return list
-        public List<Credit> UpdateActors(List<Credit> credits)
+        public List<RoleDto> UpdatePeopleMovie(List<Credits> credits)
         {
-            return null;
+            string imagePrefix = "https://image.tmdb.org/t/p/w138_and_h175_face";
+            List<RoleDto> people = new List<RoleDto>();
+            foreach (var credit in credits)
+            {
+                foreach (var cast in credit.Cast)
+                {
+                    RoleDto person = new RoleDto();
+                    person.TmdbId = cast.Id;
+                    person.Name = cast.Name;
+                    person.Character = cast.Character;
+                    person.Order = cast.Order;
+                    person.ProfilePath = $"{imagePrefix}{cast.ProfilePath}";
+                    people.Add(person);
+                }
+                foreach (var crew in credit.Crew)
+                {
+                    RoleDto person = new RoleDto();
+                    person.TmdbId = crew.Id;
+                    person.Name = crew.Name;
+                    person.Job = crew.Job;
+                    person.Department = crew.Department;
+                    person.ProfilePath = $"{imagePrefix}{crew.ProfilePath}";
+                    people.Add(person);
+                }
+            }
+
+            return people;
+        }
+
+        public PeopleDto UpdatePeople(int tmdbId)
+        {
+            PeopleDto person = new PeopleDto();
+            Person tmdbPerson = new Person();
+            string imagePrefix = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
+            tmdbPerson = _client.GetPersonAsync(tmdbId).Result;
+            person.TmdbId = tmdbPerson.Id;
+            person.Name = tmdbPerson.Name;
+            person.Gender = (int)tmdbPerson.Gender;
+            person.Biography = tmdbPerson.Biography;
+            person.PlaceOfBirth = tmdbPerson.PlaceOfBirth;
+            person.DateOfBirth = tmdbPerson.Birthday;
+            person.DateOfDeath = tmdbPerson.Deathday;
+            //person.KnownFor = 
+            person.ProfilePath = $"{imagePrefix}{tmdbPerson.ProfilePath}";
+            person.HomePage = tmdbPerson.Homepage;
+
+            return person;
         }
     }
 }

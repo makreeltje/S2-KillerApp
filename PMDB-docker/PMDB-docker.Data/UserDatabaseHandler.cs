@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
+﻿using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
+using System.Collections.Generic;
 
 namespace PMDB_docker.Data
 {
     public class UserDatabaseHandler : IUserData
 
     {
-        // TODO: Connection string aanpassen!
-        private readonly string connectionString =
-            "server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;";
+        private readonly IConfiguration _configuration;
+        private readonly string _connectionString;
+
+        public UserDatabaseHandler(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            _connectionString = _configuration.GetConnectionString("MovieDatabase");
+        }
 
         // Grabs all movies
         public IEnumerable<UserDto> GetAllUsers()
@@ -21,13 +24,10 @@ namespace PMDB_docker.Data
             List<UserDto> users = new List<UserDto>();
 
             string query = "SELECT * FROM users";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
-
-
-
                 conn.Open();
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -59,7 +59,7 @@ namespace PMDB_docker.Data
                     if (!reader.IsDBNull(14))
                         dto.ProfileImage = reader.GetString(14);
                     if (!reader.IsDBNull(15))
-                        dto.Genders = (UserDto.Gender) reader.GetInt32(15);
+                        dto.Genders = (UserDto.Gender)reader.GetInt32(15);
                     users.Add(dto);
                 }
             }
@@ -75,7 +75,7 @@ namespace PMDB_docker.Data
         {
             string query =
                 "INSERT INTO users SET username = @username, password = @password, email = @email, dor = @dor";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
@@ -96,7 +96,7 @@ namespace PMDB_docker.Data
         {
             string query =
                 "UPDATE users SET username = @username, email = @email, firstName = @firstName, lastName = @lastName, street = @street, nr = @nr, postalCode = @postalCode, country = @country, phone = @phone, mobile = @mobile, dob = @dob, image = @image, gender = @gender WHERE id = @id";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {
@@ -126,7 +126,7 @@ namespace PMDB_docker.Data
         public void RemoveUser(int id)
         {
             string query = "DELETE FROM users WHERE id = @id";
-            using MySqlConnection conn = new MySqlConnection(connectionString);
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
             using MySqlCommand command = new MySqlCommand(query, conn);
             try
             {

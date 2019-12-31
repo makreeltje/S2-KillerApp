@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
@@ -12,8 +13,9 @@ namespace PMDB_docker.Data.Tests
     [TestClass()]
     public class UserDatabaseHandlerTests
     {
+        private static readonly IConfiguration _configuration;
         private List<UserDto> _userList;
-        private readonly IUserData _userData = new UserDatabaseHandler();
+        private readonly IUserData _userData = new UserDatabaseHandler(_configuration);
 
         [TestInitialize]
         public void TestInit()

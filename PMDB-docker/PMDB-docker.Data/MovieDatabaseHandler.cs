@@ -9,9 +9,6 @@ namespace PMDB_docker.Data.Movie
 {
     public class MovieDatabaseHandler : IMovieData
     {
-        // TODO: Connection string aanpassen!
-        
-
         private readonly IConfiguration _configuration;
         private readonly string _connectionString;
 
@@ -42,7 +39,7 @@ namespace PMDB_docker.Data.Movie
                             if (!reader.IsDBNull(1))
                                 dto.ImdbId = reader.GetString(1);
                             if (!reader.IsDBNull(2))
-                                dto.TmdbId = reader.GetString(2);
+                                dto.TmdbId = reader.GetInt32(2);
                             dto.Title = reader.GetString(3);
                             if (!reader.IsDBNull(4))
                                 dto.Overview = reader.GetString(4);
@@ -161,7 +158,7 @@ namespace PMDB_docker.Data.Movie
                 try
                 {
                     command.Parameters.AddWithValue("@movieId", movieId);
-                    command.Parameters.AddWithValue("@genre", genre);
+                    command.Parameters.AddWithValue("@genre", genre.Name);
                     conn.Open();
                     command.ExecuteNonQuery();
                     MySqlDataReader reader = command.ExecuteReader();
@@ -175,6 +172,59 @@ namespace PMDB_docker.Data.Movie
                 {
                     throw new DataException(sex.Message);
                 }
+            }
+        }
+
+        public void CheckPeopleConnection(List<RoleDto> roles, int movieId)
+        {
+            int result;
+            string query = "SELECT COUNT(*) FROM role WHERE movieID = (SELECT id FROM movie WHERE id = @movieId) AND peopleID = (SELECT id FROM people WHERE tmdbID = @tmdbID)";
+            foreach (var role in roles)
+            {
+                using MySqlConnection conn = new MySqlConnection(_connectionString);
+                using MySqlCommand command = new MySqlCommand(query, conn);
+
+                try
+                {
+                    command.Parameters.AddWithValue("@movieId", movieId);
+                    command.Parameters.AddWithValue("@tmdbID", role.TmdbId);
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    MySqlDataReader reader = command.ExecuteReader();
+                    reader.Read();
+                    result = reader.GetInt32(0);
+                    if (result < 1)
+                        UpdatePeople(role, movieId);
+                    command.Parameters.Clear();
+                }
+                catch (MySqlException sex)
+                {
+                    throw new DataException(sex.Message);
+                }
+            }
+        }
+        private void UpdatePeople(RoleDto role, int movieId)
+        {
+            string query = "INSERT INTO role SET movieID = (SELECT id FROM movie WHERE id = @movieId), peopleID = (SELECT id FROM people WHERE tmdbID = @tmdbID), tmdbID = @tmdbID, name = @name, charName = @character, movieOrder = @order, department = @department, job = @job, profilePath = @profilePath";
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@tmdbID", role.TmdbId);
+                command.Parameters.AddWithValue("@movieId", movieId);
+                command.Parameters.AddWithValue("@name", role.Name);
+                command.Parameters.AddWithValue("@character", role.Character);
+                command.Parameters.AddWithValue("@order", role.Order);
+                command.Parameters.AddWithValue("@department", role.Department);
+                command.Parameters.AddWithValue("@job", role.Job);
+                command.Parameters.AddWithValue("@profilePath", role.ProfilePath);
+                conn.Open();
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
             }
         }
     }

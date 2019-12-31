@@ -26,6 +26,7 @@ namespace PMDB_docker.Interfaces
         // TODO: Implement following methods
         List<GenreDto> UpdateGenre(List<Genre> genres);
         List<ProductionCompany> UpdateProductionCompanies(List<ProductionCompany> productionCompanies);
-        List<Credit> UpdateActors(List<Credit> credits);
+        List<RoleDto> UpdatePeopleMovie(List<Credits> credits);
+        PeopleDto UpdatePeople(int tmdbId);
     }
 }

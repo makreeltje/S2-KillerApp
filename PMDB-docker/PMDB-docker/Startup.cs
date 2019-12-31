@@ -38,6 +38,8 @@ namespace PMDB_docker
             services.AddScoped<ITmdbLogic, TmdbLogic>();
             services.AddScoped<IGenreLogic, GenreLogic>();
             services.AddScoped<IGenreData, GenreDatabaseHandler>();
+            services.AddScoped<IPersonLogic, PersonLogic>();
+            services.AddScoped<IPersonData, PersonDatabaseHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -27,7 +27,8 @@ namespace PMDB_docker.Business
 
         public List<GenreDto> GetGenreForMovie(int movieId)
         {
-            return _genreData.GetGenreForMovie(movieId);
+            _genreList = _genreData.GetGenreForMovie(movieId);
+            return _genreList;
         }
 
         public List<GenreDto> GetAllGenres()
@@ -35,11 +36,13 @@ namespace PMDB_docker.Business
             throw new NotImplementedException();
         }
 
-        public bool CheckGenre(string genre)
+        public void CheckIfGenreExists(List<GenreDto> genre)
         {
-            if (_genreData.CheckGenre(genre) == 1)
-                return true;
-            return false;
+            foreach (var item in genre)
+            {
+                if (_genreData.CheckGenre(item.Name) < 1)
+                    AddGenre(item.Name);
+            }
         }
     }
 }

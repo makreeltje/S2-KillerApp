@@ -11,9 +11,9 @@ namespace PMDB_docker.Controllers
     public class UserController : Controller
     {
         private readonly IUserLogic _userRepository;
-        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public UserController(IUserLogic userRepository, IHostingEnvironment hostingEnvironment)
+        public UserController(IUserLogic userRepository, IWebHostEnvironment hostingEnvironment)
         {
             _userRepository = userRepository;
             _hostingEnvironment = hostingEnvironment;

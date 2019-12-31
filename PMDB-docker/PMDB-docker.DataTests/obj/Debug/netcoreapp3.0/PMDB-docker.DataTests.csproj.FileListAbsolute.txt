@@ -107,3 +107,6 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PM
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PMDB-docker.DataTests.dll
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\obj\Debug\netcoreapp3.0\PMDB-docker.DataTests.pdb
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\bin\Debug\netcoreapp3.0\TMDbLib.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Primitives.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.DataTests\bin\Debug\netcoreapp3.0\System.Runtime.CompilerServices.Unsafe.dll

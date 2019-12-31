@@ -1,10 +1,9 @@
-﻿
+﻿@model MovieDetailsViewModel
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.PageTitle;
 }
 @using System.Globalization
-@using Org.BouncyCastle.Crypto.Tls
-@model MovieDetailsViewModel
+
 
 <div class="row m-4">
     <div class="col-md-3">
@@ -17,49 +16,26 @@
         @*<h5>Featured Crew</h5>*@
     </div>
 </div>
-<hr/>
+<hr />
 <div class="row m-4">
     <div class="col">
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h5">Cast</span>
         </nav>
         <div class="card-deck mt-3">
-            <div class="card shadow" style="width: 10rem;">
-                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Name</h6>
-                    <small class="card-text">Role</small>
-                </div>
-            </div>
-            <div class="card shadow" style="width: 10rem;">
-                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Name</h6>
-                    <small class="card-text">Role</small>
-                </div>
-            </div>
-
-            <div class="card shadow" style="width: 10rem;">
-                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Name</h6>
-                    <small class="card-text">Role</small>
-                </div>
-            </div>
-            <div class="card shadow" style="width: 10rem;">
-                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Name</h6>
-                    <small class="card-text">Role</small>
-                </div>
-            </div>
-            <div class="card shadow" style="width: 10rem;">
-                <img src="~/img/noimage-face.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h6 class="card-title">Name</h6>
-                    <small class="card-text">Role</small>
-                </div>
-            </div>
+            @foreach (var item in @Model.Movie.People)
+            {
+                if (item.Order < 5)
+                {
+                    <div class="card m-1">
+                        <img src="@item.ProfilePath" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">@item.Name</h6>
+                            <small class="card-text">@item.Character</small>
+                        </div>
+                    </div>
+                }
+            }
         </div>
         <hr />
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -96,7 +72,14 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue turpis, auctor a arcu vitae, facilisis tristique erat. Ut maximus ex sed tincidunt viverra. Donec tristique, arcu eu rutrum iaculis, nulla leo accumsan lacus, et pellentesque urna ligula vitae eros. Nullam vitae molestie urna. Duis id tristique ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec efficitur, velit et sagittis rhoncus, ligula ante semper sem, ut malesuada libero diam id nisi. Fusce velit ligula, porttitor et bibendum nec, feugiat vitae augue. Proin eget eros eget mauris finibus tempor a sodales sem. Curabitur cursus mi a dolor elementum facilisis. Quisque id mattis arcu. In molestie, mi sed vestibulum aliquam, mi lacus placerat diam, ut pellentesque ex arcu nec dolor. Sed sed lectus neque. Cras gravida nulla maximus, viverra lectus eu, venenatis ipsum. Proin sollicitudin nunc ac odio blandit consequat.
         </p>
         <hr />
-        <a asp-controller="Movie" asp-action="Index" class="btn btn-primary">Back</a>
+        <form enctype="multipart/form-data" method="post" asp-controller="Movie" asp-action="Details">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary" asp-route-id="@Model.Movie.Id">Update</button>
+                    <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary">Back</a>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="col col-lg-3">
         <h6>Status</h6>
