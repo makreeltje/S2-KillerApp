@@ -2349,7 +2349,7 @@
       },
       "PMDB-docker.Business/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "PMDB-docker.Interface": "1.0.0",
           "TMDbLib": "1.4.0"
@@ -2363,7 +2363,7 @@
       },
       "PMDB-docker.Data/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.0",
           "MySql.Data": "8.0.18",
@@ -2379,7 +2379,7 @@
       },
       "PMDB-docker.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "MySql.Data": "8.0.18",
           "PMDB-docker.Models": "1.0.0",
@@ -2394,7 +2394,7 @@
       },
       "PMDB-docker.Models/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
           "bin/placeholder/PMDB-docker.Models.dll": {}
         },

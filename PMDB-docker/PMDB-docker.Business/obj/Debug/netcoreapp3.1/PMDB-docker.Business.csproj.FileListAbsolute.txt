@@ -1,0 +1,13 @@
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Business.deps.json
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Business.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Business.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Interface.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Models.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Interface.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\bin\Debug\netcoreapp3.1\PMDB-docker.Models.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.csprojAssemblyReference.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.AssemblyInfoInputs.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.AssemblyInfo.cs
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.csproj.CopyComplete
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker.Business\obj\Debug\netcoreapp3.1\PMDB-docker.Business.pdb
