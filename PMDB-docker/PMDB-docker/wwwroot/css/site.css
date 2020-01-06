@@ -72,6 +72,9 @@ body {
 
 .card {
     transition: transform .2s;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
 }
     .card:hover {
         -webkit-transition: all 200ms ease-in;

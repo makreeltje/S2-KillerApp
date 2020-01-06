@@ -105,7 +105,6 @@ C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\PMDB-docker.
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.csprojAssemblyReference.cache
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\staticwebassets\PMDB-docker.StaticWebAssets.Manifest.cache
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\staticwebassets\PMDB-docker.StaticWebAssets.xml
-C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.MvcApplicationPartsAssemblyInfo.cache
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.RazorAssemblyInfo.cache
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.RazorAssemblyInfo.cs
 C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.AssemblyInfoInputs.cache
@@ -280,3 +279,14 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-d
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.csproj.CopyComplete
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.pdb
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.MvcApplicationPartsAssemblyInfo.cs
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.MvcApplicationPartsAssemblyInfo.cache
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll

@@ -87,15 +87,15 @@ namespace PMDB_docker.Data.Movie
                 conn.Open();
                 MySqlDataReader reader = command.ExecuteReader();
                 reader.Read();
-                MovieDto dto = new MovieDto()
-                {
-                    Id = reader.GetInt32(0),
-                    TmdbId = reader.GetInt32(2),
-                    Title = reader.GetString(3),
-                    Overview = reader.GetString(4),
-                    ReleaseDate = reader.GetDateTime(7)
-                };
-                movie = dto;
+
+                movie.Id = reader.GetInt32(0); 
+                if (!reader.IsDBNull(2))
+                    movie.TmdbId = reader.GetInt32(2);
+                movie.Title = reader.GetString(3);
+                if (!reader.IsDBNull(5))
+                    movie.PosterPath = reader.GetString(5);
+                if (!reader.IsDBNull(7))
+                    movie.ReleaseDate = reader.GetDateTime(7);
 
             }
             catch (MySqlException sex)

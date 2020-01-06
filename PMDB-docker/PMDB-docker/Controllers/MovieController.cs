@@ -4,6 +4,7 @@ using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 using PMDB_docker.ViewModels;
 using TMDbLib.Objects.Credit;
+using X.PagedList;
 
 namespace PMDB_docker.Controllers
 {
@@ -28,11 +29,11 @@ namespace PMDB_docker.Controllers
             _peopleRepository = personRepository;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(int? page, int searchString)
         {
             MovieListViewModel movieListViewModel = new MovieListViewModel()
             {
-                Movies = _movieRepository.GetAllMoviesForListPage(),
+                Movies = _movieRepository.GetAllMoviesForListPage().ToPagedList(page ?? 1, 20),
                 PageTitle = "All Movies"
             };
             return View(movieListViewModel);

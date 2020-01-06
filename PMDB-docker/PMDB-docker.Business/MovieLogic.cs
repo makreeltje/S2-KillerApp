@@ -31,7 +31,7 @@ namespace PMDB_docker.Models
         public List<MovieDto> GetSixRandomMovies()
         {
             _movieList.Clear();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 8; i++)
             {
                 MovieDto movie = new MovieDto();
                 movie = _movieData.GetRandomMovie();
