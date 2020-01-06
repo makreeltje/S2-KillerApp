@@ -8,6 +8,7 @@ namespace PMDB_docker.Interfaces
     public interface IMovieData
     {
         List<MovieDto> GetAllMovies();
+        MovieDto GetRandomMovie();
         void AddMovie(MovieDto movie);
         void RemoveMovie(MovieDto movie);
         void EditMovie(MovieDto movie);

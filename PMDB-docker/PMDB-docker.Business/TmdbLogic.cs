@@ -39,14 +39,6 @@ namespace PMDB_docker.Business
                 movie.Budget = UpdateBudget(movie.Budget);
             if (movie.Revenue != _tmdbMovie.Revenue)
                 movie.Revenue = UpdateRevenue(movie.Revenue);
-
-            //if (_tmdbMovie.ProductionCompanies.Count != 0)
-            //{
-            //    if (movie.Studio != _tmdbMovie.ProductionCompanies[0].Name)
-            //    {
-            //        movie.Studio = _tmdbMovie.ProductionCompanies[1].Name;
-            //    }
-            //}
             if (movie.Website != _tmdbMovie.Homepage)
                 movie.Website = UpdateWebSite(movie.Website);
             if (movie.ReleaseDate != _tmdbMovie.ReleaseDate)

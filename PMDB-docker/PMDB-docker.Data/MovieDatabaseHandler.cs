@@ -76,6 +76,35 @@ namespace PMDB_docker.Data.Movie
             return movies;
         }
 
+        public MovieDto GetRandomMovie()
+        {
+            MovieDto movie = new MovieDto();
+            string query = $"SELECT * FROM movie ORDER BY RAND() LIMIT 1";
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                MovieDto dto = new MovieDto()
+                {
+                    Id = reader.GetInt32(0),
+                    TmdbId = reader.GetInt32(2),
+                    Title = reader.GetString(3),
+                    Overview = reader.GetString(4),
+                    ReleaseDate = reader.GetDateTime(7)
+                };
+                movie = dto;
+
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
+            return movie;
+        }
+
         public void AddMovie(MovieDto movie)
         {
             throw new NotImplementedException();

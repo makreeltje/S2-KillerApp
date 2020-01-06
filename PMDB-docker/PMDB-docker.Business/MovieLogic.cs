@@ -28,6 +28,19 @@ namespace PMDB_docker.Models
             return _movieList.Find(m => m.Id == Id);
         }
 
+        public List<MovieDto> GetSixRandomMovies()
+        {
+            _movieList.Clear();
+            for (int i = 0; i < 6; i++)
+            {
+                MovieDto movie = new MovieDto();
+                movie = _movieData.GetRandomMovie();
+                _movieList.Add(movie);
+            }
+
+            return _movieList;
+        }
+
         public List<MovieDto> GetAllMovies()
         {
             return _movieList;

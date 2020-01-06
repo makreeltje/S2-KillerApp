@@ -60,6 +60,7 @@ namespace PMDB_docker.Controllers
             movie = _tmdbRepository.UpdateMovie(movie);
             _genreRepository.CheckIfGenreExists(movie.Genre);
             _movieRepository.UpdateGenres(movie.Genre, movie.Id);
+            _movieRepository.UpdateMovie(movie);
             foreach (var item in movie.People)
             {
                 _peopleRepository.CheckIfPersonExists(_tmdbRepository.UpdatePeople(item.TmdbId));

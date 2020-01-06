@@ -1,7 +1,16 @@
-﻿@{
+﻿@model MovieRandomViewModel
+@{
     ViewData["Title"] = "Home";
 }
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+<div class="card-deck justify-content-center">
+    @foreach (var movie in Model.Movies)
+    {
+        <div class="card" style="width: 15rem;">
+            <img src="@movie.PosterPath" asp-append-version="true"/>
+            <div class="card-body">
+                <p class="card-text font-weight-bold">@movie.Title</p>
+                <p class="card-text text-muted">@movie.ReleaseDate</p>
+            </div>
+        </div>
+    }
+</div>
