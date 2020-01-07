@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 using PMDB_docker.ViewModels;
 using TMDbLib.Objects.Credit;
+using TMDbLib.Objects.Movies;
 using X.PagedList;
 
 namespace PMDB_docker.Controllers
@@ -33,18 +36,17 @@ namespace PMDB_docker.Controllers
         {
             MovieListViewModel movieListViewModel = new MovieListViewModel()
             {
-                Movies = _movieRepository.GetAllMoviesForListPage().ToPagedList(page ?? 1, 20),
+                MoviesPaged = _movieRepository.GetAllMoviesForListPage().ToPagedList(page ?? 1, 20),
                 PageTitle = "All Movies"
             };
             return View(movieListViewModel);
         }
 
-        [HttpPost]
-        public ViewResult Index(int? page, string searchQuery)
+        public ViewResult Search(string searchQuery)
         {
             MovieListViewModel movieListViewModel = new MovieListViewModel()
             {
-                Movies = _movieRepository.SearchMovie(searchQuery).ToPagedList(page ?? 1, 20),
+                Movies = _movieRepository.SearchMovie(searchQuery),
                 PageTitle = $"Results for {searchQuery}"
             };
             return View(movieListViewModel);
@@ -59,7 +61,11 @@ namespace PMDB_docker.Controllers
             {
                 Movie = movie,
                 PageTitle = movie.Title,
-                RuntimeTimeFormat = _movieRepository.FormatRuntime(movie.Runtime)
+                RuntimeTimeFormat = _movieRepository.FormatRuntime(movie.Runtime),
+                Reviews = _tmdbRepository.GetReviews(movie.TmdbId),
+                Videos = _tmdbRepository.GetVideos(movie.TmdbId),
+                Backdrops = _tmdbRepository.GetBackdrops(movie.TmdbId),
+                Posters = _tmdbRepository.GetPosters(movie.TmdbId)
             };
 
             return View(movieDetailsViewModel);

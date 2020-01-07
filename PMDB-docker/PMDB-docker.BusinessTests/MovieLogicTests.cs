@@ -12,26 +12,9 @@ namespace PMDB_docker.Models.Tests
     [TestClass()]
     public class MovieLogicTests
     {
-        private MovieLogic _movieLogic;
-        private IMovieData _movieData;
-        private ITmdbLogic _tmdbLogic;
-        private IGenreLogic _genreLogic;
-        private IGenreData _genreData;
-        private IConfiguration _configuration;
-        private string _connectionString;
-
-
-        [TestInitialize]
-        //public void InitTest()
-        //{
-        //    _connectionString = _configuration.GetConnectionString("MovieDatabase");
-        //    _genreData = new GenreDatabaseHandler(_configuration);
-        //    _genreLogic = new GenreLogic(_genreData);
-        //    _tmdbLogic = new TmdbLogic(_genreLogic);
-        //    _movieData = new MovieDatabaseHandler(_configuration);
-
-        //    _movieLogic = new MovieLogic(_movieData, _tmdbLogic, _genreLogic);
-        //}
+        private static readonly IMovieData _movieData = new MovieDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
+        private MovieLogic _movieLogic = new MovieLogic(_movieData);
+        
 
         [TestMethod()]
         public void GetSpecificMovie_GetMovie_SeeIfValueIsCorrect()

@@ -11,5 +11,6 @@ namespace PMDB_docker.Interfaces
         int CheckPerson(PeopleDto person);
         void AddPerson(PeopleDto person);
         List<RoleDto> GetPeopleForMovie(int movieId);
+        void RemovePerson(PeopleDto person);
     }
 }

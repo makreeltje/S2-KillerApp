@@ -91,3 +91,7 @@ body {
     color: black;
     text-decoration: none;
 }
+
+.card-block {
+    min-height: 220px;
+}

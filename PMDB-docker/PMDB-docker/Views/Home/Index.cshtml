@@ -2,12 +2,15 @@
 @{
     ViewData["Title"] = "Home";
 }
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search movie" aria-label="Search movie" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="button">Button</button>
+
+<form asp-action="Search" asp-controller="Movie" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="SearchQuery" class="form-control" placeholder="Search for movie..."/>
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </div>
     </div>
-</div>
+</form>
 
 <div class="card-deck justify-content-center mx-auto" style="width: 75%">
     @foreach (var movie in Model.Movies)

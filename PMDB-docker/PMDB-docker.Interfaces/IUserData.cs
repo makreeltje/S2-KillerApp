@@ -8,7 +8,7 @@ namespace PMDB_docker.Interfaces
 {
     public interface IUserData
     {
-        public IEnumerable<UserDto> GetAllUsers();
+        public List<UserDto> GetAllUsers();
         public void AddUser(UserDto user);
         public void EditUser(UserDto user);
 

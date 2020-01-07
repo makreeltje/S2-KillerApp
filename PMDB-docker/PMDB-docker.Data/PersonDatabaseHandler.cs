@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
@@ -19,6 +20,11 @@ namespace PMDB_docker.Data
         {
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("MovieDatabase");
+        }
+
+        public PersonDatabaseHandler(string connectionString)
+        {
+            _connectionString = connectionString;
         }
         public List<PeopleDto> GetAllPeople()
         {
@@ -151,6 +157,23 @@ namespace PMDB_docker.Data
             }
 
             return person;
+        }
+
+        public void RemovePerson(PeopleDto person)
+        {
+            string query = "DELETE FROM people WHERE tmdbID = @tmdbId";
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@tmdbId", person.TmdbId);
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
         }
     }
 }

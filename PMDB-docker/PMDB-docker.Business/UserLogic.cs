@@ -21,11 +21,6 @@ namespace PMDB_docker.Business
             _userList = new List<UserDto>(_userData.GetAllUsers());
         }
 
-        //public User()
-        //{
-
-        //}
-
         public UserDto GetUser(int id)
         {
             return _userList.FirstOrDefault(m => m.Id == id);

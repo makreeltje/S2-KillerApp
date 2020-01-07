@@ -12,6 +12,7 @@ namespace PMDB_docker.ViewModels
     {
         public string SearchQuery { get; set; }
         public string PageTitle { get; set; }
-        public IPagedList<MovieDto> Movies { get; set; }
+        public IPagedList<MovieDto> MoviesPaged { get; set; }
+        public List<MovieDto> Movies { get; set; }
     }
 }

@@ -4,10 +4,18 @@
 }
 @using System.Globalization
 
+<form asp-action="Search" asp-controller="Movie" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="SearchQuery" class="form-control" placeholder="Search for movie..."/>
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </div>
+    </div>
+</form>
 
 <div class="row m-4">
     <div class="col-md-3">
-        <img class="card-img-top " src="@Model.Movie.PosterPath" asp-append-version="true" />
+        <img class="card-img-top border-0 rounded-0 shadow-lg" src="@Model.Movie.PosterPath" asp-append-version="true" />
     </div>
     <div class="col mb-4">
         <h2>@Model.Movie.Title <span class="small text-muted">(@Model.Movie.ReleaseDate?.ToString("dd-MM-yyyy"))</span></h2>
@@ -18,7 +26,7 @@
 </div>
 <hr />
 <div class="row m-4">
-    <div class="col">
+    <div class="col-9">
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h5">Cast</span>
         </nav>
@@ -27,7 +35,7 @@
             {
                 if (item.Order < 5)
                 {
-                    <div class="card m-1">
+                    <div class="card m-1 border-0 rounded-0 shadow-lg">
                         <img src="@item.ProfilePath" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">@item.Name</h6>
@@ -37,48 +45,91 @@
                 }
             }
         </div>
+
         <hr />
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <span class="navbar-brand mb-0 h5">Social</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Reviews</a>
-                    <a class="nav-item nav-link" href="#">Discussions</a>
-                </div>
+
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="true">Reviews</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-discussions" role="tab" aria-controls="nav-discussions" aria-selected="false">Discussions</a>
             </div>
         </nav>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue turpis, auctor a arcu vitae, facilisis tristique erat. Ut maximus ex sed tincidunt viverra. Donec tristique, arcu eu rutrum iaculis, nulla leo accumsan lacus, et pellentesque urna ligula vitae eros. Nullam vitae molestie urna. Duis id tristique ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec efficitur, velit et sagittis rhoncus, ligula ante semper sem, ut malesuada libero diam id nisi. Fusce velit ligula, porttitor et bibendum nec, feugiat vitae augue. Proin eget eros eget mauris finibus tempor a sodales sem. Curabitur cursus mi a dolor elementum facilisis. Quisque id mattis arcu. In molestie, mi sed vestibulum aliquam, mi lacus placerat diam, ut pellentesque ex arcu nec dolor. Sed sed lectus neque. Cras gravida nulla maximus, viverra lectus eu, venenatis ipsum. Proin sollicitudin nunc ac odio blandit consequat.
-        </p>
-        <hr />
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <span class="navbar-brand mb-0 h5">Media</span>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Most Popular</a>
-                    <a class="nav-item nav-link" href="#">Videos</a>
-                    <a class="nav-item nav-link" href="#">Backdrops</a>
-                    <a class="nav-item nav-link" href="#">Posters</a>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
+
+                @foreach (var review in @Model.Reviews)
+                {
+                <div class="card m-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@review.Author</h5>
+                        <p class="card-text">@review.Content</p>
+                    </div>
                 </div>
+                }
+            </div>
+            <div class="tab-pane fade" id="nav-discussions" role="tabpanel" aria-labelledby="nav-discussions-tab">No discussions</div>
+        </div>
+
+        <hr/>
+
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-mostpopular-tab" data-toggle="tab" href="#nav-mostpopular" role="tab" aria-controls="nav-mostpopular" aria-selected="true">Most Popular</a>
+                <a class="nav-item nav-link" id="nav-videos-tab" data-toggle="tab" href="#nav-videos" role="tab" aria-controls="nav-videos" aria-selected="false">Videos</a>
+                <a class="nav-item nav-link" id="nav-backdrops-tab" data-toggle="tab" href="#nav-backdrops" role="tab" aria-controls="nav-backdrops" aria-selected="false">Backdrops</a>
+                <a class="nav-item nav-link" id="nav-posters-tab" data-toggle="tab" href="#nav-posters" role="tab" aria-controls="nav-posters" aria-selected="false">Posters</a>
             </div>
         </nav>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue turpis, auctor a arcu vitae, facilisis tristique erat. Ut maximus ex sed tincidunt viverra. Donec tristique, arcu eu rutrum iaculis, nulla leo accumsan lacus, et pellentesque urna ligula vitae eros. Nullam vitae molestie urna. Duis id tristique ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec efficitur, velit et sagittis rhoncus, ligula ante semper sem, ut malesuada libero diam id nisi. Fusce velit ligula, porttitor et bibendum nec, feugiat vitae augue. Proin eget eros eget mauris finibus tempor a sodales sem. Curabitur cursus mi a dolor elementum facilisis. Quisque id mattis arcu. In molestie, mi sed vestibulum aliquam, mi lacus placerat diam, ut pellentesque ex arcu nec dolor. Sed sed lectus neque. Cras gravida nulla maximus, viverra lectus eu, venenatis ipsum. Proin sollicitudin nunc ac odio blandit consequat.
-        </p>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-mostpopular" role="tabpanel" aria-labelledby="nav-home-tab"></div>
+            <div class="tab-pane fade col-9" id="nav-videos" role="tabpanel" aria-labelledby="nav-videos-tab">
+                <div class="container-fluid">
+                    <div class="row flex-row flex-nowrap">
+                        @foreach (var video in @Model.Videos)
+                        {
+                            <div class="col-3">
+                                <iframe class="card card-block" src="@video.Key"></iframe>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-backdrops" role="tabpanel" aria-labelledby="nav-backdrops-tab">
+                <div class="container-fluid">
+                    <div class="row flex-row flex-nowrap">
+                        @foreach (var backdrop in @Model.Backdrops)
+                        {
+                            <div class="col-3">
+                                <img src="@backdrop.Path"/>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-posters" role="tabpanel" aria-labelledby="nav-posters-tab">
+                <div class="container-fluid">
+                    <div class="row flex-row flex-nowrap">
+                        @foreach (var poster in @Model.Posters)
+                        {
+                            <div class="col-3">
+                                <img src="@poster.Path" />
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <hr />
+
         <form enctype="multipart/form-data" method="post" asp-controller="Movie" asp-action="Details">
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" asp-route-id="@Model.Movie.Id" data-toggle="modal" data-target="#exampleModalCenter">Update</button>
+                    <button type="submit" class="btn btn-primary" asp-route-id="@Model.Movie.Id" data-toggle="modal" data-target="#loading" id="update">Update</button>
                     <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary">Back</a>
                 </div>
             </div>
+
         </form>
     </div>
     <div class="col col-lg-3">
@@ -102,7 +153,7 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="d-flex justify-content-center m-5">
@@ -113,6 +164,3 @@
         </div>
     </div>
 </div>
-
-
-

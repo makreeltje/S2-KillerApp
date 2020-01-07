@@ -18,8 +18,13 @@ namespace PMDB_docker.Data
             _connectionString = _configuration.GetConnectionString("MovieDatabase");
         }
 
+        public UserDatabaseHandler(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         // Grabs all movies
-        public IEnumerable<UserDto> GetAllUsers()
+        public List<UserDto> GetAllUsers()
         {
             List<UserDto> users = new List<UserDto>();
 

@@ -2,11 +2,15 @@
 using PMDB_docker.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Mime;
+using System.Threading.Tasks;
 using TMDbLib.Client;
 using TMDbLib.Objects.Credit;
 using TMDbLib.Objects.General;
+using TMDbLib.Objects.Lists;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.Reviews;
 
 namespace PMDB_docker.Business
 {
@@ -198,6 +202,84 @@ namespace PMDB_docker.Business
             person.HomePage = tmdbPerson.Homepage;
 
             return person;
+        }
+
+        public List<ReviewDto> GetReviews(int tmdbId)
+        {
+            SearchContainer<ReviewBase> tmdbReviews = _client.GetMovieReviewsAsync(tmdbId).Result;
+            List<ReviewDto> reviews = new List<ReviewDto>();
+
+            foreach (var review in tmdbReviews.Results)
+            {
+                ReviewDto newReview = new ReviewDto()
+                {
+                    Author = review.Author,
+                    Content = review.Content
+                };
+                reviews.Add(newReview);
+            }
+
+            return reviews;
+        }
+
+        public List<VideosDto> GetVideos(int tmdbId)
+        {
+            ResultContainer<Video> tmdbVideos = _client.GetMovieVideosAsync(tmdbId).Result;
+            List<VideosDto> videos = new List<VideosDto>();
+
+            string urlPrefix = "https://www.youtube.com/embed/";
+
+            foreach (var video in tmdbVideos.Results)
+            {
+                if (video.Site == "YouTube")
+                {
+                    VideosDto newVideo = new VideosDto()
+                    {
+                        Key = $"{urlPrefix}{video.Key}"
+                    };
+                    videos.Add(newVideo);
+                }
+            }
+
+            return videos;
+        }
+
+        public List<ImageDto> GetBackdrops(int tmdbId)
+        {
+            Task<ImagesWithId> tmdbImages = _client.GetMovieImagesAsync(tmdbId);
+            List<ImageDto> images = new List<ImageDto>();
+
+            string urlPrefix = "https://image.tmdb.org/t/p/w533_and_h300_bestv2";
+
+            foreach (var backdrop in tmdbImages.Result.Backdrops)
+            {
+                ImageDto newImage = new ImageDto()
+                {
+                    Path = $"{urlPrefix}{backdrop.FilePath}"
+                };
+                images.Add(newImage);
+            }
+
+            return images;
+        }
+
+        public List<ImageDto> GetPosters(int tmdbId)
+        {
+            Task<ImagesWithId> tmdbImages = _client.GetMovieImagesAsync(tmdbId);
+            List<ImageDto> images = new List<ImageDto>();
+
+            string urlPrefix = "https://image.tmdb.org/t/p/w533_and_h300_bestv2";
+
+            foreach (var backdrop in tmdbImages.Result.Posters)
+            {
+                ImageDto newImage = new ImageDto()
+                {
+                    Path = $"{urlPrefix}{backdrop.FilePath}"
+                };
+                images.Add(newImage);
+            }
+
+            return images;
         }
     }
 }

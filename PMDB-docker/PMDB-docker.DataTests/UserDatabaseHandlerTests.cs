@@ -13,25 +13,30 @@ namespace PMDB_docker.Data.Tests
     [TestClass()]
     public class UserDatabaseHandlerTests
     {
-        private static readonly IConfiguration _configuration;
+        private readonly IUserData _userData = new UserDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
         private List<UserDto> _userList;
-        private readonly IUserData _userData = new UserDatabaseHandler(_configuration);
 
         [TestInitialize]
         public void TestInit()
         {
-            _userList = new List<UserDto>(_userData.GetAllUsers());
+            _userList = new List<UserDto>();
         }
 
         [TestMethod()]
         public void GetUsers_GetAllUsers_SeeIfListIsFilled()
         {
+            // Arrange
+            _userList = new List<UserDto>();
+
+            // Act
+            _userList = _userData.GetAllUsers();
+
             // Assert
-            Assert.IsTrue(_userList.Count >= 0);
+            Assert.IsTrue(_userList.Count > 0);
         }
 
         [TestMethod()]
-        public void AddUser_AddUser_SeeIfUserIsCreated()
+        public void AddUserToDatabase_AddUser_SeeIfUserIsCreated()
         {
             // Arrange
             UserDto user = new UserDto();
@@ -41,7 +46,7 @@ namespace PMDB_docker.Data.Tests
 
             // Act
             _userData.AddUser(user);
-            _userList = new List<UserDto>(_userData.GetAllUsers());
+            _userList = _userData.GetAllUsers();
 
             // Assert
             Assert.IsTrue(_userList.Last().Username == "Test" && _userList.Last().Email == "test@test.nl");
@@ -61,7 +66,7 @@ namespace PMDB_docker.Data.Tests
 
             // Act
             _userData.AddUser(user);
-            _userList = new List<UserDto>(_userData.GetAllUsers());
+            _userList = _userData.GetAllUsers();
 
             // Arrange
             user.Username = "Seemand";
@@ -87,10 +92,10 @@ namespace PMDB_docker.Data.Tests
 
             // Act
             _userData.AddUser(user);
-            _userList = new List<UserDto>(_userData.GetAllUsers());
+            _userList = _userData.GetAllUsers();
             user.Id = _userList.Last().Id;
             _userData.RemoveUser(_userList.Last().Id);
-            _userList = new List<UserDto>(_userData.GetAllUsers());
+            _userList = _userData.GetAllUsers();
 
             // Assert
             Assert.IsFalse(_userList.Last().Id == user.Id);

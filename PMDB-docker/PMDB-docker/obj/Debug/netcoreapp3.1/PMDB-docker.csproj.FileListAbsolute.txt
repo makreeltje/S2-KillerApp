@@ -300,3 +300,4 @@ D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\X.Page
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
 D:\GitKraken\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\PMDB-docker.MvcApplicationPartsAssemblyInfo.cs
+C:\git\S2-KillerApp\PMDB-docker\PMDB-docker\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Search.cshtml.g.cs

@@ -28,5 +28,9 @@ namespace PMDB_docker.Interfaces
         List<ProductionCompany> UpdateProductionCompanies(List<ProductionCompany> productionCompanies);
         List<RoleDto> UpdatePeopleMovie(List<Credits> credits);
         PeopleDto UpdatePeople(int tmdbId);
+        List<ReviewDto> GetReviews(int tmdbId);
+        List<VideosDto> GetVideos(int tmdbId);
+        List<ImageDto> GetBackdrops(int tmdbId);
+        List<ImageDto> GetPosters(int tmdbId);
     }
 }

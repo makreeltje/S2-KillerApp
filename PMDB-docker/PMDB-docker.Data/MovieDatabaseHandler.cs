@@ -18,6 +18,11 @@ namespace PMDB_docker.Data.Movie
             _connectionString = _configuration.GetConnectionString("MovieDatabase");
         }
 
+        public MovieDatabaseHandler(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         // Grabs all movies
         public List<MovieDto> GetAllMovies()
         {
@@ -107,7 +112,29 @@ namespace PMDB_docker.Data.Movie
 
         public void AddMovie(MovieDto movie)
         {
-            throw new NotImplementedException();
+            string query = "INSERT INTO movie SET title = @title, overview = @overview, image = @image, runtime = @runtime, releaseDate = @releaseDate, website = @website, budget = @budget, revenue = @revenue, status = @status, posterBackdrop = @posterBackdrop, averageRating = @averageRating";
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@title", movie.Title);
+                command.Parameters.AddWithValue("@overview", movie.Overview);
+                command.Parameters.AddWithValue("@image", movie.PosterPath);
+                command.Parameters.AddWithValue("@runtime", movie.Runtime);
+                command.Parameters.AddWithValue("@releaseDate", movie.ReleaseDate?.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@website", movie.Website);
+                command.Parameters.AddWithValue("@budget", movie.Budget);
+                command.Parameters.AddWithValue("@revenue", movie.Revenue);
+                command.Parameters.AddWithValue("@status", movie.Status);
+                command.Parameters.AddWithValue("@posterBackdrop", movie.PosterBackdrop);
+                command.Parameters.AddWithValue("@averageRating", movie.AverageRating);
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
         }
 
         public void RemoveMovie(MovieDto movie)

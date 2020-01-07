@@ -19,6 +19,11 @@ namespace PMDB_docker.Data
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("MovieDatabase");
         }
+
+        public GenreDatabaseHandler(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
         public List<GenreDto> GetAllGenres()
         {
             List<GenreDto> genres = new List<GenreDto>();
