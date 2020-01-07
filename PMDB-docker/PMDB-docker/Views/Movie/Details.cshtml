@@ -75,7 +75,7 @@
         <form enctype="multipart/form-data" method="post" asp-controller="Movie" asp-action="Details">
             <div class="form-group row">
                 <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary" asp-route-id="@Model.Movie.Id">Update</button>
+                    <button type="submit" class="btn btn-primary" asp-route-id="@Model.Movie.Id" data-toggle="modal" data-target="#exampleModalCenter">Update</button>
                     <a asp-controller="Movie" asp-action="Index" class="btn btn-secondary">Back</a>
                 </div>
             </div>
@@ -99,6 +99,18 @@
         }
         <h6>Website</h6>
         <p><a href="@Model.Movie.Website">@Model.Movie.Website</a></p>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="d-flex justify-content-center m-5">
+                <div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

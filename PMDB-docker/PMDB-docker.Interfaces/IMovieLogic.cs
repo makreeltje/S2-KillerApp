@@ -16,6 +16,7 @@ namespace PMDB_docker.Interfaces
         List<MovieDto> RemoveMovie(MovieDto movie);
         void UpdateMovie(MovieDto movie);
         string FormatRuntime(int? runtime);
+        List<MovieDto> SearchMovie(string query);
         void UpdateGenres(List<GenreDto> genres, int movieId);
         void UpdatePeopleMovie(List<RoleDto> role, int movieId);
     }

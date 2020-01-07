@@ -10,17 +10,15 @@ namespace PMDB_docker.Models
 {
     public class MovieLogic : IMovieLogic
     {
-        private readonly List<MovieDto> _movieList;
+        private List<MovieDto> _movieList;
         private readonly IMovieData _movieData;
-        private readonly ITmdbLogic _tmdbLogic;
 
         // TODO: Via een constructor mee geven wat voor een data structuur je wilt gebruiken, denk bij Mock, inMemory of database
         //MovieDatabaseHandler handler = new MovieDatabaseHandler();
 
-        public MovieLogic(IMovieData movieData, ITmdbLogic tmdbLogic)
+        public MovieLogic(IMovieData movieData)
         {
             _movieData = movieData;
-            _tmdbLogic = tmdbLogic;
             _movieList = new List<MovieDto>(_movieData.GetAllMovies());
         }
         public MovieDto GetMovie(int Id)
@@ -31,7 +29,7 @@ namespace PMDB_docker.Models
         public List<MovieDto> GetSixRandomMovies()
         {
             _movieList.Clear();
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 6; i++)
             {
                 MovieDto movie = new MovieDto();
                 movie = _movieData.GetRandomMovie();
@@ -99,6 +97,12 @@ namespace PMDB_docker.Models
 
             return "-";
 
+        }
+
+        public List<MovieDto> SearchMovie(string query)
+        {
+            _movieList = _movieData.SearchMovie(query);
+            return _movieList;
         }
 
         public void UpdateGenres(List<GenreDto> genres, int movieId)

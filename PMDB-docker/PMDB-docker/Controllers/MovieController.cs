@@ -29,12 +29,23 @@ namespace PMDB_docker.Controllers
             _peopleRepository = personRepository;
         }
 
-        public ViewResult Index(int? page, int searchString)
+        public ViewResult Index(int? page)
         {
             MovieListViewModel movieListViewModel = new MovieListViewModel()
             {
                 Movies = _movieRepository.GetAllMoviesForListPage().ToPagedList(page ?? 1, 20),
                 PageTitle = "All Movies"
+            };
+            return View(movieListViewModel);
+        }
+
+        [HttpPost]
+        public ViewResult Index(int? page, string searchQuery)
+        {
+            MovieListViewModel movieListViewModel = new MovieListViewModel()
+            {
+                Movies = _movieRepository.SearchMovie(searchQuery).ToPagedList(page ?? 1, 20),
+                PageTitle = $"Results for {searchQuery}"
             };
             return View(movieListViewModel);
         }

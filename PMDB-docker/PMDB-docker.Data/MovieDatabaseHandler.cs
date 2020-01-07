@@ -88,7 +88,7 @@ namespace PMDB_docker.Data.Movie
                 MySqlDataReader reader = command.ExecuteReader();
                 reader.Read();
 
-                movie.Id = reader.GetInt32(0); 
+                movie.Id = reader.GetInt32(0);
                 if (!reader.IsDBNull(2))
                     movie.TmdbId = reader.GetInt32(2);
                 movie.Title = reader.GetString(3);
@@ -255,6 +255,59 @@ namespace PMDB_docker.Data.Movie
             {
                 throw new DataException(sex.Message);
             }
+        }
+
+        public List<MovieDto> SearchMovie(string searchQuery)
+        {
+            List<MovieDto> movies = new List<MovieDto>();
+            string query = "SELECT * FROM movie WHERE title LIKE @searchQuery";
+            using MySqlConnection conn = new MySqlConnection(_connectionString);
+            using MySqlCommand command = new MySqlCommand(query, conn);
+            try
+            {
+                command.Parameters.AddWithValue("@searchQuery", $"%{searchQuery}%");
+                conn.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    MovieDto dto = new MovieDto();
+                    dto.Id = reader.GetInt32(0);
+                    if (!reader.IsDBNull(1))
+                        dto.ImdbId = reader.GetString(1);
+                    if (!reader.IsDBNull(2))
+                        dto.TmdbId = reader.GetInt32(2);
+                    dto.Title = reader.GetString(3);
+                    if (!reader.IsDBNull(4))
+                        dto.Overview = reader.GetString(4);
+                    if (!reader.IsDBNull(5))
+                        dto.PosterPath = reader.GetString(5);
+                    if (!reader.IsDBNull(6))
+                        dto.Runtime = reader.GetInt32(6);
+                    if (!reader.IsDBNull(7))
+                        dto.ReleaseDate = reader.GetDateTime(7);
+                    if (!reader.IsDBNull(8))
+                        dto.Website = reader.GetString(8);
+                    if (!reader.IsDBNull(9))
+                        dto.Budget = reader.GetInt64(9);
+                    if (!reader.IsDBNull(10))
+                        dto.Revenue = reader.GetInt64(10);
+                    if (!reader.IsDBNull(11))
+                        dto.Status = reader.GetString(11);
+                    if (!reader.IsDBNull(12))
+                        dto.PosterBackdrop = reader.GetString(12);
+                    if (!reader.IsDBNull(13))
+                        dto.AverageRating = reader.GetDouble(13);
+                    if (!reader.IsDBNull(14))
+                        dto.LastModified = reader.GetDateTime(14);
+                    movies.Add(dto);
+                }
+            }
+            catch (MySqlException sex)
+            {
+                throw new DataException(sex.Message);
+            }
+
+            return movies;
         }
     }
 }

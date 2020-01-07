@@ -7660,11 +7660,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
+      "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
       "projectName": "PMDB-docker.BusinessTests",
-      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
+      "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
       "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\obj\\",
+      "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7680,11 +7680,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+            "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+              "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
             },
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+            "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+              "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
             }
           }
         }

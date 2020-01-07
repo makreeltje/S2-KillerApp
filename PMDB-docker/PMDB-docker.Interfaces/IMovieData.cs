@@ -13,6 +13,7 @@ namespace PMDB_docker.Interfaces
         void RemoveMovie(MovieDto movie);
         void EditMovie(MovieDto movie);
         //void UpdateGenres(string genres, int movieId);
+        List<MovieDto> SearchMovie(string searchQuery);
         void CheckGenreConnection(List<GenreDto> genres, int movieId);
         void CheckPeopleConnection(List<RoleDto> role, int movieId);
     }
