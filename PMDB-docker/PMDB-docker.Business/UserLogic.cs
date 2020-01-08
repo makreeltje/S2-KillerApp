@@ -34,7 +34,7 @@ namespace PMDB_docker.Business
         public UserDto Add(UserDto user)
         {
             _userData.AddUser(user);
-            _userList = (List<UserDto>) _userData.GetAllUsers();
+            _userList = _userData.GetAllUsers();
             user.Id = _userList.Last().Id;
 
             return user;
