@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
@@ -12,8 +13,14 @@ namespace PMDB_docker.Data.Tests
     [TestClass()]
     public class GenreDatabaseHandlerTests
     {
-        private readonly IGenreData _genreData = new GenreDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
+        private static readonly IConfiguration _configuration;
+        private readonly IGenreData _genreData;
         private List<GenreDto> _genreList;
+
+        public GenreDatabaseHandlerTests()
+        {
+            _genreData = new GenreDatabaseHandler();
+        }
 
         [TestMethod()]
         public void GetAllGenresFromTheDatabase_GetAllGenres_IsTrue()
