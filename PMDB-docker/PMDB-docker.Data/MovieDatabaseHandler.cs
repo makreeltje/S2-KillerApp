@@ -1,11 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
-using System;
-using System.Collections.Generic;
 
-namespace PMDB_docker.Data.Movie
+namespace PMDB_docker.Data
 {
     public class MovieDatabaseHandler : IMovieData
     {

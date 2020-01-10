@@ -1,13 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PMDB_docker.Data.Movie;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PMDB_docker.Data;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
-namespace PMDB_docker.Data.Movie.Tests
+namespace PMDB_docker.DataTests
 {
     [TestClass()]
     public class MovieDatabaseHandlerTests

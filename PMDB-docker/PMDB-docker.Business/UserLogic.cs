@@ -26,9 +26,10 @@ namespace PMDB_docker.Business
             return _userList.FirstOrDefault(m => m.Id == id);
         }
 
-        public IEnumerable<UserDto> GetAllUsers()
+        public List<UserDto> GetAllUsers()
         {
-            throw new NotImplementedException();
+            _userList = _userData.GetAllUsers();
+            return _userList;
         }
 
         public UserDto Add(UserDto user)
@@ -45,12 +46,9 @@ namespace PMDB_docker.Business
             _userData.EditUser(userChanges);
         }
 
-        public UserDto Delete(int id)
+        public void Delete(int id)
         {
-             UserDto user =_userList.FirstOrDefault(u => u.Id == id);
-             if (user != null)
-                 _userList.Remove(user);
-             return user;
+            _userData.RemoveUser(id);
         }
         
     }

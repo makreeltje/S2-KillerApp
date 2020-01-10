@@ -31,8 +31,7 @@ namespace PMDB_docker.Business
             _tmdbMovieCredits = GetMovieCredits(movie.TmdbId);
             if (movie.Title != _tmdbMovie.Title)
                 movie.Title = UpdateTitle(movie.Title);
-            if (movie.PosterPath != _tmdbMovie.PosterPath)
-                movie.PosterPath = UpdatePosterPath(movie.PosterPath);
+            movie.PosterPath = UpdatePosterPath(movie.PosterPath);
             if (movie.Overview != _tmdbMovie.Overview)
                 movie.Overview = UpdateOverview(movie.Overview);
             if (movie.AverageRating != _tmdbMovie.VoteAverage)
@@ -81,6 +80,8 @@ namespace PMDB_docker.Business
         private string UpdatePosterPath(string image)
         {
             string imagePrefix = "https://image.tmdb.org/t/p/w600_and_h900_bestv2";
+            if (_tmdbMovie.PosterPath == null)
+                return "~/img/noimage-cover.png";
             image = $"{imagePrefix}{_tmdbMovie.PosterPath}";
             return image;
         }
@@ -149,10 +150,8 @@ namespace PMDB_docker.Business
         // TODO: Add prodComps to list and return list
         public List<ProductionCompany> UpdateProductionCompanies(List<ProductionCompany> productionCompanies)
         {
-            return null;
+            throw new NotImplementedException();
         }
-        // TODO: Implement database insertion of credits
-        // TODO: Add credit to list and return list
         public List<RoleDto> UpdatePeopleMovie(List<Credits> credits)
         {
             string imagePrefix = "https://image.tmdb.org/t/p/w138_and_h175_face";
@@ -198,7 +197,10 @@ namespace PMDB_docker.Business
             person.DateOfBirth = tmdbPerson.Birthday;
             person.DateOfDeath = tmdbPerson.Deathday;
             //person.KnownFor = 
-            person.ProfilePath = $"{imagePrefix}{tmdbPerson.ProfilePath}";
+            if (tmdbPerson.ProfilePath == null)
+                person.ProfilePath = "~/img/noimage-face.png";
+            else
+                person.ProfilePath = $"{imagePrefix}{tmdbPerson.ProfilePath}";
             person.HomePage = tmdbPerson.Homepage;
 
             return person;

@@ -1,14 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PMDB_docker.Data;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PMDB_docker.Data;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
-using TMDbLib.Objects.Lists;
 
-namespace PMDB_docker.Data.Tests
+namespace PMDB_docker.DataTests
 {
     
 

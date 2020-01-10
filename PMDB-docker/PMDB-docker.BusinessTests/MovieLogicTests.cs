@@ -1,19 +1,26 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PMDB_docker.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PMDB_docker.Business;
 using PMDB_docker.Data;
-using PMDB_docker.Data.Movie;
+using PMDB_docker.Interfaces;
+using PMDB_docker.Models;
 
-namespace PMDB_docker.Models.Tests
+namespace PMDB_docker.BusinessTests
 {
     [TestClass()]
     public class MovieLogicTests
     {
-        private static readonly IMovieData _movieData = new MovieDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
-        private MovieLogic _movieLogic = new MovieLogic(_movieData);
+        private MovieDto _movie;
+        private List<MovieDto> _movieList;
+        private readonly IMovieData _movieData;
+        private readonly IMovieLogic _movieLogic;
+
+        public MovieLogicTests()
+        {
+            _movieData = new MovieDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
+            _movieLogic = new MovieLogic(_movieData);
+        }
         
 
         [TestMethod()]
@@ -66,20 +73,82 @@ namespace PMDB_docker.Models.Tests
         public void RemoveMovieFromList_RemoveMovie_SeeIfMovieHasBeenRemoved()
         {
             List<MovieDto> movies = new List<MovieDto>();
-            MovieDto movie = new MovieDto();
+            MovieDto movie = new MovieDto()
+            {
+                Title = "NEW MOVIE"
+            };
+            _movieLogic.Add(movie);
             int i;
 
             movies = _movieLogic.GetAllMovies();
-            movie = _movieLogic.GetMovie(movies.Last().Id);
+            movie = _movieLogic.GetMovie(movies.Max(m => m.Id));
             i = movies.Count();
 
             movies = _movieLogic.RemoveMovie(movie);
+            
 
             Assert.IsTrue(movies.Count < i);
 
-            _movieLogic.Add(movie);
 
+        }
 
+        [TestMethod()]
+        public void FormatRuntimeFromIntToTime_FormatRuntime_AreEqual()
+        {
+            // Arrange
+            List<MovieDto> movies = new List<MovieDto>();
+            MovieDto movie = new MovieDto();
+
+            movies = _movieLogic.GetAllMovies();
+            movie = _movieLogic.GetMovie(888);
+
+            string time;
+
+            // Act
+            time = _movieLogic.FormatRuntime(movie.Runtime);
+
+            // Assert
+            Assert.AreEqual("02:49", time);
+        }
+
+        [TestMethod()]
+        public void FormatRuntimeFromIntToTimeWithNoIntSet_FormatRuntime_AreEqual()
+        {
+            // Arrange
+            MovieDto movie = new MovieDto();
+            string time;
+
+            // Act
+            time = _movieLogic.FormatRuntime(movie.Runtime);
+
+            // Assert
+            Assert.AreEqual("-", time);
+        }
+
+        [TestMethod()]
+        public void GetRandomMovies_GetSixRandomMovies_AreEqual()
+        {
+            // Arrange
+            List<MovieDto> movies = new List<MovieDto>();
+
+            // Act
+            movies = _movieLogic.GetSixRandomMovies();
+
+            // Assert
+            Assert.AreEqual(6, movies.Count);
+        }
+
+        [TestMethod()]
+        public void SearchForAMovieWithString_SearchMovie_IsTrue()
+        {
+            // Arrange
+            List<MovieDto> movies = new List<MovieDto>();
+
+            // Act
+            movies = _movieLogic.SearchMovie("mission");
+
+            // Assert
+            Assert.IsTrue(movies.Count > 0);
         }
     }
 }

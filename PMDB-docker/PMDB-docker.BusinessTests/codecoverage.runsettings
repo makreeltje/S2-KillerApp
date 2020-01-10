@@ -1,0 +1,10 @@
+﻿<CodeCoverage>
+  <ModulePaths>
+    <Exclude></Exclude>
+  </ModulePaths>
+  <Functions>
+    <Exclude>
+      <Function>.*&lt;*&gt;.*</Function>
+    </Exclude>
+  </Functions>
+</CodeCoverage>

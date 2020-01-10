@@ -8,10 +8,10 @@ namespace PMDB_docker.Interfaces
     public interface IUserLogic
     {
         UserDto GetUser(int id);
-        IEnumerable<UserDto> GetAllUsers();
+        List<UserDto> GetAllUsers();
         UserDto Add(UserDto user);
         void Edit(UserDto userChanges);
-        UserDto Delete(int id);
+        void Delete(int id);
 
     }
 }

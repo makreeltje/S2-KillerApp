@@ -1,26 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PMDB_docker.Data;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PMDB_docker.Data;
 using PMDB_docker.Interfaces;
 using PMDB_docker.Models;
 
-namespace PMDB_docker.Data.Tests
+namespace PMDB_docker.DataTests
 {
     [TestClass()]
     public class GenreDatabaseHandlerTests
     {
-        private static readonly IConfiguration _configuration;
-        private readonly IGenreData _genreData;
+        private readonly IGenreData _genreData = new GenreDatabaseHandler("server=meelsnet.nl;user id=pmdb;persistsecurityinfo=True;database=pmdb;password=IqtOPJ8Udt0O;");
         private List<GenreDto> _genreList;
-
-        public GenreDatabaseHandlerTests()
-        {
-            _genreData = new GenreDatabaseHandler();
-        }
 
         [TestMethod()]
         public void GetAllGenresFromTheDatabase_GetAllGenres_IsTrue()

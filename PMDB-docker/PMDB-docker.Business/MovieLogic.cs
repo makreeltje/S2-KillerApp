@@ -1,12 +1,9 @@
 ﻿using System;
-using PMDB_docker.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
-using PMDB_docker.Business;
-using TMDbLib.Client;
-using TMDbLib.Objects.People;
+using PMDB_docker.Interfaces;
+using PMDB_docker.Models;
 
-namespace PMDB_docker.Models
+namespace PMDB_docker.Business
 {
     public class MovieLogic : IMovieLogic
     {
@@ -46,8 +43,8 @@ namespace PMDB_docker.Models
 
         public MovieDto Add(MovieDto movie)
         {
-            movie.Id = _movieList.Max(m => m.Id) + 1;
-            _movieList.Add(movie);
+            _movieData.AddMovie(movie);
+            _movieList = _movieData.GetAllMovies();
             return movie;
         }
 
@@ -78,7 +75,7 @@ namespace PMDB_docker.Models
         public List<MovieDto> RemoveMovie(MovieDto movie)
         {
             _movieData.RemoveMovie(movie);
-            _movieList.RemoveAt(movie.Id);
+            _movieList.RemoveAt(_movieList.FindIndex(m => m.Id == movie.Id));
             return _movieList;
         }
 

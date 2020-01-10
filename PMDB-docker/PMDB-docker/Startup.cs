@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PMDB_docker.Business;
 using PMDB_docker.Data;
-using PMDB_docker.Data.Movie;
 using PMDB_docker.Models;
 using PMDB_docker.Interfaces;
 
