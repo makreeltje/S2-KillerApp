@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "PMDB-docker.BusinessTests/1.0.0": {
         "dependencies": {
+          "JetBrains.dotMemoryUnit": "3.0.20171219.105559",
           "MSTest.TestAdapter": "2.0.0",
           "MSTest.TestFramework": "2.0.0",
           "Microsoft.Extensions.Configuration": "3.1.0",
@@ -43,6 +44,14 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {
             "assemblyVersion": "3.6.1.0",
             "fileVersion": "3.6.1.0"
+          }
+        }
+      },
+      "JetBrains.dotMemoryUnit/3.0.20171219.105559": {
+        "runtime": {
+          "lib/netstandard2.0/dotMemory.Unit.dll": {
+            "assemblyVersion": "111.0.0.0",
+            "fileVersion": "111.0.0.0"
           }
         }
       },
@@ -1573,6 +1582,13 @@
       "sha512": "sha512-741fGeDQjixBJaU2j+0CbrmZXsNJkTn/hWbOh4fLVXndHsCclJmWznCPWrJmPoZKvajBvAz3e8ECJOUvRtwjNQ==",
       "path": "google.protobuf/3.6.1",
       "hashPath": "google.protobuf.3.6.1.nupkg.sha512"
+    },
+    "JetBrains.dotMemoryUnit/3.0.20171219.105559": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hiyO5il6mapGmP+u1AWPr5YZxMAUcBlO4GQuMEmTNV1LHd2/3GoJMTh5JrbjNDnMwjeWXAyAojcqPEXmE1XUag==",
+      "path": "jetbrains.dotmemoryunit/3.0.20171219.105559",
+      "hashPath": "jetbrains.dotmemoryunit.3.0.20171219.105559.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.2.0": {
       "type": "package",

@@ -26,18 +26,15 @@ namespace PMDB_docker.BusinessTests
         [TestMethod()]
         public void GetSpecificMovie_GetMovie_SeeIfValueIsCorrect()
         {
-            MovieDto movie = new MovieDto();
-            movie = _movieLogic.GetMovie(888);
-            Assert.AreEqual("It Chapter Two", movie.Title);
+            _movie = _movieLogic.GetMovie(888);
+            Assert.AreEqual("It Chapter Two", _movie.Title);
         }
         [TestMethod()]
         public void GetEveryMovie_GetAllMovies_SeeIfListIsPopulated()
         {
-            List<MovieDto> movies = new List<MovieDto>();
+            _movieList = _movieLogic.GetAllMovies();
 
-            movies = _movieLogic.GetAllMovies();
-
-            Assert.IsTrue(movies.Count > 0);
+            Assert.IsTrue(_movieList.Count > 0);
         }
 
         [TestMethod()]
@@ -59,11 +56,9 @@ namespace PMDB_docker.BusinessTests
         [TestMethod()]
         public void GetMoviesWithShortenedOverview_GetAllMoviesForListPage_SeeIfOverviewDoesNotExceedSpecifiedThreshold()
         {
-            List<MovieDto> movies = new List<MovieDto>();
+            _movieList = _movieLogic.GetAllMoviesForListPage();
 
-            movies = _movieLogic.GetAllMoviesForListPage();
-
-            foreach (var movie in movies)
+            foreach (var movie in _movieList)
             {
                 if (movie.ShortenedPlot != null)
                     Assert.IsTrue(movie.ShortenedPlot.Length <= 100);
@@ -96,16 +91,13 @@ namespace PMDB_docker.BusinessTests
         public void FormatRuntimeFromIntToTime_FormatRuntime_AreEqual()
         {
             // Arrange
-            List<MovieDto> movies = new List<MovieDto>();
-            MovieDto movie = new MovieDto();
-
-            movies = _movieLogic.GetAllMovies();
-            movie = _movieLogic.GetMovie(888);
+            _movieList = _movieLogic.GetAllMovies();
+            _movie = _movieLogic.GetMovie(888);
 
             string time;
 
             // Act
-            time = _movieLogic.FormatRuntime(movie.Runtime);
+            time = _movieLogic.FormatRuntime(_movie.Runtime);
 
             // Assert
             Assert.AreEqual("02:49", time);
@@ -128,27 +120,21 @@ namespace PMDB_docker.BusinessTests
         [TestMethod()]
         public void GetRandomMovies_GetSixRandomMovies_AreEqual()
         {
-            // Arrange
-            List<MovieDto> movies = new List<MovieDto>();
-
             // Act
-            movies = _movieLogic.GetSixRandomMovies();
+            _movieList = _movieLogic.GetSixRandomMovies();
 
             // Assert
-            Assert.AreEqual(6, movies.Count);
+            Assert.AreEqual(6, _movieList.Count);
         }
 
         [TestMethod()]
         public void SearchForAMovieWithString_SearchMovie_IsTrue()
         {
-            // Arrange
-            List<MovieDto> movies = new List<MovieDto>();
-
             // Act
-            movies = _movieLogic.SearchMovie("mission");
+            _movieList = _movieLogic.SearchMovie("mission");
 
             // Assert
-            Assert.IsTrue(movies.Count > 0);
+            Assert.IsTrue(_movieList.Count > 0);
         }
     }
 }

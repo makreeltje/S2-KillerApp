@@ -34,6 +34,15 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
+      "JetBrains.dotMemoryUnit/3.0.20171219.105559": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/dotMemory.Unit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/dotMemory.Unit.dll": {}
+        }
+      },
       "Microsoft.CodeCoverage/16.2.0": {
         "type": "package",
         "compile": {
@@ -2409,6 +2418,109 @@
         "lib/net45/Google.Protobuf.xml",
         "lib/netstandard1.0/Google.Protobuf.dll",
         "lib/netstandard1.0/Google.Protobuf.xml"
+      ]
+    },
+    "JetBrains.dotMemoryUnit/3.0.20171219.105559": {
+      "sha512": "hiyO5il6mapGmP+u1AWPr5YZxMAUcBlO4GQuMEmTNV1LHd2/3GoJMTh5JrbjNDnMwjeWXAyAojcqPEXmE1XUag==",
+      "type": "package",
+      "path": "jetbrains.dotmemoryunit/3.0.20171219.105559",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jetbrains.dotmemoryunit.3.0.20171219.105559.nupkg.sha512",
+        "jetbrains.dotmemoryunit.nuspec",
+        "lib/net35/dotMemory.Unit.dll",
+        "lib/net35/dotMemory.Unit.xml",
+        "lib/netstandard2.0/dotMemory.Unit.dll",
+        "lib/netstandard2.0/dotMemory.Unit.xml",
+        "lib/tools/BLToolkit.3.dll",
+        "lib/tools/Castle.Core.dll",
+        "lib/tools/DotNetZip.dll",
+        "lib/tools/JetBrains.Annotations.dll",
+        "lib/tools/JetBrains.CommandLine.Interop.dll",
+        "lib/tools/JetBrains.Common.CallTreeStorage.dll",
+        "lib/tools/JetBrains.Common.ExternalStorage.CLR40.exe",
+        "lib/tools/JetBrains.Common.ExternalStorage.CLR40.exe.config",
+        "lib/tools/JetBrains.Common.ExternalStorage.CLR40.x86.exe",
+        "lib/tools/JetBrains.Common.ExternalStorage.CLR40.x86.exe.config",
+        "lib/tools/JetBrains.Common.JetInjector.Interface.dll",
+        "lib/tools/JetBrains.Common.JetInjector.dll",
+        "lib/tools/JetBrains.Common.Remotable.Proxy.dll",
+        "lib/tools/JetBrains.Common.Remotable.Util.dll",
+        "lib/tools/JetBrains.Common.Remotable.dll",
+        "lib/tools/JetBrains.Common.Util.Metadata.dll",
+        "lib/tools/JetBrains.Common.Util.Shell.dll",
+        "lib/tools/JetBrains.Common.Util.dll",
+        "lib/tools/JetBrains.Etw.dll",
+        "lib/tools/JetBrains.Platform.ComponentModel.dll",
+        "lib/tools/JetBrains.Platform.Core.dll",
+        "lib/tools/JetBrains.Platform.Interop.WinApi.dll",
+        "lib/tools/JetBrains.Platform.Metadata.dll",
+        "lib/tools/JetBrains.Platform.RdCore.dll",
+        "lib/tools/JetBrains.Platform.Shell.dll",
+        "lib/tools/JetBrains.Platform.UIInteractive.Shell.dll",
+        "lib/tools/JetBrains.Platform.Util.dll",
+        "lib/tools/JetBrains.Profiler.Snapshot.Interface.dll",
+        "lib/tools/JetBrains.Profiler.Snapshot.dll",
+        "lib/tools/JetBrains.Profiler.Util.dll",
+        "lib/tools/JetBrains.Profiler.Windows.Api.dll",
+        "lib/tools/JetBrains.Profiler.Windows.Impl.dll",
+        "lib/tools/JetBrains.Profiler.Windows.Impl.dll.config",
+        "lib/tools/JetBrains.Profiler.Windows.RemoteAgent.dll",
+        "lib/tools/JetBrains.Profiler.Windows.RemoteAgent.dll.config",
+        "lib/tools/JetBrains.Profiler.Windows.SysTools.dll",
+        "lib/tools/JetBrains.Profiler.Windows.dll",
+        "lib/tools/JetBrains.Profiler.dll",
+        "lib/tools/JetBrains.dotMemory.Assembler.dll",
+        "lib/tools/JetBrains.dotMemory.Core.dll",
+        "lib/tools/JetBrains.dotMemory.Dal.Interface.dll",
+        "lib/tools/JetBrains.dotMemory.Dal.dll",
+        "lib/tools/JetBrains.dotMemory.Model.Interface.dll",
+        "lib/tools/JetBrains.dotMemory.Model.dll",
+        "lib/tools/JetBrains.dotMemory.Resources.dll",
+        "lib/tools/JetBrains.dotMemory.Shellless.dll",
+        "lib/tools/JetBrains.dotMemoryUnit.ClientController.dll",
+        "lib/tools/JetBrains.dotMemoryUnit.Interface.dll",
+        "lib/tools/JetBrains.dotMemoryUnit.Interop.Console.dll",
+        "lib/tools/JetBrains.dotMemoryUnit.Server.exe",
+        "lib/tools/JetBrains.dotMemoryUnit.Server.exe.config",
+        "lib/tools/Newtonsoft.Json.dll",
+        "lib/tools/dotMemory.Unit.dll",
+        "lib/tools/dotMemory.Unit.xml",
+        "lib/tools/dotMemoryUnit.config.xslt",
+        "lib/tools/dotMemoryUnit.exe",
+        "lib/tools/dotMemoryUnit.exe.config",
+        "lib/tools/dotMemory_Unit_license.pdf",
+        "lib/tools/netstandard2.0/JetBrains.Platform.Interop.WinApi.dll",
+        "lib/tools/netstandard2.0/JetBrains.dotMemoryUnit.ClientController.dll",
+        "lib/tools/netstandard2.0/JetBrains.dotMemoryUnit.Interface.dll",
+        "lib/tools/netstandard2.0/System.Buffers.dll",
+        "lib/tools/netstandard2.0/System.IO.dll",
+        "lib/tools/netstandard2.0/System.Net.Http.WinHttpHandler.dll",
+        "lib/tools/netstandard2.0/System.Private.ServiceModel.dll",
+        "lib/tools/netstandard2.0/System.Private.Uri.dll",
+        "lib/tools/netstandard2.0/System.Reflection.DispatchProxy.dll",
+        "lib/tools/netstandard2.0/System.Reflection.Emit.ILGeneration.dll",
+        "lib/tools/netstandard2.0/System.Reflection.Emit.dll",
+        "lib/tools/netstandard2.0/System.Reflection.Primitives.dll",
+        "lib/tools/netstandard2.0/System.Reflection.dll",
+        "lib/tools/netstandard2.0/System.Runtime.dll",
+        "lib/tools/netstandard2.0/System.Security.Principal.Windows.dll",
+        "lib/tools/netstandard2.0/System.ServiceModel.NetTcp.dll",
+        "lib/tools/netstandard2.0/System.ServiceModel.Primitives.dll",
+        "lib/tools/netstandard2.0/System.Text.Encoding.dll",
+        "lib/tools/netstandard2.0/System.Threading.Tasks.dll",
+        "lib/tools/netstandard2.0/dotMemory.Unit.dll",
+        "lib/tools/x64/JetBrains.Common.NativeUtils.dll",
+        "lib/tools/x64/JetBrains.Profiler.Windows.Core.dll",
+        "lib/tools/x64/JetBrains.Profiler.Windows.CoreApi.dll",
+        "lib/tools/x64/symsrv.dll",
+        "lib/tools/x64/symsrv.yes",
+        "lib/tools/x86/JetBrains.Common.NativeUtils.dll",
+        "lib/tools/x86/JetBrains.Profiler.Windows.Core.dll",
+        "lib/tools/x86/JetBrains.Profiler.Windows.CoreApi.dll",
+        "lib/tools/x86/symsrv.dll",
+        "lib/tools/x86/symsrv.yes"
       ]
     },
     "Microsoft.CodeCoverage/16.2.0": {
@@ -7654,6 +7766,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "JetBrains.DotMemoryUnit >= 3.0.20171219.105559",
       "MSTest.TestAdapter >= 2.0.0",
       "MSTest.TestFramework >= 2.0.0",
       "Microsoft.Extensions.Configuration >= 3.1.0",
@@ -7670,11 +7783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
+      "projectUniqueName": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
       "projectName": "PMDB-docker.BusinessTests",
-      "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
+      "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\PMDB-docker.BusinessTests.csproj",
       "packagesPath": "C:\\Users\\rick_\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\obj\\",
+      "outputPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.BusinessTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rick_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7690,11 +7803,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
+            "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj": {
+              "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Business\\PMDB-docker.Business.csproj"
             },
-            "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
-              "projectPath": "C:\\git\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
+            "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj": {
+              "projectPath": "D:\\GitKraken\\S2-KillerApp\\PMDB-docker\\PMDB-docker.Data\\PMDB-docker.Data.csproj"
             }
           }
         }
@@ -7708,6 +7821,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "JetBrains.DotMemoryUnit": {
+            "target": "Package",
+            "version": "[3.0.20171219.105559, )"
+          },
           "MSTest.TestAdapter": {
             "target": "Package",
             "version": "[2.0.0, )"
