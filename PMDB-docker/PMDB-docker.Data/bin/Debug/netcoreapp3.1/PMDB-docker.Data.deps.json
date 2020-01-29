@@ -9,7 +9,6 @@
       "PMDB-docker.Data/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.0",
-          "MySql.Data": "8.0.18",
           "PMDB-docker.Interface": "1.0.0",
           "PMDB-docker.Models": "1.0.0"
         },
